@@ -22,172 +22,152 @@
                     <h4>2023年8月04日</h4>
                 </section>
 
-				<section data-auto-animate>
-                    <h2 data-id="linux">shell script</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment">1 <b class="fragment" style="color: salmon">文件命令</b></li>
-                        <li class="fragment">2 <b class="fragment" style="color: salmon">系统信息</b></li>
-                        <li class="fragment">3 <b class="fragment" style="color: salmon">解压缩</b></li>
-                        <li class="fragment">4 <b class="fragment" style="color: salmon">进程管理</b></li>
-                        <li class="fragment">5 <b class="fragment" style="color: salmon">文件权限</b></li>
-                        <li class="fragment">6 <b class="fragment" style="color: salmon">网络</b></li>
-                        <li class="fragment">7 <b class="fragment" style="color: salmon">安装</b></li>
-                        <li class="fragment">8 <b class="fragment" style="color: salmon">远程</b></li>
-                        <li class="fragment">9 <b class="fragment" style="color: salmon">查询</b></li>
-                    </ul>
-                </section>
-
                 <section data-auto-animate>
-                    <h2 data-id="linux">文件命令</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> ls </a>：显示文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> ls -al </a>：显示文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cd dir </a>：进入dir文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cd </a>：进入home目录</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cd - </a>：进入上一次进入的目录</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> pwd </a>：打印当前文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> mkdir dir </a>：创建dir文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> rm file </a>：删除file文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> rm -r dir </a>：递归删除文件夹</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> rm -f file </a>：强制删除文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cp -r dir1 dir2 </a>：拷贝dir1到dir2</li>
+                    <h2 data-id="syllbus">Linux复杂命令</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><b class="fragment" style="color: salmon">管道 pipe |</b></li>
+                            <li class="fragment"><b class="fragment" style="color: salmon">重定向 redirection > </b></li>
+                            <li class="fragment"><b class="fragment" style="color: salmon">find</b></li>
+                            <li class="fragment"><b class="fragment" style="color: salmon">grep</b></li>
                         </ul>
                 </section>
 
- 
+
                 <section data-auto-animate>
-                    <h2 data-id="linux">文件命令</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cp -r file1 file2 </a>：拷贝file1到file2</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> mv file1 file2 </a>:移动file1到file2</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> touch file </a>:创建file文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cat file </a>:输出file文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> more file </a>:输出file文件内容</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> head file </a>:输出file文件的头十行</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> tail file </a>:输出file文件的尾十行</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> ln -s file link</a>:创建link链接文件，链接到file</li>
-                    </ul>
+                    <h2 data-id="linux">多种命令</h2>
+                    <pre data-id="bash"><code data-line-numbers="1|3|5|7|9" data-trim class="bash">
+                        <script type="text/template">
+                            $ find $FOAM_SRC -type f -iname "*singlephase*" | grep "incompress*"
+
+                            $ ls /bin /usr/bin | sort | uniq | less
+
+                            $ ls /bin/usr > 1.txt
+
+                            $ ls /bin/usr 2> 1.txt
+
+                            $ ls /bin/usr > 1.txt 2>&1
+                        </script>
+                    </code></pre>
                 </section>
 
                 <section data-auto-animate>
-                    <h1>DEMO</h1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">系统信息</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> date </a>：显示当前日期和时间</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cal </a>：显示日历</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> uptime </a>：显示系统运行时间及其他信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> w </a>：显示谁在线</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> whoami </a>：显示谁登陆</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> uname -a </a>：显示系统信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cat /proc/cpuinfo </a>：cpu信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> cat /proc/meminfo </a>：内存信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> df </a>：磁盘信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> du </a>：文件夹信息</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> man command </a>：命令使用手册</li>
-                        </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">系统信息</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> whereis app </a>：显示app可能路径</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> which app </a>：显示默认运行app路径</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> type app </a>：显示命令的类型</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> file binary </a>：文件类型</li>
-                        </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h1>DEMO</h1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">解压缩</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> tar cf file.tar files </a>：创建包含files的file.tar压缩文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> tar xf file.tar </a>：解压缩file.tar</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> tar czf file.tar.gz files </a>：创建Gzip压缩的压缩文件</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> tar xzf file.tar.gz </a>：解压缩file.tar.gz</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> gzip </a>:gzip压缩</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> zip </a>:zip压缩</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> unzip </a>:unzip解压缩</li>
-                        </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h1>DEMO</h1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">进程管理</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> ps </a>： 显示当前运行进程</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> top </a>：显示所有运行进程</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> htop </a>：更智能的top </li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> kill pid </a>：杀死进程pid的进程 </li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> jobs </a>： 当前的作业情况</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> fg </a>： 前台</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;"> bg </a>： 后台</li>
-                        </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h1>DEMO</h1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">文件权限</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">chmod xxx file</a>： 改变文件/文件夹的权限</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">chmod 777</a>： user/group/onwer都可读可写可执行/li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">chmod 755</a>： user可读可写可执行，/group/onwer可读可执行</li>
-                        
-                    </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h1>DEMO</h1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">网络</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">ping host</a>： 查看网络通信情况</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">wget url</a>： 从网络获得资源</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">curl url</a>： 从网络获得资源</li>   
-                    </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="linux">安装</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">dpkg -i pkg.deb</a>： 安装下载的包</li>
+                    <h2 data-id="linux">更好的工具</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment"><a href="https://github.com/sharkdp/fd">更好的find</a></li>
+                        <li class="fragment"><a href="https://github.com/BurntSushi/ripgrep">更好的grep</a></li>
                     </ul>
                 </section>
                 
                 <section data-auto-animate>
-                    <h2 data-id="linux">远程</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">ssh user@host</a>： 连接到远程主机</li>
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">scp -r user@host</a>： 远程主机与本地机之间拷贝</li>
-                    </ul>
-                    
+                    <h2 data-id="syllbus">shell脚本</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">脚本程序</li>
+                            <li class="fragment">变量</li>
+                            <li class="fragment">条件分支</li>
+                            <li class="fragment">循环</li>
+                            <li class="fragment">函数</li>
+                        </ul>
                 </section>
 
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">脚本程序</h2>
+
+                        <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                            #!/bin/sh
+                            MY_MESSAGE="OpenFOAM Programming"
+                            echo $MY_MESSAGE
+                        </code></pre>
+
+                        <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                            $ bash first.sh
+                        </code></pre>
+
+                        <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                            $ chmod 755 first.sh
+                            $ ./first.sh
+                        </code></pre>
+                </section>
 
                 <section data-auto-animate>
                     <h1>DEMO</h1>
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="linux">搜索</h2>
-                    <ul style="line-height: 1.5em;">
-                        <li class="fragment spotlight"><a style="font-family: Noto Serif SC;color:salmon;">grep</a>： 搜索工具</li>
-                    </ul>
+                    <h2 data-id="syllbus">变量</h2>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        echo "What is your name?"
+                        read USER_NAME
+                        echo "Hello $USER_NAME"
+                        echo "I will create you a file called ${USER_NAME}_file"
+                        touch "${USER_NAME}_file"
+                    </code></pre>
+                </section>
 
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">条件分支</h2>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        echo "Please guess the magic number"
+                        read X
+                        echo $X | grep "[^0-9]" > /dev/null 2>&1
+                        if [ "$?" -eq "0" ]; then
+                            echo "Sorry wanted a number"
+                        else
+                            if [ "$X" -eq "6" ]; then
+                                echo "you got it"
+                            fi
+                        fi
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">循环</h2>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        for i in 1 2 3 4 5
+                        do
+                            echo "Looping ... number $i"
+                        done
+                    </code></pre>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        while read input_text
+                        do
+                            case $input_text in
+                                fixedValue)     echo BoundaryContiditions ;;
+                                ddt)            echo TimeSchemes ;;
+                                div)            echo SpaceSchemes;;
+                                *)              echo Unknown $input_text  ;;    
+                            esac         
+                        done < schemes.txt
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">函数</h2>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        # common.lib
+                        STD_MSG="About to rename some file"
+                        rename()
+                        {
+                            FROM=$1
+                            TO=$2
+                            
+                            for i in *$FROM
+                            do
+                                j=`basename $i $FROM`
+                                mv $i ${j}$TO
+                            done
+                        }
+                    </code></pre>
+
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        . ./common.lib
+                        echo $STD_MSG
+                        rename .txt .bak
+                    </code></pre>
                 </section>
 
                 <section data-auto-animate>
@@ -196,7 +176,7 @@
                 
                 <section data-background-image="./images/jupyter.jpg" data-background-opacity="0.3">
 			    <h2>
-					<h1>路漫漫其修远兮</h2>
+					<h1>雄关漫道真如铁</h2>
 				</h2>
 			</section>
  
