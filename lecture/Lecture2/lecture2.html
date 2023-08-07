@@ -18,7 +18,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-auto-animate data-background-image="./images/jupyter.jpg" data-background-opacity="0.2">
+				<section data-auto-animate data-background-image="./images/mercury.jpg" data-background-opacity="0.2">
                     <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
                     <h3>汪洋</h3>
                     <h4>2023年8月04日</h4>
@@ -48,6 +48,10 @@
 
                             $ ls /bin/usr > 1.txt 2>&1
                     </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h1>DEMO</h1>
                 </section>
 
                 <section data-auto-animate>
@@ -103,24 +107,7 @@
                         touch "${USER_NAME}_file"
                     </code></pre>
                 </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="syllbus">条件分支</h2>
-                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
-                        #!/bin/sh
-                        echo "Please guess the magic number"
-                        read X
-                        echo $X | grep "[^0-9]" > /dev/null 2>&1
-                        if [ "$?" -eq "0" ]; then
-                            echo "Sorry wanted a number"
-                        else
-                            if [ "$X" -eq "6" ]; then
-                                echo "you got it"
-                            fi
-                        fi
-                    </code></pre>
-                </section>
-
+                
                 <section data-auto-animate>
                     <h2 data-id="syllbus">循环</h2>
                     <pre data-id="bash"><code data-line-numbers data-trim class="bash">
@@ -143,6 +130,24 @@
                         done < schemes.txt
                     </code></pre>
                 </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">条件分支</h2>
+                    <pre data-id="bash"><code data-line-numbers data-trim class="bash">
+                        #!/bin/sh
+                        echo "Please guess the magic number"
+                        read X
+                        echo $X | grep "[^0-9]" > /dev/null 2>&1
+                        if [ "$?" -eq "0" ]; then
+                            echo "Sorry wanted a number"
+                        else
+                            if [ "$X" -eq "6" ]; then
+                                echo "you got it"
+                            fi
+                        fi
+                    </code></pre>
+                </section>
+
 
                 <section data-auto-animate>
                     <h2 data-id="syllbus">函数</h2>
@@ -178,7 +183,7 @@
                     <h1>AI 工具</h1>
                 </section>
                 
-                <section data-background-image="./images/jupyter.jpg" data-background-opacity="0.3">
+                <section data-background-image="./images/mercury.jpg" data-background-opacity="0.3">
 			    <h2>
 					<h1>雄关漫道真如铁</h2>
 				</h2>

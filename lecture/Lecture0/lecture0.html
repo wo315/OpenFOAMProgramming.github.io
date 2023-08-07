@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../node_modules/highlight.js/styles/arta.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/earth.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年7月25日</h4>
+                </section>
+
+                <!-- <section data-markdown="lecture0.md"> -->
+                <section data-auto-animate>
+                    <h2>时间安排</h2>
+					<ul style="line-height: 2em;">
+						<li class="fragment spotlight">周二，周五上课</li>
+						<li class="fragment spotlight">每次两节课，中间有15分钟休息</li>
+						<li class="fragment spotlight">每两周答疑一次，答疑看大家具体问题适当延长</li>
+						<li class="fragment spotlight">暂定15周，不够则适当增加</li>
+					</ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>作业</h2>
+                    <ul style="line-height: 2em;">
+						<li class="fragment spotlight">作业尽可能提交</li>
+						<li class="fragment spotlight">发送到：2106936@qq.com</li>
+						<li class="fragment spotlight">飞书群今明两天建设</li>
+					</ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">内容组成</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">Part 1 <b style="color: salmon">LINUX</b></li>
+                            <li class="fragment">Part 2 <b style="color: salmon">CPP</b></li>
+                            <li class="fragment">Part 3 <b style="color: salmon">OpenFOAM</b></li>
+                        </ul>
+                </section>
+
+				<section data-auto-animate>
+                    <h2 data-id="linux">Linux</h2>
+                    <p>2周时间</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux</h2>
+                    <ul style="line-height: 2em;"> 
+                        <li class="fragment spotlight">常用工具</li>
+                        <li class="fragment spotlight">常用命令</li>
+                        <li class="fragment spotlight">shell脚本</li>
+                        <li class="fragment spotlight">容器</li>
+                    </ul>
+                </section>
+
+                <section data-background="https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg" 
+                         data-background-size="80%"
+                         data-background-color="white"
+                         data-background-opacity="1">
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux 常用工具</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">shell</li>
+                        <li class="fragment spotlight">vim</li>
+                        <li class="fragment spotlight">nano</li>
+                        <li class="fragment spotlight">vscode</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h1>DEMO</h1>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux 常用命令</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">cd</li>
+                        <li class="fragment spotlight">ls</li>
+                        <li class="fragment spotlight">cat</li>
+                        <li class="fragment spotlight">head</li>
+                        <li class="fragment spotlight">less</li>
+                        <li class="fragment spotlight">mv</li>
+                        <li class="fragment spotlight">cp</li>
+                        <li class="fragment spotlight">rm</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h1>DEMO</h1>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux SHELL脚本</h2>
+                    <pre data-id="shell" style="width: 1080px; height: 480px"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                        #----------------------------------*-sh-*--------------------------------------
+                        # =========                 |
+                        # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+                        #  \\    /   O peration     |
+                        #   \\  /    A nd           | www.openfoam.com
+                        #    \\/     M anipulation  |
+                        #------------------------------------------------------------------------------
+                        #     Copyright (C) 2011-2016 OpenFOAM Foundation
+                        #     Copyright (C) 2016-2022 OpenCFD Ltd.
+                        #------------------------------------------------------------------------------
+                        # License
+                        #     This file is part of OpenFOAM, distributed under GPL-3.0-or-later.
+                        #
+                        # File
+                        #     etc/bashrc
+                        #
+                        # Description
+                        #     The OpenFOAM environment for POSIX shell (eg, bash,dash,zsh,...).
+                        #     Source manually or from the ~/.bashrc or ~/.profile files.
+                        #
+                        #     Most settings can be overridden with a <prefs.sh> file:
+                        #
+                        #       - Base values (eg, from system admin):
+                        #         -  $WM_PROJECT_DIR/etc/prefs.sh
+                        #
+                        #       - User or group values (first file found):
+                        #         -  ~/.OpenFOAM/$FOAM_API/prefs.sh
+                        #         -  ~/.OpenFOAM/prefs.sh
+                        #         -  $WM_PROJECT_SITE/$FOAM_API/etc/prefs.sh
+                        #         -  $WM_PROJECT_SITE/etc/prefs.sh
+                        #
+                        #     Some settings can also be overridden on the command-line when
+                        #     sourcing this file. For example,
+                        #
+                        #       . /path/etc/bashrc WM_COMPILER=Clang WM_LABEL_SIZE=64
+                        #
+                        # Environment
+                        #     FOAM_CONFIG_ETC
+                        #     - alternative/additional location for OpenFOAM etc/ directory
+                        #
+                        #     FOAM_CONFIG_MODE (search mode for etc config files - see foamEtcFile)
+                        #         - eg, FOAM_CONFIG_MODE="o" to only use OpenFOAM config files
+                        #         - no influence on OpenFOAM applications, just the config files
+                        #
+                        #     FOAM_VERBOSE (set/unset)
+                        #         - add extra verbosity when sourcing files
+                        #
+                        #     WM_PROJECT_SITE (optional directory)
+                        #         - local site-specific directory, uses WM_PROJECT_DIR/site if unset
+                        #
+                        # Note
+                        #     Changes made to this file will be lost with the next upgrade.
+                        #
+                        #------------------------------------------------------------------------------
+
+                        # [WM_PROJECT_VERSION] - A human-readable version name
+                        # A development version is often named 'com' - as in www.openfoam.com
+                        export WM_PROJECT_VERSION=v2306
+
+                        #------------------------------------------------------------------------------
+                        # Configuration environment variables.
+                        # Override with <prefs.sh> instead of editing here.
+
+                        # [WM_COMPILER_TYPE] - Compiler location:
+                        # = system | ThirdParty
+                        export WM_COMPILER_TYPE=system
+
+                        # [WM_COMPILER] - Compiler:
+                        # = Gcc | Clang | Icc | Icx | Amd | Arm | Cray | Fujitsu | Nvidia |
+                        #   Gcc<digits> | Clang<digits>
+                        export WM_COMPILER=Clang
+
+                        # [WM_PRECISION_OPTION] - Floating-point precision:
+                        # = DP | SP | SPDP
+                        export WM_PRECISION_OPTION=DP
+
+                        # [WM_LABEL_SIZE] - Label size in bits:
+                        # = 32 | 64
+                        export WM_LABEL_SIZE=32
+
+                        # [WM_COMPILE_OPTION] - Optimised(default), debug, profiling, other:
+                        # = Opt | Dbg | Debug | Prof
+                        export WM_COMPILE_OPTION=Opt
+
+                        # [WM_COMPILE_CONTROL] - additional control for compilation/linking
+                        #   +gold   : with gold linker
+                        #   +lld    : with  lld linker (with clang)
+                        #   +mold   : with mold linker (with clang)
+                        #   ~libz   : without libz compression
+                        #   +openmp : with openmp
+                        #   ~openmp : without openmp
+                        #   +ccache : use ccache
+                        #   ccache=... : ccache command (unquoted, single/double or <> quoted)
+                        #   version=... : compiler suffix (eg, "11" for gcc-11)
+                        #export WM_COMPILE_CONTROL="+gold"
+
+                        # [WM_MPLIB] - MPI implementation:
+                        # = SYSTEMOPENMPI | OPENMPI | SYSTEMMPI | MPI | MPICH | MPICH-GM |
+                        #   HPMPI | CRAY-MPICH | FJMPI | QSMPI | SGIMPI | INTELMPI | USERMPI
+                        # Specify SYSTEMOPENMPI1, SYSTEMOPENMPI2 for internal tracking (if desired)
+                        # Can also use INTELMPI-xyz etc and define your own wmake rule
+                        export WM_MPLIB=OPENMPI
+
+
+                        #------------------------------------------------------------------------------
+                        # (advanced / legacy)
+
+                        # [WM_PROJECT] - This project is "OpenFOAM" - do not change
+                        export WM_PROJECT=OpenFOAM
+
+                        # [projectDir] - directory containing this OpenFOAM version.
+                        # \- When this file is located as $WM_PROJECT_DIR/etc/bashrc, the next lines
+                        #    should work when sourced by BASH or ZSH shells. If this however fails,
+                        #    set one of the fallback values to an appropriate path.
+                        #
+                        #    This can be removed if an absolute path is provided for WM_PROJECT_DIR
+                        #    later on in this file
+                        # --
+                        projectDir="${BASH_SOURCE:-${ZSH_NAME:+$0}}";
+                        [ -n "$projectDir" ] && projectDir="$(\cd $(dirname $projectDir)/.. && \pwd -L)" ||\
+                        projectDir="$HOME/OpenFOAM/OpenFOAM-$WM_PROJECT_VERSION"
+                        # projectDir="/opt/openfoam/OpenFOAM-$WM_PROJECT_VERSION"
+                        # projectDir="/usr/local/OpenFOAM/OpenFOAM-$WM_PROJECT_VERSION"
+                        ################################################################################
+                        # Or optionally hard-coded (eg, with autoconfig)
+                        # projectDir="@PROJECT_DIR@"
+                        : # Safety statement (if the user removed all fallback values)
+
+                        # [FOAM_SIGFPE] - Trap floating-point exceptions.
+                        #               - overrides the 'trapFpe' controlDict entry
+                        # = true | false
+                        #export FOAM_SIGFPE=true
+
+                        # [FOAM_SETNAN] - Initialize memory with NaN
+                        #               - overrides the 'setNaN' controlDict entry
+                        # = true | false
+                        #export FOAM_SETNAN=false
+
+                        # [FOAM_ABORT] - Treat exit() on FatalError as abort()
+                        # = true | false
+                        #export FOAM_ABORT=false
+
+                        # [FOAM_CODE_TEMPLATES] - dynamicCode templates
+                        # - unset: uses 'foamEtcFile -list codeTemplates/dynamicCode'
+                        ##export FOAM_CODE_TEMPLATES="$WM_PROJECT_DIR/etc/codeTemplates/dynamicCode"
+
+                        # [FOAM_JOB_DIR] - location of jobControl
+                        #                - unset: equivalent to ~/.OpenFOAM/jobControl
+                        # export FOAM_JOB_DIR="$HOME/.OpenFOAM/jobControl"
+
+                        # [WM_OSTYPE] - Operating System Type (set automatically)
+                        # = POSIX | MSwindows
+                        #export WM_OSTYPE=POSIX
+
+                        # [WM_ARCH_OPTION] - compiling with -m32 option on 64-bit system
+                        # = 32 | 64
+                        #   * on a 64-bit OS this can be 32 or 64
+                        #   * on a 32-bit OS this option is ignored (always 32-bit)
+                        #export WM_ARCH_OPTION=64
+
+                        # [FOAM_EXTRA_CFLAGS, FOAM_EXTRA_CXXFLAGS, FOAM_EXTRA_LDFLAGS]
+                        # Additional compilation flags - do not inherit from the environment.
+                        # Set after sourcing or via <prefs.sh> to avoid surprises.
+                        unset FOAM_EXTRA_CFLAGS FOAM_EXTRA_CXXFLAGS FOAM_EXTRA_LDFLAGS
+
+                        ################################################################################
+                        # NO (NORMAL) USER EDITING BELOW HERE
+
+                        # Capture values of old directories to be cleaned from PATH, LD_LIBRARY_PATH
+                        foamOldDirs="$WM_PROJECT_DIR $WM_THIRD_PARTY_DIR \
+                            $HOME/$WM_PROJECT/${USER:-user} $FOAM_USER_APPBIN $FOAM_USER_LIBBIN \
+                            $WM_PROJECT_SITE $FOAM_SITE_APPBIN $FOAM_SITE_LIBBIN \
+                            $FOAM_MODULE_APPBIN $FOAM_MODULE_LIBBIN"
+
+                        # [WM_PROJECT_DIR] - Location of this OpenFOAM version
+                        export WM_PROJECT_DIR="$projectDir"
+
+                        # [WM_PROJECT_USER_DIR] - Location of user files
+                        export WM_PROJECT_USER_DIR="$HOME/$WM_PROJECT/${USER:-user}-$WM_PROJECT_VERSION"
+
+                        # [WM_PROJECT_SITE] - Location of site-specific (group) files
+                        # Default (unset) implies WM_PROJECT_DIR/site
+                        # Normally defined in calling environment
+
+
+                        # Finalize setup of OpenFOAM environment
+                        if [ -d "$WM_PROJECT_DIR" ]
+                        then
+                            if [ -n "$FOAM_VERBOSE" ] && [ -n "$PS1" ]
+                            then
+                                echo "source $WM_PROJECT_DIR/etc/config.sh/setup" 1>&2
+                            fi
+                            . "$WM_PROJECT_DIR/etc/config.sh/setup" "$@"
+                        else
+                            echo "Error: did not locate installation path for $WM_PROJECT-$WM_PROJECT_VERSION" 1>&2
+                            echo "No directory: $WM_PROJECT_DIR" 1>&2
+                        fi
+
+                        # Cleanup variables (done as final statement for a clean exit code)
+                        unset foamOldDirs projectDir
+
+                        #------------------------------------------------------------------------------
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux SHELL脚本</h2>
+                    <pre data-id="shell"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            export WM_PROJECT_VERSION=v2306
+
+                            export WM_COMPILER_TYPE=system
+
+                            export WM_COMPILER=Clang
+
+                            export WM_PRECISION_OPTION=DP
+
+                            export WM_LABEL_SIZE=32
+
+                            export WM_COMPILE_OPTION=Opt
+
+                            export WM_MPLIB=OPENMPI
+
+                            export WM_PROJECT=OpenFOAM
+
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="linux">Linux 容器</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">WSL</li>
+                        <li class="fragment">VM</li>
+                        <li class="fragment">docker</li>
+                    </ul>   
+                </section>
+                
+                <section data-auto-animate>
+                    <h1>DEMO</h1>
+                </section>
+                <section data-background-color="white">
+                    <iframe data-src="https://dafoam.github.io" width="900px" height="600px" data-preload></iframe>
+                </section>
+                
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">CPP</h2>
+                    <p>4周时间</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">代码样式</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            ...
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">代码样式</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            ...
+                            int main() {
+                                ...
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">代码样式</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <vector>
+                            #include <string>
+
+                            int main() {
+                                std::vector<std::string> msg{
+                                    "Hello", 
+                                    "2306", 
+                                    "OpenFOAM", 
+                                    "Programming"};
+
+                                for(const auto& str: msg) {
+                                    for (const auto& ch: str) {
+                                        std::cout << ch << std::endl;
+                                    }
+                                }
+
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 hello.cpp -o hello
+                        </script>
+                    </code></pre>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="cpp">CPP五种编程范式</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">面向过程</li>
+                        <li class="fragment spotlight">面向对象</li>
+                        <li class="fragment spotlight">函数式</li>
+                        <li class="fragment spotlight">范型</li>
+                        <li class="fragment spotlight">模板元编程</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">OpenFOAM涉及<a>几种</a>？</h2>
+                    <h3 style="color: salmon" class="fragment">全部</h3>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">CPP授课内容</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">基础语法</li>
+                        <li class="fragment spotlight">面向对象</li>
+                        <li class="fragment spotlight">范型</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">CPP授课重难点 <a>语法角度</a></h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">移动语义</li>
+                        <li class="fragment spotlight">智能指针</li>
+                        <li class="fragment spotlight">多重继承，多态(虚函数、纯虚函数)</li>
+                        <li class="fragment spotlight">类模板、函数模板</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">CPP授课重难点 <a>工具链角度</a></h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">Make</li>
+                        <li class="fragment spotlight">CMake</li>
+                        <li class="fragment spotlight">CLion</li>
+                        <li class="fragment spotlight">g++, clang++</li>
+                        <li class="fragment spotlight">vscode</li>
+                    </ul>
+                </section>
+                <section data-background="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" 
+                         data-background-size="50%"
+                         data-background-color="white"
+                         data-background-opacity="1">
+                </section>
+
+                <section>
+                    <h2 data-id="cpp">CPP授课难点</h2>
+                    <h2><a>编译、链接、调试和测试</a></h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">编译</li>
+                        <li class="fragment spotlight">链接</li>
+                        <li class="fragment spotlight">调试</li>
+                        <li class="fragment spotlight">测试</li>
+                    </ul>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM</h2>
+                    <p>9周时间</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM编程涵盖内容</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">数据类型</li>
+                        <li class="fragment spotlight">基本类</li>
+                        <li class="fragment spotlight">智能指针(<a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;">tmp&ltT&gt, autoPtr&ltT&gt</a>)</li>
+                        <li class="fragment spotlight">DSL(<a >D</a>omain <a>S</a>pecific <a>L</a>anguage)</li>
+                        <li class="fragment spotlight">RTS机制</li>
+                        <li class="fragment spotlight">并行算法</li>
+                    </ul>
+                    <p class="fragment">慢慢体会标准CPP和OpenFOAM之间的异同</p>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM DSL语言</h2>
+                    <h4>以湍动能方程为例</h4>
+
+                    \[\footnotesize{
+                        \frac{\partial k}{\partial t} + \nabla\cdot(\mathbf{u}{k}
+                        )-\nabla\cdot[(\nu+\nu_t)\nabla{k}]= \\
+                        \nu_t\left[\dfrac{1}{2}(\nabla\mathbf{u}+\nabla\mathbf{u}^T)\right]
+                        -\dfrac{\epsilon_o}{k_o}k}
+                    \]
+                    <h4>code</h4>
+                    <pre data-id="openfoam"><code data-line-numbers data-trim class="cpp">
+                        solve(
+                            fvm::ddt(k)
+                          + fvm::div(phi, k)
+                          - fvm::laplacian(nu() + nut, k)
+                         == nut*magSqrt(symm(fvc::grad(U)))
+                          - fvm::Sp(epsilon/k, k)
+                        )
+                    </code></pre>
+                </section>
+                
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM 数据类型</h2>
+                        <iframe data-src="https://www.openfoam.com/documentation/guides/latest/doc/openfoam-guide-expression-syntax.html#autotoc_md1331" width="1080px" height="480px" data-preload></iframe>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM 五个基本类</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment spotlight">Space and time: <a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;"> polyMesh, fvMesh, Time </a></li>
+                        <li class="fragment spotlight">Field Algebra: <a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;"> Field, DimensionedField, GeometricField </a></li>
+                        <li class="fragment spotlight">Boundary conditions: <a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;"> fvPatchField and derived classes</a></li>
+                        <li class="fragment spotlight">Sparse Matrices: <a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;"> lduMatrix, fvMatrix and linear solvers</a></li>
+                        <li class="fragment spotlight">Finite Volume discretisation: <a style="font-family: Noto Serif SC; font-size: 30px;color:salmon;">fvc and fvm namespace</a></li>
+                    </ul>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM 智能指针</h2>
+                    <ul>
+                        <li>tmp&ltT&gt</li>
+                        <br>
+                        <iframe data-src="https://www.openfoam.com/documentation/guides/latest/api/classFoam_1_1tmp.html#details" width="1080px" height="480px" data-preload></iframe>
+                    </ul>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM 智能指针</h2>
+                    <ul>
+                        <li>autoPtr&ltT&gt</li>
+                        <br>
+                        <iframe data-src="https://www.openfoam.com/documentation/guides/latest/api/classFoam_1_1autoPtr.html#details" width="1080px" height="480px" data-preload></iframe>
+                    </ul>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM RTS机制</h2>
+                    <h4 style="text-align:left">简单说，运行时机制使得用户在程序运行过程可以灵活选择不同的格式。OpenFOAM重度使用了
+                        这种机制，使得用户具有相当程度的灵活性。</h4>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">边界条件</li>
+                        <li class="fragment">离散格式</li>
+                        <li class="fragment">粘性模型，湍流模型，多相属性等</li>
+                        <li class="fragment">函数对象</li>
+                    </ul>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">OpenFOAM 并行</h2>
+                    <ul>
+                        <li>Pstream</li>
+                        <iframe data-src="https://www.openfoam.com/documentation/guides/latest/api/classFoam_1_1Pstream.html" width="1080px" height="480px" data-preload></iframe>
+                    </ul>
+                    MPI, <a style="font-size: 30px;"> mpirun -np 32 icoFoam -parallel </a>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">CFD角度看OpenFOAM</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">对于具体物理问题，求解器</li>
+                        <ul><li class="fragment">例如,icoFoam,simpleFoam, pimpleFoam</li></ul>
+                        <li class="fragment">对于具体物理问题，边界条件</li>
+                        <ul><li class="fragment">例如,inletOutlet, zeroGradient, fixedValue</li></ul>
+                    </ul>
+                </section>
+
+                <section data-background-image="./images/earth.jpg" data-background-opacity="0.3">
+			    <h2>
+					<h1 style="color: salmon">路虽远，行则将至 事虽难，做则必成</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>

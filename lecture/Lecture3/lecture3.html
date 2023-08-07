@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture03</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/arta.css"> -->
+        <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css">
+	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/mercury.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月08日</h4>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">Linux发行版</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">Linux内核 + 其他软件 = 操作系统</li>
+                            <li class="fragment">所以市场上有许多发型版本</li>
+                            <ul>
+                                <li class="fragment">
+                                    Debian->Ubuntu, Arch->Manjaro
+                                </li>
+                            </ul>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">安装软件：包管理</h2>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">包是什么？</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">含有程序的二进制文件和库文件</li>
+                            <li class="fragment">也包含应用程序所需的系统元信息</li>
+                            <li class="fragment">程序通过包来安装</li>
+                            <li class="fragment">Debian通常使用.deb格式</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate data-background-image="https://itsfoss.com/content/images/wordpress/2020/10/linux-package-manager-explanation.png" data-background-opacity="0.2">
+                    <h2 data-id="packages">包管理是什么？</h2>    
+                </section>
+
+                <section data-auto-animate data-background-image="https://itsfoss.com/content/images/wordpress/2020/10/linux-package-manager-explanation.png" 
+                data-background-size="80%">
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">如何使用</h2>
+                    <pre data-id="packages"><code data-line-numbers data-trim class="shell">
+                        $ sudo apt update
+
+                        $ sudo apt install "packagename"
+                        
+                        $ sudo apt remove "packagename"
+                        
+                        $ sudo apt search "packagename"
+                    </code>
+                    </pre>
+
+                    
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">apt vs apt-get</h2>
+                        <iframe data-src="https://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get" width="1080px" height="480px" data-preload></iframe>
+                </section>
+
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">编译</h2>
+                        
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">编辑器</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><b class="fragment" style="color: salmon">VIM</b></li>
+                            <li class="fragment"><b class="fragment" style="color: salmon">vscode</b></li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">VIM</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><a herf="https://www.lazyvim.org">lazyvim</a></li>
+                            <li class="fragment"><a herf="https://spacevim.org/SpaceVim-release-v2.2.0">spacevim</a></li>
+                            <li class="fragment"><a herf="https://www.lunarvim.org">lunarvim</b></li>
+                            <li class="fragment"><a herf="https://nvchad.com">nvchad</a></li>
+                            <li class="fragment"><a herf="https://astronvim.com">astroNvim</a></li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">vscode</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><b class="fragment" style="color: salmon">VIM</b></li>
+                            <li class="fragment"><b class="fragment" style="color: salmon">vscode</b></li>
+                        </ul>
+                </section>
+
+                <section data-background-image="./images/mercury.jpg" data-background-opacity="0.3">
+			    <h2>
+					<h1>只要功夫深</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
