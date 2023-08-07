@@ -11,8 +11,8 @@
 		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/arta.css"> -->
-        <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css">
+        <!-- <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css"> -->
 	
 	</head>
 	<body>
@@ -61,14 +61,12 @@
 
                 <section data-auto-animate>
                     <h2 data-id="packages">如何使用</h2>
-                    <pre data-id="packages"><code data-line-numbers data-trim class="shell">
+                    <pre data-id="packages" style="line-height: 2em;"><code data-line-numbers data-trim class="shell">
                         $ sudo apt update
-
                         $ sudo apt install "packagename"
-                        
                         $ sudo apt remove "packagename"
-                        
                         $ sudo apt search "packagename"
+                        $ sudo apt download "packagename"
                     </code>
                     </pre>    
                 </section>
@@ -80,32 +78,49 @@
 
                 <section  data-auto-animate>
                     <h2 data-id="OF">换源</h2>
-                    <iframe src="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" data-preload></iframe>
+                    <iframe data-src="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" width="1080" height="480" data-preload></iframe>
+                </section>
+
+                <section data-auto-animate>
+                    <H2>一个常见包的组成</H2>
+                    <pre><code data-line-numbers data-trim class="shell">
+                        $ tree -L 3                                                                                                                                                                             ─╯
+                        .
+                        ├── control
+                        ├── control.tar.xz
+                        ├── data.tar.xz
+                        ├── debian-binary
+                        ├── htop_2.2.0-2build1_amd64.deb
+                        ├── md5sums
+                        └── usr
+                            ├── bin
+                            │   └── htop
+                            └── share
+                                ├── applications
+                                ├── doc
+                                ├── man
+                                └── pixmaps
+    
+                        7 directories, 7 files
+                    </code></pre>
+
                 </section>
 
                 <section data-auto-animate>
                     <H1>DEMO</H1>
                 </section>
-                
+
                 <section data-auto-animate>
-                    <h2 data-id="syllbus">编译</h2>
-                        
+                    <h2 data-id="editors">编辑器</h2>
+                        <ol style="line-height: 2em;">
+                            <li class="fragment"><a href="https://www.vim.org">VIM</a></li>
+                            <li class="fragment"><a href="https://code.visualstudio.com">VSCode</a></li>
+                            <li class="fragment"><a href="https://www.gnu.org/software/emacs/">emacs</a></li>
+                        </ol>
                 </section>
 
                 <section data-auto-animate>
-                    <H1>DEMO</H1>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="syllbus">编辑器</h2>
-                        <ul style="line-height: 2em;">
-                            <li class="fragment"><b class="fragment" style="color: salmon">VIM</b></li>
-                            <li class="fragment"><b class="fragment" style="color: salmon">vscode</b></li>
-                        </ul>
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="syllbus">VIM</h2>
+                    <h2 data-id="editors">VIM</h2>
                         <ul style="line-height: 2em;">
                             <li class="fragment"><a herf="https://www.lazyvim.org">lazyvim</a></li>
                             <li class="fragment"><a herf="https://spacevim.org/SpaceVim-release-v2.2.0">spacevim</a></li>
@@ -116,11 +131,43 @@
                 </section>
 
                 <section data-auto-animate>
+                    <h2 data-id="editors">VIM三种模式</h2>
+                        <ul style="line-height: 2em;">
+                            <li>NORMAL</li>
+                            <li>INSERT</li>
+                            <li>VISUAL</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <H1 data-id="editors">建议</H1>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">学习vimtutor以及其他资料</li>
+                        <li class="fragment">适可而止的配置vimrc</li>
+                        <li class="fragment">目的：为了更好的成长</li>
+                    </ul>
+
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-auto-animate>
                     <h2 data-id="syllbus">vscode</h2>
                         <ul style="line-height: 2em;">
-                            <li class="fragment"><b class="fragment" style="color: salmon">VIM</b></li>
                             <li class="fragment"><b class="fragment" style="color: salmon">vscode</b></li>
                         </ul>
+                </section>
+ 
+                <section data-background="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" 
+                data-background-size="65%"
+                data-background-color="white"
+                data-background-opacity="1">
+                </section>
+            
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
                 </section>
 
                 <section data-background-image="./images/mercury.jpg" data-background-opacity="0.3">
@@ -137,7 +184,8 @@
 		<script src="../../plugin/notes/notes.js"></script>
 		<script src="../../plugin/search/search.js"></script>
 		<script src="../../plugin/markdown/markdown.js"></script>
-		<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
         <script src="../../plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
