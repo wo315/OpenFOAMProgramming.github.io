@@ -146,7 +146,13 @@
                         <li class="fragment">适可而止的配置vimrc</li>
                         <li class="fragment">目的：为了更好的成长</li>
                     </ul>
+                </section>
 
+                <section data-auto-animate data-background="https://i.imgur.com/YLInLlY.png" 
+                data-background-size="75%"
+                data-background-color="white"
+                data-background-opacity="0.2">
+                <h2>VIM <a href="https://i.imgur.com/YLInLlY.png">Cheat Sheet</a></h2>
                 </section>
 
                 <section data-auto-animate>
@@ -154,16 +160,181 @@
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="syllbus">vscode</h2>
-                        <ul style="line-height: 2em;">
-                            <li class="fragment"><b class="fragment" style="color: salmon">vscode</b></li>
-                        </ul>
+                <h2>vim configure file</h2>
+                <pre data-id="vim"><code data-line-numbers data-trim class="vim">
+                let mapleader=" "
+                set nu
+                syntax on
+                set hlsearch
+                set tabstop=4
+                set autoindent
+
+                set cursorline
+                set wrap
+                set showcmd
+                set wildmenu " command completion
+
+                set hlsearch
+                exec "nohlsearch"
+                set incsearch
+                set ignorecase
+                set smartcase
+
+                noremap K 10k
+                noremap J 10j
+
+                noremap <LEADER><CR> :nohlsearch<CR>
+
+                " key mapping
+
+                map s <nop>
+                map S :w<CR>
+                map Q :q<CR>
+                map R :source $MYVIMRC<CR>
+                imap jk <ESC>
+                map sh :split<CR>
+                map sv :vsplit<CR>
+
+                map <LEADER>h <C-w>h
+                map <LEADER>j <C-w>j
+                map <LEADER>k <C-w>k
+                map <LEADER>l <C-w>l
+                nnoremap <C-a> <C-w>>
+                nnoremap <C-b> <C-w><
+                nnoremap <C-c> <C-w>+
+                nnoremap <C-d> <C-w>-
+
+                map <C-k> :m -2<CR>
+                map <C-j> :m +1<CR>
+                map tu :tabe<CR>
+                map tn :+tabnext<CR>
+                map tp :-tabnext<CR>
+
+                call plug#begin('~/.vim/plugged')
+
+                Plug 'vim-airline/vim-airline'
+
+                Plug 'ghifarit53/tokyonight-vim'
+
+                call plug#end()
+
+                let g:tokyonight_style = 'night'
+                let g:tokyonight_enable_italic = 1
+                colorscheme tokyonight
+                </code>
+                </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="code"><a href="https://code.visualstudio.com">VSCode</a></h2>
                 </section>
  
                 <section data-background="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" 
                 data-background-size="65%"
                 data-background-color="white"
                 data-background-opacity="1">
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="code">VSCode CPP配置</h2>
+                    <ul style="line-height: 2em;">
+                        <li>tasks.json</li>
+                        <li>launch.json</li>
+                        <li>c_cpp_properties.json</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="code">tasks.json</h2>
+                    <pre data-id="code">
+                        <code data-line-numbers data-trim class="json">
+                            {
+                                "tasks": [
+                                    {
+                                        "type": "cppbuild",
+                                        "label": "wangyang",
+                                        "command": "/usr/bin/clang++",
+                                        "args": [
+                                            "-std=c++17",
+                                            "-stdlib=libc++",
+                                            "-g",
+                                            "${file}",
+                                            "-o",
+                                            "${fileDirname}/${fileBasenameNoExtension}"
+                                        ],
+                                        "options": {
+                                            "cwd": "${fileDirname}"
+                                        },
+                                        "problemMatcher": [
+                                            "$gcc"
+                                        ],
+                                        "group": {
+                                            "kind": "build",
+                                            "isDefault": true
+                                        },
+                                        "detail": "调试器生成的任务。"
+                                    }
+                                ],
+                                "version": "2.0.0"
+                            }
+                        </code>
+                    </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="code">launch.json</h2>
+                    <pre data-id="code">
+                        <code data-line-numbers data-trim class="json">
+                            {
+                                // Use IntelliSense to learn about possible attributes.
+                                // Hover to view descriptions of existing attributes.
+                                // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+                                "version": "0.2.0",
+                                "configurations": [
+                                  {
+                                    "name": "C/C++: clang++ build and debug active file",
+                                    "type": "cppdbg",
+                                    "request": "launch",
+                                    "program": "${fileDirname}/${fileBasenameNoExtension}",
+                                    "args": [],
+                                    "stopAtEntry": true,
+                                    "cwd": "${workspaceFolder}",
+                                    "environment": [],
+                                    "externalConsole": false,
+                                    "MIMode": "lldb",
+                                    "preLaunchTask": "wangyang"
+                                  }
+                                ]
+                              }
+                        </code>
+                    </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="code">c_cpp_properties.json</h2>
+                    <pre data-id="code">
+                        <code data-line-numbers data-trim class="json">
+                            {
+                                "configurations": [
+                                    {
+                                        "name": "Mac",
+                                        "includePath": [
+                                            "${workspaceFolder}/**"
+                                        ],
+                                        "defines": [],
+                                        "macFrameworkPath": [
+                                            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+                                        ],
+                                        "compilerPath": "/usr/bin/clang",
+                                        "cStandard": "c17",
+                                        "cppStandard": "c++17",
+                                        "intelliSenseMode": "macos-clang-arm64"
+                                    }
+                                ],
+                                "version": 4
+                            }
+                        </code>
+                    </pre>
                 </section>
             
                 <section data-auto-animate>
