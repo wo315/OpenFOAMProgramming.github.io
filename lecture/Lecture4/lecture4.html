@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture04</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css">
+	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/galary.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月11日</h4>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">课程内容</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">版本控制</li>
+                            <li class="fragment">虚拟机和容器</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">版本控制</h2>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">版本控制</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><a href="https://git-scm.com">git</a></li>
+                            <li class="fragment"><a href="https://subversion.apache.org">svn</a></li>
+                            <li class="fragment"><a href>...</a></li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">svn会用到吗？</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><a href="https://openfoamwiki.net/index.php/Contrib/waves2Foam">waves2foam</a></li>
+                        </ul>
+                        <iframe class="fragment" src="https://openfoamwiki.net/index.php/Contrib/waves2Foam" width="1080" height="480" data-preload></iframe>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="git">git</h2>
+                    <blockquote style="font-size: 24px; width: 1080px; height: 240px; font-family:Noto Serif SC;font-weight:light;font-style:normal;">
+                        &ldquo;Git was created in two weeks by Linus Torvalds in 2005. He initially developed it as a tool to manage the Linux kernel development process, but it quickly gained widespread popularity and is now used by many open-source and commercial projects. Torvalds wrote the initial version of Git in C, which makes it fast and efficient. The fact that it was created in such a short amount of time is a testament to Torvalds' programming skills and the simplicity of the tool's design.&ldquo;
+                    </blockquote>
+                </section>
+
+                
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">如何使用</h2>
+                    <pre data-id="packages" style="line-height: 2em;"><code data-line-numbers data-trim class="shell">
+                        $ git init
+                        $ git status
+                        $ git add
+                        $ git commit
+                        $ git log
+                        $ git checkout
+                        $ git clone
+                        $ git push
+                        $ git pull
+                        $ git merge
+                        $ git 
+                    </code>
+                    </pre>    
+                </section>
+                
+                <section  data-auto-animate>
+                    <h2 data-id="git">git vs github</h2>
+                    <iframe data-src="https://devmountain.com/blog/git-vs-github-whats-the-difference/ " width="1080" height="480" data-preload></iframe>
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="OF">换源</h2>
+                    <iframe data-src="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" width="1080" height="480" data-preload></iframe>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="editors">虚拟机和容器</h2>
+                    <ol style="line-height: 2em;">
+                        <li class="fragment">都可以对计算资源进行虚拟化,实现应用的隔离。</li>
+                        <li class="fragment">都允许在一台物理机上运行多个相互隔离的环境。</li>
+                        <li class="fragment">都提供了一定程度的安全性和封装性</li>
+                    </ol>
+                        
+                </section>
+
+
+                <section data-auto-animate>
+                    <h2 data-id="editors">虚拟机和容器</h2>
+                    <ol style="line-height: 1.5em;">
+                        <li class="fragment">虚拟机需要模拟整套硬件和操作系统,容器直接运行在宿主机内核,更轻量。</li>
+                        <li class="fragment">虚拟机性能消耗更大,容器性能损耗很小。</li>
+                        <li class="fragment">虚拟机镜像文件较大,容器镜像小。</li>
+                        <li class="fragment">虚拟机可以运行不同OS,容器进程运行在同一OS内核。</li>
+                        <li class="fragment">虚拟机启动时间较长,容器启动很快。</li>
+                        <li class="fragment">虚拟机完全隔离整套系统,容器隔离粒度更细。</li>
+                    </ol>
+                        
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="editors">Docker使用两个例子</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment"><a herf="https://github.com/doyubkim/fluid-engine-dev">fluid-engine-dev</a></li>
+                            <li class="fragment"><a herf="https://dafoam.github.io/mydoc_get_started_download_docker.html">DAFoam</a></li>
+                        </ul>
+                </section>
+
+                <section data-background-video="./images/dafoam.avi"
+                data-background-video-muted="true"
+                data-background-video-loop="true"
+                data-background-opacity="2"
+                data-background-size="contain">
+				    <h1 style="opacity:0.1">DAFOAM</h1>
+			    </section>
+
+                <section data-background-video="./images/dafoam2.avi"
+                data-background-video-muted="true"
+                data-background-video-loop="true"
+                data-background-opacity="2"
+                data-background-size="contain">
+				    <h1 style="opacity:0.1">DAFOAM2</h1>
+			    </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="packages">Docker安装</h2>
+                        <iframe class="fragment" src="https://www.yuque.com/wangyang-mnunv/gy2pbw/kgxgrp2wt1x837go?singleDoc# 《Docker入门》" width="1080" height="480" data-preload></iframe>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-background-image="./images/galary.jpg" data-background-opacity="0.3">
+			    <h2>
+					<h1>中庸之道，不偏不倚</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <!-- <script src="../../plugin/highlight/highlight.js"></script> -->
+		<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
