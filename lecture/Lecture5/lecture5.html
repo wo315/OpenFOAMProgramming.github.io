@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture05</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css">
+	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./galaxy.jpeg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月18日</h4>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">过程式</li>
+                            <li class="fragment">面向对象</li>
+                            <li class="fragment">范型</li>
+                            <li class="fragment">函数式</li>
+                            <li class="fragment">元编程</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="lang">编程语言</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">机器语言</li>
+                            <li class="fragment">汇编语言</li>
+                            <li class="fragment">高级语言</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="lang">机器语言</h2>
+                    <pre><code data-line-numbers data-trim class="c">
+                    10110000 01100001  
+                    </code>
+                    </pre> 
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="lang">汇编语言</h2>
+                    <pre><code data-line-numbers data-trim class="assembly">
+                    mov al, 061h  
+                    </code>
+                    </pre> 
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="lang">高级语言</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">编译语言</li>
+                            <li class="fragment">解释语言</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">C/CPP简介</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">C语言</li>
+                            <li class="fragment">CPP</li>
+                        </ul>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="dev">CPP开发逻辑</h2>
+                        <ul style="line-height: 1.5em;">
+                            <li class="fragment">确定问题</li>
+                            <li class="fragment">设计方案</li>
+                            <li class="fragment">写程序</li>
+                            <li class="fragment">编译程序</li>
+                            <li class="fragment">链接程序</li>
+                            <li class="fragment">测试程序</li>
+                            <li class="fragment">调试程序</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="dev">开发环境</h2>
+                        <ul style="line-height: 1.5em;">
+                            <li class="fragment">命令行</li>
+                            <li class="fragment">vscode</li>
+                            <li class="fragment">集成开发环境</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+
+                <section data-background-image="./galaxy.jpeg" data-background-opacity="0.3">
+			    <h2>
+					<h1>学会抽象</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <!-- <script src="../../plugin/highlight/highlight.js"></script> -->
+		<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
