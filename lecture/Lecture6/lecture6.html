@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture06</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css">
+        <!-- <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css"> -->
+	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./galaxy.jpeg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月20日</h4>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">C++编程入门</li>
+                            <li class="fragment">控制语句一</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">第一个CPP程序</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iosteram>
+
+                            int main() {
+                                
+                                std::cout << "Hello World" << std::endl;
+                                std::cout << "Hello World\n";
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 hello.cpp -o hello
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">单行文本</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iosteram>
+
+                            int main() {
+                                
+                                std::cout << "Hello";
+                                std::cout << " World\n";
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 hello.cpp -o hello
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">多行文本</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iosteram>
+
+                            int main() {
+                                
+                                std::cout << "Hello\nOpenFOAM\nCFD!\n";
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 hello.cpp -o hello
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">多行文本</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            
+                        #include <iostream> // enables program to perform input and output
+
+                        // function main begins program execution
+                        int main() {
+                            // declaring and initializing variables
+                            int number1{0}; // first integer to add (initialized to 0)
+                            int number2{0}; // second integer to add (initialized to 0)
+                            int sum{0}; // sum of number1 and number2 (initialized to 0)
+                        
+                            std::cout << "Enter first integer: "; // prompt user for data
+                            std::cin >> number1; // read first integer from user into number1
+                        
+                            std::cout << "Enter second integer: "; // prompt user for data
+                            std::cin >> number2; // read second integer from user into number2
+                        
+                            sum = number1 + number2; // add the numbers; store result in sum
+                        
+                            std::cout << "Sum is " << sum << "\n"; // display sum
+                        } // end function main”
+
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch02_04.cpp -o ch02_04
+                        </script>
+                    </code></pre>
+                </section>
+                
+                <section  data-auto-animate>
+                    <h2 data-id="arithmetic">算数运算符</h2>
+                    <img src="arithmetic.png" width="1080px", height="360px">
+                </section>
+
+                <section  data-auto-animate>
+                    <h2 data-id="relation">关系操作符</h2>
+                    <img src="relation.png" width="720px", height="480px">
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">关系操作符</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            
+                        #include <iostream> // enables program to perform input and output
+
+                        // function main begins program execution
+                        int main() {
+                            // declaring and initializing variables
+                            int number1{0}; // first integer to add (initialized to 0)
+                            int number2{0}; // second integer to add (initialized to 0)
+                            int sum{0}; // sum of number1 and number2 (initialized to 0)
+                        
+                            std::cout << "Enter first integer: "; // prompt user for data
+                            std::cin >> number1; // read first integer from user into number1
+                        
+                            std::cout << "Enter second integer: "; // prompt user for data
+                            std::cin >> number2; // read second integer from user into number2
+                        
+                            sum = number1 + number2; // add the numbers; store result in sum
+                        
+                            std::cout << "Sum is " << sum << "\n"; // display sum
+                        } // end function main”
+
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch02_05.cpp -o ch02_05
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">自然对象学习方法</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            
+                            // Standard library string class test program. 
+                            #include <iostream>
+                            #include <string> 
+                            using namespace std;
+                            
+                            int main() {
+                               string s1{"happy"};    
+                               string s2{" birthday"};
+                               string s3; // creates an empty string
+                                          
+                               // display the strings and show their lengths (length is C++20)
+                               cout << "s1: \"" << s1 << "\"; length: " << s1.length()
+                                  << "\ns2: \"" << s2 << "\"; length: " << s2.length()
+                                  << "\ns3: \"" << s3 << "\"; length: " << s3.length();
+                            
+                               // compare strings with == and !=
+                               cout << "\n\nThe results of comparing s2 and s1:" << boolalpha
+                                  << "\ns2 == s1: " << (s2 == s1)
+                                  << "\ns2 != s1: " << (s2 != s1);
+                               
+                               // test string member function empty 
+                               cout << "\n\nTesting s3.empty():\n";
+                            
+                               if (s3.empty()) {
+                                  cout << "s3 is empty; assigning to s3;\n";
+                                  s3 = s1 + s2; // assign s3 the result of concatenating s1 and s2
+                                  cout << "s3: \"" << s3 << "\"";
+                               } 
+                            
+                               // testing new C++20 string member functions 
+                               cout << "\n\ns1 starts with \"ha\": " << s1.starts_with("ha") << "\n";
+                               cout << "s2 starts with \"ha\": " << s2.starts_with("ha") << "\n";
+                               cout << "s1 ends with \"ay\": " << s1.ends_with("ay") << "\n";
+                               cout << "s2 ends with \"ay\": " << s2.ends_with("ay") << "\n";
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++20 ch02_06.cpp -o ch02_06
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">控制语句</h2>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">条件判断</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                // initialization phase
+                                int total{0}; // initialize sum of grades entered by the user
+                                int gradeCounter{1}; // initialize grade # to be entered next
+                            
+                                // processing phase uses counter-controlled iteration
+                                while (gradeCounter <= 10) { // loop 10 times
+                                    cout << "Enter grade: "; // prompt 
+                                    int grade;
+                                    cin >> grade; // input next grade
+                                    total = total + grade; // add grade to total
+                                    gradeCounter = gradeCounter + 1; // increment counter by 1
+                                } 
+                            
+                                // termination phase
+                                int average{total / 10}; // int division yields int result
+                            
+                                // display total and average of grades
+                                cout << "\nTotal of all 10 grades is " << total;
+                                cout << "\nClass average is " << average << "\n";
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch03_01.cpp -o ch03_01
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">类型转换和格式化</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip> // parameterized stream manipulators  
+                            using namespace std;
+                            
+                            int main() {
+                                // initialization phase
+                                int total{0}; // initialize sum of grades
+                                int gradeCounter{0}; // initialize # of grades entered so far
+                                
+                                // processing phase
+                                // prompt for input and read grade from user
+                                cout << "Enter grade or -1 to quit: "; 
+                                int grade; 
+                                cin >> grade; 
+                            
+                                // loop until sentinel value is read from user
+                                while (grade != -1) {
+                                    total = total + grade; // add grade to total
+                                    gradeCounter = gradeCounter + 1; // increment counter 
+                            
+                                    // prompt for input and read next grade from user
+                                    cout << "Enter grade or -1 to quit: "; 
+                                    cin >> grade; 
+                                }
+                            
+                                // termination phase
+                                // if user entered at least one grade
+                                if (gradeCounter != 0) {
+                                    // use number with decimal point to calculate average of grades
+                                    double average{static_cast<double>(total) / gradeCounter};
+                            
+                                    // display total and average (with two digits of precision)
+                                    cout << "\nTotal of the " << gradeCounter 
+                                        << " grades entered is " << total;
+                                    cout << setprecision(2) << fixed; 
+                                    cout << "\nClass average is " << average << "\n"; 
+                                } 
+                                else { // no grades were entered, so output appropriate message
+                                    cout << "No grades were entered\n"; 
+                                }
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch03_02.cpp -o ch03_02
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">嵌套控制语句</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                // initializing variables in declarations
+                                int passes{0}; 
+                                int failures{0};
+                                int studentCounter{1}; 
+                            
+                                // process 10 students using counter-controlled loop
+                                while (studentCounter <= 10) {
+                                    // prompt user for input and obtain value from user
+                                    cout << "Enter result (1 = pass, 2 = fail): ";
+                                    int result;
+                                    cin >> result;
+                            
+                                    // if...else is nested in the while statement           
+                                    if (result == 1) {         
+                                        passes = passes + 1;  
+                                    }
+                                    else {    
+                                        failures = failures + 1; 
+                                    }
+                            
+                                    // increment studentCounter so loop eventually terminates
+                                    studentCounter = studentCounter + 1;  
+                                } 
+                            
+                                // termination phase; prepare and display results
+                                cout << "Passed: " << passes << "\nFailed: " << failures << "\n";
+                            
+                                // determine whether more than 8 students passed
+                                if (passes > 8) {
+                                    cout << "Bonus to instructor!\n";
+                                }
+                            } 
+                                
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++-10 -std=c++20 ch03_03.cpp -o ch03_03 
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">符合语句和自增自减</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                // demonstrate postfix increment operator
+                                int c{5}; 
+                                cout << "c before postincrement: " << c << "\n"; // prints 5
+                                cout << "    postincrementing c: " << c++ << "\n"; // prints 5
+                                cout << " c after postincrement: " << c << "\n"; // prints 6                     
+                            
+                                cout << endl; // skip a line
+                            
+                                // demonstrate prefix increment operator
+                                c = 5;  
+                                cout << " c before preincrement: " << c << "\n"; // prints 5
+                                cout << "     preincrementing c: " << ++c << "\n"; // prints 6
+                                cout << "  c after preincrement: " << c << "\n"; // prints 6                     
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++-10 -std=c++20 ch03_04.cpp -o ch03_04 
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">BigNumber库</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include "bignumber.h" 
+                            using namespace std;
+                            
+                            int main() {
+                                // use the maximum long long fundamental type value in calculations
+                                const long long value1{9'223'372'036'854'775'807LL}; // long long max
+                                cout << "long long value1: " << value1
+                                    << "\nvalue1 - 1: " << value1 - 1 // OK
+                                    << "\nvalue1 + 1: " << value1 + 1; // result is undefined
+                            
+                                // use an arbitrary-precision integer
+                                const BigNumber value2{value1};
+                                cout << "\n\nBigNumber value2: " << value2
+                                    << "\nvalue2 - 1: " << value2 - 1 // OK
+                                    << "\nvalue2 + 1: " << value2 + 1; // OK
+                            
+                                // powers of 100,000,000 with long long
+                                long long value3{100'000'000};
+                                cout << "\n\nvalue3: " << value3;
+                            
+                                int counter{2};
+                            
+                                while (counter <= 5) {
+                                    value3 *= 100'000'000; // quickly exceeds maximum long long value
+                                    cout << "\nvalue3 to the power " << counter << ": " << value3;
+                                    ++counter;
+                                }
+                                
+                                // powers of 100,000,000 with BigNumber
+                                BigNumber value4{100'000'000};
+                                cout << "\n\nvalue4: " << value4 << "\n";
+                            
+                                counter = 2;
+                            
+                                while (counter <= 5) {
+                                    cout << "value4.pow(" << counter << "): " 
+                                        << value4.pow(counter) << "\n";
+                                    ++counter;
+                                }
+                            
+                                cout << "\n";
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++-10 -std=c++20 -I ./BigNumber/src/ ch03_05.cpp ./BigNumber/src/bignumber.cpp -o ch03_05
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">fmt库</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <fmt/format.h> // C++20: This will be #include <format>
+                            using namespace std;
+                            using namespace fmt; // not needed in C++20
+                            
+                            int main() {
+                                string student{"Paul"};
+                                int grade{87};
+                            
+                                cout << format("{}'s grade is {}\n", student, grade);
+                            }
+                                
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++-10 -std=c++20 ch03_06.cpp ../../libraries/fmt/src/format.cc -o ch03_06 
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-background-image="./galaxy.jpeg" data-background-opacity="0.3">
+			    <h2>
+					<h1>非一日之功</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
