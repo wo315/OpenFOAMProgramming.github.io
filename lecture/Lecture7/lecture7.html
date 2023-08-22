@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture07</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/wangyang.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css">
+        <!-- <link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css"> -->
+	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./venus.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月22日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">控制语句二</li>
+                            <li class="fragment">函数一</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="while">while循环</h2>
+                    <pre data-id="while"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {      
+                                int counter{1}; // declare and initialize control variable
+                            
+                                while (counter <= 10) { // loop-continuation condition
+                                    cout << counter << "  ";
+                                    ++counter; // increment control variable 
+                                } 
+                            
+                                cout << "\n"; 
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="while"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch04_01.cpp -o while
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="for">for循环</h2>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int main() {
+                            // for statement header includes initialization,  
+                            // loop-continuation condition and increment
+                            for (int counter{1}; counter <= 10; ++counter) { 
+                                cout << counter << "  ";
+                            }
+                            
+                            cout << "\n";
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="for"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch04_02.cpp -o for
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="for">for循环语句通用格式</h2>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            for (initialization; loopContinuationCondition; increment) {
+                                statement
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            //expression
+                            counter = counter + 1
+                            counter += 1
+                            ++counter
+                            counter++
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="for">for循环语句几种例子</h2>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            // expression
+                            for (int i{1}; i <= 20; ++i)
+                            for (int i{20}; i >= 1; --i)
+                            for (int i{5}; i <= 55; i += 5)
+                            for (int i{20}; i >= 0; i -= 2)
+                        </script>
+                    </code></pre>
+                    <p>尽量少使用!=</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="for">求和算例</h2>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                int total{0};
+                            
+                                // total even integers from 2 through 20
+                                for (int number{2}; number <= 20; number += 2) {
+                                    total += number;
+                                }
+                            
+                                cout << "Sum is " << total << "\n";
+                            } 
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="for">求和算例</h2>
+                    <pre data-id="for"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                int total{0};
+                            
+                                // total even integers from 2 through 20
+                                for (int number{2}; number <= 20; total += number, number += 2) {}
+                                cout << "Sum is " << total << "\n";
+                            } 
+                        </script>
+                    </code></pre>
+                    <p>这里可以有几个变种，体会区别</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">利率计算</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            #include <cmath> // for pow function
+                            using namespace std;
+                            
+                            int main() {
+                                // cout << setprecision(20) << 10.0 / 3.0 << "\n";
+                                // set floating-point number format
+                                cout << fixed << setprecision(2);
+                            
+                                double principal{1000.00}; // initial amount before interest
+                                double rate{0.05}; // interest rate
+                            
+                                cout << "Initial principal: " << principal << "\n";
+                                cout << "    Interest rate:    " << rate << "\n";
+                            
+                                // display headers
+                                cout << "\nYear" << setw(20) << "Amount on deposit" << "\n";
+                            
+                                // calculate amount on deposit for each of ten years
+                                for (int year{1}; year <= 10; ++year) {
+                                    // calculate amount on deposit at the end of the specified year
+                                    double amount{principal * pow(1.0 + rate, year)} ;             
+                            
+                                    // display the year and the amount
+                                    cout << setw(4) << year << setw(20) << amount << "\n";
+                                }
+
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="for"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch04_04.cpp -o interest
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="dowhile">do...while循环</h2>
+                    <pre data-id="dowhile"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                int counter{1}; 
+                            
+                                do {
+                                    cout << counter << "  ";
+                                    ++counter;
+                                } while (counter <= 10); // end do...while 
+                            
+                                cout << "\n"; 
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="dowhile"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 ch04_05 -o dowhile
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="switch">switch语句</h2>
+                    <pre data-id="switch"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            using namespace std;
+                            
+                            int main() {
+                                int total{0}; // sum of grades                  
+                                int gradeCounter{0}; // number of grades entered
+                                int aCount{0}; // count of A grades             
+                                int bCount{0}; // count of B grades             
+                                int cCount{0}; // count of C grades             
+                                int dCount{0}; // count of D grades             
+                                int fCount{0}; // count of F grades             
+                            
+                                cout << "Enter the integer grades in the range 0-100.\n"
+                                    << "Type the end-of-file indicator to terminate input:\n"
+                                    << "   On UNIX/Linux/macOS type <Ctrl> d then press Enter\n"
+                                    << "   On Windows type <Ctrl> z then press Enter\n";
+                            
+                                int grade;
+                            
+                                // loop until user enters the end-of-file indicator
+                                while (cin >> grade) {
+                                    total += grade; // add grade to total
+                                    ++gradeCounter; // increment number of grades
+                                    
+                                    //  increment appropriate letter-grade counter   
+                                    switch (grade / 10) {                                                
+                                        case 9:  // grade was between 90              
+                                        case 10: // and 100, inclusive                
+                                        ++aCount;         
+                                        break; // exits switch         
+                                                                                    
+                                        case 8: // grade was between 80 and 89        
+                                        ++bCount;            
+                                        break; // exits switch                      
+                                                                                    
+                                        case 7: // grade was between 70 and 79        
+                                        ++cCount;            
+                                        break; // exits switch                      
+                                                                                    
+                                        case 6: // grade was between 60 and 69        
+                                        ++dCount;             
+                                        break; // exits switch                      
+                                                                                    
+                                        default: // grade was less than 60            
+                                        ++fCount;              
+                                        break; // optional; exits switch anyway
+                                    } // end switch                                  
+                                } // end while 
+                            
+                                // set floating-point number format
+                                cout << fixed << setprecision(2);
+                            
+                                // display grade report
+                                cout << "\nGrade Report:\n";
+                            
+                                // if user entered at least one grade...
+                                if (gradeCounter != 0) {
+                                    // calculate average of all grades entered
+                                    double average{static_cast<double>(total) / gradeCounter};
+                            
+                                    // output summary of results
+                                    cout << "Total of the " << gradeCounter << " grades entered is " 
+                                        << total << "\nClass average is " << average  
+                                        << "\nNumber of students who received each grade:"
+                                        << "\nA: " << aCount << "\nB: " << bCount << "\nC: " << cCount
+                                        << "\nD: " << dCount << "\nF: " << fCount << "\n"; 
+                                } 
+                                else { // no grades were entered, so output appropriate message
+                                    cout << "No grades were entered" << "\n";
+                                }
+                            }
+
+                        </script>
+                    </code></pre>
+                    
+                    <p>c++17 [[fallthrough]] </p>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="break">break和continue</h2>
+                    <pre data-id="break"><code data-line-numbers="9" data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                int count; // control variable also used after loop 
+                                
+                                for (count = 1; count <= 10; ++count) { // loop 10 times
+                                    if (count == 5) {
+                                        break; // terminates for loop if count is 5
+                                    }
+                            
+                                    cout << count << " ";
+                                }
+                            
+                                cout << "\nBroke out of loop at count = " << count << "\n";
+                            } 
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="break">break和continue</h2>
+                    <pre data-id="continue"><code data-line-numbers="7" data-trim class="c++">
+                        <script type="text/template">
+                        #include <iostream>
+                        using namespace std;
+                        
+                        int main() {
+                            for (int count{1}; count <= 10; ++count) { // loop 10 times
+                                if (count == 5) {
+                                    continue; // skip remaining code in loop body if count is 5
+                                }
+                        
+                                cout << count << " ";
+                            } 
+                        
+                            cout << "\nUsed continue to skip printing 5" << "\n";
+                        }
+                        </script>
+                </code></pre>
+            </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="logical">逻辑运算符</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">逻辑与</li>
+                        <li class="fragment">逻辑或</li>
+                        <li class="fragment">逻辑非</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="logical">逻辑运算符</h2>
+                    <pre data-id="logical"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            
+                            #include <iostream>
+                            #include <fmt/format.h>
+                            using namespace std;
+                            using namespace fmt;
+                            
+                            int main() {
+                                // create truth table for && (logical AND) operator
+                                cout << "Logical AND (&&)\n"
+                                    << format("false && false: {}\n", false && false)
+                                    << format("false && true: {}\n", false && true)
+                                    << format("true && false: {}\n", true && false)
+                                    << format("true && true: {}\n\n", true && true);
+                            
+                                // create truth table for || (logical OR) operator
+                                cout << "Logical OR (||)\n"
+                                    << format("false || false: {}\n", false || false)
+                                    << format("false || true: {}\n", false || true)
+                                    << format("true || false: {}\n", true || false)
+                                    << format("true || true: {}\n\n", true || true);
+                            
+                                // create truth table for ! (logical negation) operator
+                                cout << "Logical negation (!)\n"
+                                    << format("!false: {}\n", !false)
+                                    << format("!true: {}\n", !true);
+                            } 
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 -I../../libraries/fmt/include/ fig04_10.cpp ./../../libraries/fmt/src/format.cc -o fig04
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">自然对象学习方法</h2>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            
+                            #include <iostream>
+                            #include <string>
+                            #include "zip_file.hpp"
+                            using namespace std;
+                            
+                            int main() {
+                                cout << "Enter a ZIP file name: ";
+                                string zipFileName;
+                                getline(cin, zipFileName); // inputs a line of text
+                            
+                                // string literals separated only by whitespace are combined 
+                                // into a single string by the compiler
+                                string content{ 
+                                    "This chapter introduces all but one of the remaining control "
+                                    "statements--the for, do...while, switch, break and continue "
+                                    "statements. We explore the essentials of counter-controlled "
+                                    "iteration. We use compound-interest calculations to begin "
+                                    "investigating the issues of processing monetary amounts. First, "
+                                    "we discuss the representational errors associated with "
+                                    "floating-point types. We use a switch statement to count the "
+                                    "number of A, B, C, D and F grade equivalents in a set of "
+                                    "numeric grades. We show C++17's enhancements that allow you to "
+                                    "initialize one or more variables of the same type in the "
+                                    "headers of if and switch statements."};
+                            
+                                cout << "\ncontent.length(): " << content.length();
+                            
+                                miniz_cpp::zip_file output; // create zip_file object
+                            
+                                // write content into a text file in output
+                                output.writestr("intro.txt", content); // create file in ZIP
+                                output.save(zipFileName); // save output to zipFileName
+                            
+                                miniz_cpp::zip_file input{zipFileName}; // load zipFileName
+                            
+                                // display input's file name and directory listing
+                                cout << "\n\nZIP file's name: " << input.get_filename()
+                                    << "\n\nZIP file's directory listing:\n";
+                                input.printdir(); 
+                            
+                                // display info about the compressed intro.txt file
+                                miniz_cpp::zip_info info{input.getinfo("intro.txt")};
+                            
+                                cout << "\nFile name: " << info.filename
+                                    << "\nOriginal size: " << info.file_size
+                                    << "\nCompressed size: " << info.compress_size;
+                            
+                                // original file contents
+                                string extractedContent{input.read(info)};
+                            
+                                cout << "\n\nOriginal contents of intro.txt:\n"  
+                                    << extractedContent << "\n";
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="cpp"><code data-line-numbers data-trim class="bash">
+                        <script type="text/template">
+                            g++ -std=c++17 -I../../examples/libraries/miniz-cpp/ fig04_11.cpp -o fig04_11
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="functions">函数一</h2>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="functions">函数一</h2>
+                    <ul style="line-height: 2em;">
+                        <li>C++标准库的函数</li>
+                        <li>开源的第三方库函数</li>
+                        <li>自己开发的函数</li>
+                    </ul>
+                    <p>
+                        思考：抽象，<a color=red>D</a>on't <a color=red>R</a>epeat <a color=red>Y</a>ourself                        
+                    </p>
+                    <a color=red>D</a>on't <a color=red>R</a>einvent <a color=red>T</a>he <a color=red>W</a>heel
+                </section>
+
+                <section data-auto-animate>
+                    <h2>函数原型和定义</h2>
+                    <pre><code data-line-numbers="5" data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            using namespace std;
+                            
+                            int maximum(int x, int y, int z); // function prototype 
+                            
+                            int main() {
+                                cout << "Enter three integer values: ";
+                                int int1, int2, int3;
+                                cin >> int1 >> int2 >> int3;
+                            
+                                // invoke maximum 
+                                cout << "The maximum integer value is: "
+                                    << maximum(int1, int2, int3) << '\n';
+                            }
+                            
+                            // returns the largest of three integers   
+                            int maximum(int x, int y, int z) {
+                                int maximumValue{x}; // assume x is the largest to start
+                            
+                                // determine whether y is greater than maximumValue
+                                if (y > maximumValue) {
+                                    maximumValue = y; // make y the new maximumValue
+                                }
+                            
+                                // determine whether z is greater than maximumValue
+                                if (z > maximumValue) {
+                                    maximumValue = z; // make z the new maximumValue
+                                }
+                            
+                                return maximumValue;
+                            }
+                                
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>函数原型和定义</h2>
+                    <pre><code data-line-numbers="18" data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            using namespace std;
+                            
+                            int maximum(int x, int y, int z); // function prototype 
+                            
+                            int main() {
+                                cout << "Enter three integer values: ";
+                                int int1, int2, int3;
+                                cin >> int1 >> int2 >> int3;
+                            
+                                // invoke maximum 
+                                cout << "The maximum integer value is: "
+                                    << maximum(int1, int2, int3) << '\n';
+                            }
+                            
+                            // returns the largest of three integers   
+                            int maximum(int x, int y, int z) {
+                                int maximumValue{x}; // assume x is the largest to start
+                            
+                                // determine whether y is greater than maximumValue
+                                if (y > maximumValue) {
+                                    maximumValue = y; // make y the new maximumValue
+                                }
+                            
+                                // determine whether z is greater than maximumValue
+                                if (z > maximumValue) {
+                                    maximumValue = z; // make z the new maximumValue
+                                }
+                            
+                                return maximumValue;
+                            }
+                                
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="functions">函数原型和定义</h2>
+                    <ul style="line-height: 2em;">
+                        <li>形参，parameter</li>
+                        <li>实参，argument</li>
+                        <li>函数签名，<a color="red">不包括返回值</a></li>
+                        <li>类型转换</li>
+                    </ul>
+                </section>
+
+                <section data-background-image="./venus.jpg" data-background-opacity="0.3">
+			    <h2>
+					<h1>天道酬勤</h2>
+				</h2>
+			</section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
