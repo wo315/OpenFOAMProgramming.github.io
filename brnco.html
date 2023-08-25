@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>😎 DPOE-N Webinar: Intro to CLI</title>
+        <link rel="stylesheet" href="reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="reveal.js/dist/theme/materialocean.css" id="theme">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+        <style type="text/css">
+            div p {
+                text-align:left;
+            }
+            .twoColContainer{
+                display:flex;
+                /*outline:3px dotted blue;*/
+            }
+	        .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .example_command {
+                text-align:left;
+                font-size:80%;
+                background-color:#E5E9F0;
+                color:#00010A;
+                font-family:monospace;
+                display:inline-block;
+                float:left;
+                padding:6px;
+                /*width:75%;*/
+                /*border:1px solid yellow;*/
+            }
+	        .colLCLI h3{
+		        text-align: left;
+		        text-transform: lowercase;
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+            .colR img{
+                object-fit:contain;
+            }
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+            .colREven img{
+                object-fit:contain;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section style="text-align:center;'">
+                    <h1>Intro to the Command Line Interface</h1><br>
+                    <h3>DPOE-N | 2022-05-04</h3><br>
+                    <h5>with Brendan Coates (he|his)</h5><br>
+                </section>
+                <section style="text-align:center;">
+                    <h1>About Me</h1><br>
+                    gardener, technobabbler, LATU member<br><br>
+                    archivist specializing in AV and Oral Histories
+                </section>
+                <section>
+                    <h1>Agenda</h1><br><br>
+                    <section>
+                    </section>
+                    <section>
+                        <h3>Part 1</h3>
+                        <h3>History, Context, Objectives</h3><br>
+                        12pm-12:50pm EDT | 9am-9:50am PDT<br><br>
+                        Overview of the command line<br>
+                        Basic command line use<br>
+                        10min break
+                    </section>
+                    <section>
+                        <h3>Part 2</h3>
+                        <h3>Intro to Commands</h3><br>
+                        1pm-2pm EDT | 10am-11am PDT<br><br>
+                        System info<br>
+                        navigation<br>
+                        inputs and outputs
+                    </section>
+                    <section>
+                        <h3>LUNCH</h3><br>
+                        2pm-3pm EDT | 11am-12pm PDT
+                    </section>
+                    <section>
+                        <h3>Part 3</h3>
+                        <h3>CLI Tools for DigiPres</h3><br>
+                        3pm-3:50pm EDT | 12pm-12:50pm PDT<br><br>
+                        file movement, rsync<br>
+                        checksums, Bagit<br>
+                        10 minute break
+                    </section>
+                    <section>
+                        <h3>Part 4</h3>
+                        <h3>Intro to Scripting</h3><br>
+                        4pm-5pm EDT | 1pm-2pm PDT<br><br>
+                        setup, principles<br>
+                        command sequences, loops<br>
+                        managing scripts
+                    </section>
+                </section>
+                <section>
+                    <h1>Overview</h1><br>
+                    What are we doing here?<br>
+                    What is "open source" - how is it relevant?<br>
+                    Weren't those readings cool?
+                </section>
+                <section>
+                    <h1>Introductions</h1>
+                    <h3>Breakout Rooms</h3><br>
+                    What's your name/ pronouns/ location?<br>
+                    What do you do for fun? For work?<br>
+                    What's 1 thing that brought you here?
+                </section>
+                <section>
+                    <h2>What is the command line?</h2>
+                        <section>
+                            <h3>Historical use</h3>
+                            <div class="twoColContainer">
+                                <div class="colL">
+                                    A "terminal" connects to a computer<br>
+                                    Only interface before 1973<br>
+                                    Bell Labs, UNIX, Bourne Shell<br>
+                                    GNU:Bourne Again Shell (bash)<br>
+                                </div>
+                                <div class="colR">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/DEC_VT100_terminal_transparent.png/1280px-DEC_VT100_terminal_transparent.png">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <h3>Modern use</h3>
+                            <div class="twoColContainer">
+                                <div class="colL">
+                                    "terminal emulator," technically<br>
+                                    many terminals to choose from<br>
+                                    common interface for servers<br>
+                                    ppl will think you're a hacker 😎
+                                </div>
+                                <div class="colR">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Xterm.png/300px-Xterm.png">
+                                    <br>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/XtermMenus.png/220px-XtermMenus.png"
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <h3>What good is it?</h3>
+                            more consistency, less "meatdata"<br>
+                            computers don't get bored<br>
+                            connects you to your computing ancestors<br>
+                            instantiate your workflows in code!
+                        </section>
+                        <section>
+                            <h3>Basic Command Structure</h3>
+                            <code>software -options arguments</code><br>
+                            <iframe
+                            src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                            width="100%"
+                            height="100%"
+                            allowfullscreen="true"
+                            autoplay="false">
+                            </iframe>
+                       </section>
+                       <section>
+                            <h2>How To Brake</h2>
+                            <div class="twoColContainer">
+                                <div class="r-stack colLCLI">
+    			                    <div class="fragment fade-in-then-out">
+                                        <h3>Stopping</h3>
+                                        Interrupt process:<br>
+                                        <code>Ctl+c</code><br>
+                                        Stop process:<br>
+                                        <code>Ctl+z</code><br>
+                                </div>
+    			                    <div class="fragment fade-in-then-out">
+                                        <h3>Quit/ Exit</h3>
+                                        <code>Esc</code><br>
+                                        <code>q</code><br><br>
+                                        <code>ps aux | grep [proc]</code><br>
+                                        <code>kill [proc]</code>
+                                    </div>
+                                </div>
+                                <div class="colRCLI">
+                                <iframe
+                                src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                                width="100%"
+                                height="100%"
+                                allowfullscreen="true"
+                                autoplay="false">
+                                </iframe>
+                                </div>
+                           </div>
+                       </section>
+                       <section>
+                            <h2>Finding Help</h2>
+                            <div class="twoColContainer">
+                                <div class="r-stack colLCLI">
+                                    <div class="fragment fade-in-then-out">
+                                        <h3>man pages</h3>
+                                        help within terminal<br>
+                                        official help docs<br>
+                                        also available online
+                                    </div>
+                                    <div class="fragment fade-in-then-out">
+                                        <h3>Stack Overflow</h3>
+                                        <code>[software] [what you wanna do]</code><br>
+                                        use exact error text<br>
+                                        be mindful of dates
+                                    </div>
+                                </div>
+                            <div class="colRCLI">
+                            <iframe
+                            src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                            width="100%"
+                            height="100%"
+                            allowfullscreen="true"
+                            autoplay="false">
+                            </iframe>
+                        </div>
+                        </div>
+                       </section>
+                </section>
+                <section>
+                    <h2>Navigation</h2><br>
+                    <div class="twoColContainer">
+			            <div class="r-stack colLCLI">
+    			            <div class="fragment fade-in-then-out">
+        				        <h3>PWD</h3>
+                                    "print working directory"<br><br>
+        				            no flags for this
+    			            </div>
+    			            <div id="ls" class="fragment fade-in-then-out">
+        				        <h3>ls</h3>
+                                    "list" contents<br><br>
+        				            key flags:<br>
+                                    <code>-a</code> = all<br>
+                                    <code>-l</code> = long format<br>
+                                    <code>-1</code> = one per line<br>
+    			            </div>
+    			            <div id="cd" class="fragment fade-in-then-out">
+        				        <h3>cd</h3>
+                                    "change directory"<br>
+        				            key arguments:<br>
+                                    <code>~/</code> = home folder<br>
+                                    <code>..</code> = parent directory<br>
+                                    <code>- </code> = previous directory<br>
+    			            </div>
+                            <div id="paths" class="fragment fade-in-then-out">
+                                <h3>paths</h3>
+                                    absolute paths:<br>
+                                    from drive to file<br><br>
+                                    relative paths:<br>
+                                    relative to working directory
+                            </div>
+    			            <div id="which" class="fragment fade-in-then-out">
+                                <h3>whereis and which</h3>
+                                    return path of search "term"<br><br>
+                                    find installation paths of command
+                            </div>
+    			            <div id="find1" class="fragment fade-in-then-out">
+                                <h3>find</h3>
+                                    like <code>ls</code> but better<br>
+                                    key flags:<br>
+                                    <code>-type</code><br>
+                                    <code>-name</code>
+                            </div>
+    			            <div id="find2" class="fragment fade-in-then-out">
+                                <h3>find</h3>
+                                    more flags:<br>
+                                    <code>-and</code><br>
+                                    <code>-or</code><br>
+                                    <code>*</code><br>
+                            </div>
+			            </div>
+  		                <div class="colRCLI">
+        			        <iframe
+                            src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                            width="100%"
+                            height="100%"
+                            allowfullscreen="true"
+                            autoplay="false">
+        				    </iframe>
+  			            </div>
+                        </div>
+                </section>
+                <section>
+                    <h2>Users & Permissions</h2><br>
+                    <div class="twoColContainer">
+                      <div class="r-stack colLCLI">
+                        <div id="id_nG"class="fragment fade-in-then-out">
+                          <h3>id</h3>
+                          display user info<br><br>
+                          flags:<br>
+                          -n = name<br>
+                          -G = group
+                      </div>
+                      <div id="sudo" class="fragment fade-in-then-out">
+                          <h3>sudo</h3>
+                          "super user do"<br>
+                          you're admin now<br>
+                      </div>
+                      <div id="chmod" class="fragment fade-in-then-out">
+                          <h3>chmod|chown</h3>
+                          chmod = change perms<br>
+                          chown = change ownership<br>
+                      </div>
+                  </div>
+                  <div class="colRCLI">
+                    <iframe
+                       src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                       width="100%"
+                       height="100%"
+                       allowfullscreen="true"
+                       autoplay="false">
+                    </iframe>
+                  </div>
+                </div>
+            </section>
+            <section>
+                <h2>I/O, Redirection</h2><br>
+                <div class="twoColContainer">
+                     <div class="r-stack colLCLI">
+                      <div class="fragment fade-in-then-out">
+                        <h3>prequel</h3>
+                        "everything is a file"<br>
+                        ...in linux
+                      </div>
+                       <div id="echo" class="fragment fade-in-then-out">
+                         <h3>echo</h3>
+                         print to terminal<br>
+                         text -> stdout
+                       </div>
+                      <div class="fragment fade-in-then-out">
+                        <h3>stdin</h3>
+                        "standard in" = terminal
+                        <h3>stdout</h3>
+                        "standard out" = also terminal
+                        <h3>stderr</h3>
+                        "standard error" = again, terminal
+                      </div>
+                      <div id="pipes" class="fragment fade-in-then-out">
+                        <h3>pipes</h3>
+                        send output to command<br>
+                        common uses:<br>
+                        tail<br>
+                        less<br>
+                        grep
+                      </div>
+                      <div id="redirects" class="fragment fade-in-then-out">
+                        <h3>redirects</h3>
+                        send output to file<br>
+                        cmd > /dev/null<br>
+                        cmd >> log.txt
+                      </div>
+                      <div id="ampersand" class="fragment fade-in-then-out">
+                          <h3>&&</h3>
+                          sequence commands<br>
+                          only runs cmd2 IF<br>
+                          cmd1 successful
+                      </div>
+                     </div>
+              <div class="colRCLI">
+                <iframe
+                 src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                 width="100%"
+                 height="100%"
+                 allowfullscreen="true"
+                 autoplay="false">
+                </iframe>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h1>lunch</h1>
+              see you in an hr!
+            </section>
+            <section>
+              <h1>CLI for DigiPres</h1>
+              moving files<br>
+              doing hashes<br>
+              BagIt
+            </section>
+            <section>
+                <h2>Moving Files</h2><br>
+                <div class="twoColContainer">
+                     <div class="r-stack colLCLI">
+                       <div id="cp" class="fragment fade-in-then-out">
+                         <h3>cp</h3>
+                         "copy"<br>
+                         flags:<br>
+                         -R = recursive (subdirs)<br>
+                         -a = timestamps<br>
+                         -i/n = interactive/not<br>
+                         -v = verbose
+                       </div>
+                      <div id="mv" class="fragment fade-in-then-out">
+                        <h3>mv</h3>
+                        "move"<br>
+                        renames files/paths<br>
+                        flags:<br>
+                        -i/n = interactive/not
+                      </div>
+                      <div id="mkdir" class="fragment fade-in-then-out">
+                        <h3>mkdir</h3>
+                        "make directory"<br>
+                        flags:<br>
+                        -p = parents<br>
+                        -v = verbose
+                      </div>
+                      <div id="rsync1" class="fragment fade-in-then-out">
+                        <h3>rsync</h3>
+                        sync files/ dirs<br>
+                        flags:<br>
+                        -a = archive mode<br>
+                        -v = verbose<br>
+                        -z = compress<br>
+                        -x = extended attrs
+                      </div>
+                      <div id="rsync2" class="fragment fade-in-then-out">
+                        <h3>rsync</h3>
+                        flags:<br>
+                        --progress<br>
+                        --logfile=path<br>
+                        --exclude
+                      </div>
+                     </div>
+              <div class="colRCLI">
+                <iframe
+                 src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                 width="100%"
+                 height="100%"
+                 allowfullscreen="true"
+                 autoplay="false">
+                </iframe>
+                </div>
+              </div>
+            </section>
+            <section>
+                <h2>Checksums</h2><br>
+                <div class="twoColContainer">
+                  <div class="colLEven">
+                    <h3>Hashes</h3>
+                    break file into blocks<br>
+                    read blocks + compute hash<br>
+                    check full file hash
+                  </div>
+                  <div class="colREven">
+                    <h3>CRC</h3>
+                    break file into blocks<br>
+                    read blocks + compute block hash<br>
+                    check block hashes
+                  </div>
+                </div>
+            </section>
+            <section>
+                <h2>Checksums</h2><br>
+                <div class="twoColContainer">
+                 <div class="r-stack colLCLI">
+                   <div id="md5sum" class="fragment fade-in-then-out">
+                     <h3>md5sum</h3>
+                     generate MD5 hash<br>
+                     flags:<br>
+                     -c = check files
+                   </div>
+                  <div id="shasum" class="fragment fade-in-then-out">
+                    <h3>shasum</h3>
+                    generate SHA hash<br>
+                    flags:<br>
+                    -a = algorithm<br>
+                    -p = portable<br>
+                    -c = check files
+                  </div>
+                 </div>
+                 <div class="colRCLI">
+                  <iframe
+                   src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+                   width="100%"
+                   height="100%"
+                   allowfullscreen="true"
+                   autoplay="false">
+                  </iframe>
+            </div>
+          </div>
+          </section>
+          <section>
+            <h1>BagIt</h1>
+            <section>
+            <div class="twoColContainer">
+              <div class="colL">
+                Library of Congress + IETF standard<br>
+                for folder architecture<br><br>
+                supports robust verification<br>
+                of package contents + integrity
+              </div>
+              <div class="colR">
+                <img src="https://raw.githubusercontent.com/brnco/DPOE-N-Workshop_IntroCLI-AVTools/main/images/myfirstbag.png">
+              </div>
+            </div>
+          </section>
+            <section>
+              <h4>grabbags</h4>
+              wrapper for bagit-python<br>
+              maintained by AMIA OSC<br>
+              exposes bagit-python to CLI
+            </section>
+          </section>
+            <section>
+            <h2>Scripting</h2>
+            <div class="twoColContainer">
+             <div class="r-stack colLCLI">
+               <div id="find3" class="fragment fade-in-then-out">
+                 <h3>find</h3>
+                 execute a command<br>
+                 on output of find
+               </div>
+               <div id="for" class="fragment fade-in-then-out">
+                 <h3>FOR loops</h3>
+                 iterate through something<br>
+                 loop thru directory
+               </div>
+              </div>
+              <!--</div>-->
+             <div class="colRCLI">
+              <iframe
+               src="https://player.twitch.tv/?channel=brnc0&parent=brnco.github.io"
+               width="100%"
+               height="100%"
+               allowfullscreen="true"
+               autoplay="false">
+              </iframe>
+            </div>
+          </div>
+          </section>
+          <section>
+            <h1>wrap up & questions</h1>
+          </section>
+          <section>
+            <h1>thank you!</h1>
+            and thanks to everyone who made this possible
+          </section>
+            </section>
+          </div><!-- end of <div class=slides> -->
+          </div><!-- end of <div class="reveal.js"> -->
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/notes/notes.js"></script>
+        <script src="reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                hash: true,
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+        <script>
+            console.log("here1");
+            cmdwrap_pre = '<div class="example_command">';
+            cmd="";
+            Reveal.on('fragmenthidden', event => {
+                /*const end_slides = ["find2"];*/
+                if(event.fragment.class === "fragment fade-in-then-out"){
+                    $(".example_command").remove();
+                }
+            });
+            Reveal.on('fragmentshown', event => {
+                            console.log("here2");
+                            if(event.fragment.id === "ls"){
+                                cmd = "$ ls -al<br>$ ls -1 /Volumes/HardDrive";
+                            } else if(event.fragment.id === "cd") {
+                                cmd = '$ cd ~/Downloads<br>$ cd "/Volumes/Hard Drive"';
+                            } else if(event.fragment.id === "paths"){
+                                cmd = "absolute: /home/bcoates/Downloads<br>relative: ../config";
+                            } else if(event.fragment.id === "which"){
+                                cmd = "$ which bash<br>$ whereis python";
+                            } else if(event.fragment.id === "find1"){
+                                cmd = '$ find . -name "*.jpg"<br>$ find . -name access -type d';
+                            } else if(event.fragment.id === "find2"){
+                                cmd = "$ find . -name .* -exec rm -f {}\\;<br>$ find . -type f -empty";
+                            } else if(event.fragment.id === "find3"){
+                                cmd = '$ find /pyforav/ -type f -name ".DS_Store" -delete'
+                            } else if(event.fragment.id === "id_nG"){
+                                cmd = "$ id -nG";
+                            } else if(event.fragment.id === "sudo"){
+                                cmd = "$ sudo fdisk -l<br>$ sudo su";
+                            } else if(event.fragment.id === "chmod"){
+                                cmd = "# chmod +x script.sh<br># chown brnco:brnco ~/Downloads/pyforav.zip";
+                            } else if(event.fragment.id === "echo"){
+                                cmd = "$ echo 'Hello World!'<br>$ echo $PATH";
+                            } else if(event.fragment.id === "pipes"){
+                                cmd = "$ ps aux | grep zoom<br>$ ps aux | grep firefox | less";
+                            } else if(event.fragment.id === "redirects"){
+                                cmd = "$ echo 'Hello World!' >> a_file.txt<br>$ ffmpeg -i input.mp4 -f null /dev/null";
+                            } else if(event.fragment.id === "ampersand"){
+                                cmd = "$ cd ~/Downloads && ls";
+                            } else if(event.fragment.id === "rsync1"){
+                                cmd = "$ rsync ~/Downloads/pyforav ~/Desktop<br>try the above with trailing slashes /";
+                            } else if(event.fragment.id === "rsync2"){
+                                cmd = "$ rsync -avzx --progress --exclude='*.txt' --log-file=~/Desktop/rsync-1.log /pyforav/120th_anniversary/0909 ~/Desktop";
+                            } else if(event.fragment.id === "mv"){
+                                cmd = "$ mv ~/Downloads/pyforav ~/Desktop";
+                            } else if(event.fragment.id === "cp"){
+                                cmd = "$ cp /pyforav/on_demand/catexhibit_1157.mov ~/Desktop<br>$ cp -R /pyforav/on_demand ~/Desktop";
+                            } else if(event.fragment.id === "mkdir"){                                        
+                                cmd = "$ mkdir ~/Desktop/2022-05-04<br>$ mkdir -p ~/Desktop/2022-05-04/parent/child";
+                            } else if(event.fragment.id === "md5sum"){
+                                cmd = "$ md5sum /pyforav/federal_grant/napl_1125_pres.mov";
+                            
+                            } else if(event.fragment.id === "shasum"){
+                                cmd = "$ shasum -a 256 -p /pyforav/federal_grant/napl_1125_pres.mov";
+                            } else if(event.fragment.id === "for"){
+                                            cmd = "$ for file in *; do echo $file; done<br>$ for file in *.mov; do shasum -p -a 256 $file >> $file.sha256; done";
+                            } else {
+                                cmd = "";
+                            }
+                            /*$(".example_command").html(cmd);*/
+                            if(!cmd){
+                                console.log("ayo no cmd");
+                                cmd_div = $(".example_command");
+                                $("example_command").remove();
+                            } else {
+                                cmd_div = $(".example_command");
+                                if(cmd_div.length) {
+                                    $(".example_command").html(cmd);
+                                } else {
+                                    cmdwrap = '<div class="example_command" style="visibility:visible;"><div>';
+                                    $("section").append(cmdwrap);
+                                    $(".example_command").html(cmd);
+                                }
+                            }
+            });
+            Reveal.on( 'slidechanged', event => {
+                    $(".example_command").remove();
+            });
+        </script>
+    </body>
+</html>
