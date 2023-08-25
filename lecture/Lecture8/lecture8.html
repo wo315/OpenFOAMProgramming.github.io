@@ -90,7 +90,7 @@
                             <div class="fragment fade-in">
                                 <ul style="line-height: 2em;">
                                     <li class="fragment">随机数生成</li>
-                                    <li class="fragment">作用域enum</li>
+                                    <li class="fragment">枚举类型ENUM</li>
                                     <li class="fragment">作用域规则</li>
                                     <li class="fragment">内联函数</li>
                                     <li class="fragment">引用和引用参数</li>
@@ -554,10 +554,10 @@
                             }          
                         </script>
                     </code></pre> 
-                    <pre data-id="overload" class="fragment fade-in"><code data-line-numbers data-trim class="bash">
+                    <pre data-id="overload" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
                         <script type="text/template">
-                            g++ -std=c++17 ch05_11.cpp -o overloading
-                            objdump -d ./overloading | grep square
+                            $ g++ -std=c++17 ch05_11.cpp -o overloading
+                            $ objdump -d ./overloading | grep square
                         </script>
                     </code></pre>
                 </section>
@@ -620,11 +620,6 @@
                                           
                         </script>
                     </code></pre> 
-                    <pre data-id="template" class="fragment fade-in"><code data-line-numbers data-trim class="bash">
-                        <script type="text/template">
-                            g++ -std=c++17 ch05_14.cpp -o function_template
-                        </script>
-                    </code></pre>
                 </section>
 
                 <section data-auto-animate>
@@ -660,19 +655,20 @@
 
                 <section data-auto-animate>
                     <h2 data-id="cpp">自然对象学习方法</h2>
-                    <H4>凯撒密码</H4>
-                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                    <H4 class="fragment fade-in">凯撒密码</H4>
+                    <pre data-id="cpp" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             Caesar Cipher
                             Fdhvdu Flskhu
                         </script>
                     </code></pre>
-                    <H4>凯撒密码</H4>
+                    <H4 class="fragment fade-in">维吉尼亚密码</H4>
                 </section>
 
                 <section data-auto-animate>
                     <h2 data-id="cpp">自然对象学习方法</h2>
-                    <pre data-id="cpp"><code data-line-numbers data-trim class="c++">
+                    <H4 class="fragment fade-in">维吉尼亚密码</H4>
+                    <pre data-id="cpp" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             #include "cipher.h"
                             #include <iostream>
@@ -721,14 +717,14 @@
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="array">数组声明</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                    <h2 data-id="array" class="fragment fade-in">数组声明</h2>
+                    <pre data-id="array" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             std::array<type, size> arrayName;
                         </script>
                     </code></pre>
-                    <h2 data-id="array">数组实例化</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                    <h2 data-id="array" class="fragment fade-in">数组实例化</h2>
+                    <pre data-id="array" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             std::array<int, 5> intArray;
                         </script>
