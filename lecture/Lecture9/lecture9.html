@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture09</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./mars.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年8月25日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">数组</li>
+                            <li class="fragment">指针</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="array">数组</h2>
+                    <div class="fragment fade-in">
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">基于范围的for</li>
+                            <li class="fragment">数组算法</li>
+                            <li class="fragment">函数式编程入门</li>
+                        </ul> 
+                    </div>
+                </section>
+
+                <section>
+                    <h2>基于范围的for</h2>
+                    <pre><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <array>
+
+                            int main() {
+                                std::array items{1, 2, 3, 4, 5}; // type inferred as array<int, 5>
+
+                                // display items before modification
+                                std::cout << "items before modification: ";
+                                for (const int& item : items) { // item is a reference to a const int
+                                    std::cout << fmt::format("{} ", item); 
+                                }                       
+                            
+                                // multiply the elements of items by 2
+                                for (int& item : items) { // item is a reference to an int
+                                    item *= 2;
+                                }
+
+                                // display items after modification
+                                std::cout << "\nitems after modification: ";
+                                for (const int& item : items) {
+                                    std::cout << fmt::format("{} ", item);
+                                }
+
+                                // sum elements of items using range-based for with initialization
+                                std::cout << "\n\ncalculating a running total of items' values:\n";
+                                for (int runningTotal{0}; const int& item : items) {
+                                    runningTotal += item;
+                                    std::cout << fmt::format("item: {}; running total: {}\n",
+                                        item, runningTotal);
+                                }
+                            }  
+                        </script>
+                    </code></pre>
+               </section>
+
+                <section>
+                <h2>理解<a href="https://zh.cppreference.com/w/cpp/language/constexpr">constexpr</a></h2>
+                    <pre><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <array>
+
+                            int main() {
+                                // constant can be used to specify array size
+                                constexpr size_t arraySize{5}; // must initialize in declaration
+
+                                std::array<int, arraySize> values{}; // array values has 5 elements
+
+                                for (size_t i{0}; i < values.size(); ++i) { // set the values
+                                    values.at(i) = 2 + 2 * i;
+                                }
+
+                                // output contents of array values in tabular format
+                                for (const int& value : values) {
+                                    std::cout << fmt::format("{}  ", value);
+                                }
+
+                                std::cout << '\n';
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>数组元素累加，规约(reduce)</a></h2>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <fmt/format.h>
+                                #include <iostream>
+                                #include <array>
+
+                                int main() {
+                                    std::array items{10, 20, 30, 40}; // type inferred as array<int, 4>
+                                    int total{0};
+
+                                    // sum the contents of items            
+                                    for (const int& item : items) {
+                                        total += item;
+                                    }
+
+                                    std::cout << fmt::format("Total of array elements: {}\n", total);
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h2>数组应用</a></h2>
+                    <h4>数组实现上一节掷骰子的游戏</h4>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <fmt/format.h> // C++20: This will be #include <format>
+                                #include <iostream>
+                                #include <array>
+                                #include <random>
+                                
+                                int main() {
+                                    // set up random-number generation
+                                    std::random_device rd; // used to seed the default_random_engine
+                                    std::default_random_engine engine{rd()}; // rd() produces a seed 
+                                    std::uniform_int_distribution randomDie{1, 6};
+                                
+                                    constexpr size_t arraySize{7}; // ignore element zero
+                                    std::array<int, arraySize> frequency{}; // initialize to 0s
+                                
+                                    // roll die 60,000,000 times; use die value as frequency index
+                                    for (int roll{1}; roll <= 60'000'000; ++roll) {
+                                        ++frequency.at(randomDie(engine));
+                                    }
+                                
+                                    std::cout << fmt::format("{}{:>13}\n", "Face", "Frequency");
+                                
+                                    // output each array element's value
+                                    for (size_t face{1}; face < frequency.size(); ++face) {
+                                        std::cout << fmt::format("{:>4}{:>13}\n", face, frequency.at(face));
+                                    }
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h2>数组应用</a></h2>
+                    <h4>事物调查汇总</h4>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                ##include <fmt/format.h> // C++20: This will be #include <format>
+                                #include <iostream>
+                                #include <array>
+                                
+                                int main() {
+                                    // place survey responses in array responses
+                                    constexpr std::array responses{
+                                        1, 2, 5, 4, 3, 5, 2, 1, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2, 2, 5};
+                                
+                                    // initialize frequency counters to 0
+                                    constexpr size_t frequencySize{6}; // size of array frequency
+                                    std::array<int, frequencySize> frequency{};
+                                
+                                    // for each response in responses, use that value 
+                                    // as frequency index to determine element to increment
+                                    for (const int& response : responses) {
+                                        ++frequency.at(response);
+                                    }
+                                
+                                    std::cout << fmt::format("{}{:>12}\n", "Rating", "Frequency");
+                                
+                                    // output each array element's value
+                                    for (size_t rating{1}; rating < frequency.size(); ++rating) {
+                                        std::cout << fmt::format("{:>6}{:>12}\n",
+                                            rating, frequency.at(rating));
+                                    }
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+                
+                <section>
+                    <h2>数组应用</a></h2>
+                    <h4>数组排序和查找</h4>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <array>
+                                #include <algorithm> // contains sort and binary_search
+                                #include <fmt/format.h>
+                                #include <iostream>
+                                #include <string>
+                                
+                                int main() {
+                                    using namespace std::string_literals; // enables string object literals
+                                
+                                    // colors is inferred to be an array<string, 7>
+                                    std::array colors{"red"s, "orange"s, "yellow"s,
+                                        "green"s, "blue"s, "indigo"s, "violet"s};
+                                
+                                    // output original array
+                                    std::cout << "Unsorted colors array:\n   ";
+                                    for (const std::string& color : colors) {
+                                        std::cout << fmt::format("{} ", color);
+                                    }
+                                
+                                    // sort contents of colors
+                                    std::sort(std::begin(colors), std::end(colors));
+                                
+                                    // output sorted array
+                                    std::cout << "\nSorted colors array:\n   ";
+                                    for (const std::string& color : colors) {
+                                        std::cout << fmt::format("{} ", color);
+                                    }
+                                
+                                    // search for "indigo" in colors
+                                    bool found{std::binary_search(
+                                        std::begin(colors), std::end(colors), "indigo")};
+                                    std::cout << fmt::format("\n\n\"indigo\" {} found in colors array\n",
+                                        found ? "was" : "was not");
+                                
+                                    // search for "cyan" in colors
+                                    found = std::binary_search(
+                                        std::begin(colors), std::end(colors), "cyan");
+                                    std::cout << fmt::format("\"cyan\" {} found in colors array\n",
+                                        found ? "was" : "was not");
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section>
+                    <h2>多维数组</a></h2>
+                    
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <iostream>
+                                    #include <array>
+                                    
+                                    constexpr size_t rows{2};
+                                    constexpr size_t columns{3};
+                                    void printArray(const std::array<std::array<int, columns>, rows>& a);
+                                    
+                                    int main() {
+                                       constexpr std::array values1{std::array{1, 2, 3}, std::array{4, 5, 6}};
+                                       constexpr std::array values2{std::array{1, 2, 3}, std::array{4, 5, 0}};
+                                    
+                                       std::cout << "values1 by row:\n";
+                                       printArray(values1);
+                                    
+                                       std::cout << "\nvalues2 by row:\n";
+                                       printArray(values2);
+                                    }
+                                    
+                                    // output array with two rows and three columns                 
+                                    void printArray(const std::array<std::array<int, columns>, rows>& a) {
+                                       // loop through array's rows             
+                                       for (const auto& row : a) {
+                                          // loop through columns of current row                
+                                          for (const auto& element : row) {
+                                             std::cout << element << ' ';
+                                          }
+                                    
+                                          std::cout << '\n'; // start new line of output             
+                                       }
+                                    }
+                            </script>
+                        </code></pre>
+                </section>
+               
+
+                <section data-auto-animate>
+                    <h2 data-id="random"><a href="https://zh.cppreference.com/w/cpp/language/enum">enum</a>枚举类型</h2>
+                    
+                    <pre><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <random> 
+                            using namespace std;
+                            
+                            int rollDice(); // rolls dice, calculates and displays sum 
+                            
+                            int main() {
+                               // scoped enumeration with constants that represent the game status
+                               enum class Status {keepRolling, won, lost};   
+                               
+                               int myPoint{0}; // point if no win or loss on first roll
+                               Status gameStatus{Status::keepRolling}; // game is not over 
+                            
+                               // determine game status and point (if needed) based on first roll
+                               switch (const int sumOfDice{rollDice()}) {
+                                  case 7: // win with 7 on first roll
+                                  case 11: // win with 11 on first roll           
+                                     gameStatus = Status::won;
+                                     break;
+                                  case 2: // lose with 2 on first roll
+                                  case 3: // lose with 3 on first roll
+                                  case 12: // lose with 12 on first roll             
+                                     gameStatus = Status::lost;
+                                     break;
+                                  default: // did not win or lose, so remember point
+                                     myPoint = sumOfDice; // remember the point
+                                     cout << fmt::format("Point is {}\n", myPoint);
+                                     break; // optional (but recommended) at end of switch  
+                               }
+                            
+                               // while game is not complete
+                               while (Status::keepRolling == gameStatus) { // not won or lost
+                                  // roll dice again and determine game status
+                                  if (const int sumOfDice{rollDice()}; sumOfDice == myPoint) {
+                                     gameStatus = Status::won;
+                                  }
+                                  else if (sumOfDice == 7) { // lose by rolling 7 before point
+                                     gameStatus = Status::lost;
+                                  }
+                               }
+                            
+                               // display won or lost message
+                               if (Status::won == gameStatus) {
+                                  cout << "Player wins\n";
+                               }
+                               else {
+                                  cout << "Player loses\n";
+                               }
+                            }
+                            
+                            // roll dice, calculate sum and display results
+                            int rollDice() {
+                               // set up random-number generation
+                               static random_device rd; // used to seed the default_random_engine
+                               static default_random_engine engine{rd()}; // rd() produces a seed 
+                               static uniform_int_distribution randomDie{1, 6};
+                            
+                               const int die1{randomDie(engine)}; // first die roll
+                               const int die2{randomDie(engine)}; // second die roll
+                               const int sum{die1 + die2}; // compute sum of die values
+                            
+                               // display results of this roll
+                               cout << fmt::format("Player rolled {} + {} = {}\n", die1, die2, sum);
+                            
+                               return sum;
+                            }      
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="enum"><a href="https://zh.cppreference.com/w/cpp/language/enum">enum</a>枚举类型</h2>
+                    <li  class="fragment fade-in">
+                        有作用域的ENUM
+                    </li>
+                    <pre data-id="enum" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        enum class Month {jan=1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};     
+                        </script>
+                    </code></pre>
+                    <li  class="fragment fade-in">
+                        无作用域的ENUM
+                    </li>
+                    <pre data-id="enum"  class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment>
+                        <script type="text/template">
+                        enum Status {keepRolling, won, lost};     
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="enum"><a href="https://zh.cppreference.com/w/cpp/language/enum">enum</a>枚举类型</h2>
+                    <p  class="fragment fade-in">
+                        <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Renum-class">CppCoreGuidelines</a>
+                        尽量使用"enum class"
+                    </p>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="scope"><a href="https://zh.cppreference.com/w/cpp/language/scope">scope</a>作用域</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment fade-in">块作用域</li>
+                        <li class="fragment fade-in">类作用域</li>
+                        <li class="fragment fade-in">命名空间作用域</li>
+                        <li class="fragment fade-in">函数参数作用域</li>
+                    </ul>   
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="scope"><a href="https://zh.cppreference.com/w/cpp/language/scope">scope</a>作用域</h2>
+                    <pre data-id="enum" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            void useLocal(); // function prototype
+                            void useStaticLocal(); // function prototype
+                            void useGlobal(); // function prototype
+                            
+                            int x{1}; // global variable
+                            
+                            int main() {
+                                cout << "global x in main is " << x << '\n';
+                            
+                                const int x{5}; // local variable to main
+                            
+                                cout << "local x in main's outer scope is " << x << '\n';
+                            
+                                { // block starts a new scope                               
+                                    const int x{7}; // hides both x in outer scope and global x   
+                            
+                                    cout << "local x in main's inner scope is " << x << '\n';
+                                }
+                            
+                                cout << "local x in main's outer scope is " << x << '\n';
+                            
+                                useLocal(); // useLocal has local x
+                                useStaticLocal(); // useStaticLocal has static local x
+                                useGlobal(); // useGlobal uses global x
+                                useLocal(); // useLocal reinitializes its local x
+                                useStaticLocal(); // static local x retains its prior value
+                                useGlobal(); // global x also retains its prior value
+                            
+                                cout << "\nlocal x in main is " << x << '\n';
+                            }
+                            
+                            // useLocal reinitializes local variable x during each call
+                            void useLocal() {
+                                int x{25}; // initialized each time useLocal is called
+                            
+                                cout << "\nlocal x is " << x << " on entering useLocal\n";
+                                ++x;
+                                cout << "local x is " << x << " on exiting useLocal\n";
+                            }
+                            
+                            // useStaticLocal initializes static local variable x only the
+                            // first time the function is called; value of x is saved
+                            // between calls to this function
+                            void useStaticLocal() {
+                                static int x{50}; // initialized first time useStaticLocal is called
+                            
+                                cout << "\nlocal static x is " << x 
+                                    << " on entering useStaticLocal\n";
+                                ++x;
+                                cout << "local static x is " << x << 
+                                    " on exiting useStaticLocal\n";
+                            }
+                            
+                            // useGlobal modifies global variable x during each call
+                            void useGlobal() {
+                                cout << "\nglobal x is " << x << " on entering useGlobal\n";
+                                x *= 10;
+                                cout << "global x is " << x << " on exiting useGlobal\n";
+                            }   
+                        </script>
+                    </code></pre>   
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="inline"><a href="https://zh.cppreference.com/w/cpp/language/inline">inline</a>内联函数</h2>
+                    <p  class="fragment fade-in">
+                        <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-inline">CppCoreGuidelines</a>
+                        只对非常小和时间要求高的函数使用内联
+                    </p>
+                    <pre data-id="inline" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            // Definition of inline function cube. Definition of function appears 
+                            // before function is called, so a function prototype is not required. 
+                            // First line of function definition also acts as the prototype.
+                            inline double cube(double side) {
+                                return side * side * side; // calculate cube
+                            }
+                            
+                            int main() {
+                                double sideValue; // stores value entered by user 
+                                cout << "Enter the side length of your cube: ";
+                                cin >> sideValue; // read value from user
+                            
+                                // calculate cube of sideValue and display result
+                                cout << "Volume of cube with side "
+                                    << sideValue << " is " << cube(sideValue) << '\n';
+                            }           
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="reference"><a href="https://zh.cppreference.com/w/cpp/language/reference">reference</a>引用和引用参数</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment fade-in">传值，pass by value</li>
+                        <li class="fragment fade-in">传引用, pass by reference</li>
+                    </ul>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="reference"><a href="https://zh.cppreference.com/w/cpp/language/reference">reference</a>引用和引用参数</h2>
+                    <pre data-id="inline" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int squareByValue(int number); // prototype (for value pass)          
+                            void squareByReference(int& numberRef); // prototype (for reference pass)
+                            
+                            int main() {
+                                int x{2}; // value to square using squareByValue
+                                int z{4}; // value to square using squareByReference
+                            
+                                // demonstrate squareByValue
+                                cout << "x = " << x << " before squareByValue\n";
+                                cout << "Value returned by squareByValue: "
+                                    << squareByValue(x) << endl;
+                                cout << "x = " << x << " after squareByValue\n\n";
+                            
+                                // demonstrate squareByReference
+                                cout << "z = " << z << " before squareByReference\n";
+                                squareByReference(z);
+                                cout << "z = " << z << " after squareByReference\n";
+                            }
+                            
+                            // squareByValue multiplies number by itself, stores the     
+                            // result in number and returns the new value of number      
+                            int squareByValue(int number) {
+                                return number *= number; // caller's argument not modified 
+                            }
+                            
+                            // squareByReference multiplies numberRef by itself and stores the result
+                            // in the variable to which numberRef refers in function main            
+                            void squareByReference(int& numberRef) {
+                                numberRef *= numberRef; // caller's argument modified 
+                            }           
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="reference"><a href="https://zh.cppreference.com/w/cpp/language/default_arguments">default arguments</a>默认参数</h2>
+                    <pre data-id="inline" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            // function prototype that specifies default arguments
+                            int boxVolume(int length = 1, int width = 1, int height = 1);
+                            
+                            int main() {
+                                // no arguments--use default values for all dimensions
+                                cout << "The default box volume is: " << boxVolume();
+                            
+                                // specify length; default width and height
+                                cout << "\n\nThe volume of a box with length 10,\n"
+                                    << "width 1 and height 1 is: " << boxVolume(10);
+                            
+                                // specify length and width; default height
+                                cout << "\n\nThe volume of a box with length 10,\n"
+                                    << "width 5 and height 1 is: " << boxVolume(10, 5);
+                            
+                                // specify all arguments 
+                                cout << "\n\nThe volume of a box with length 10,\n"
+                                    << "width 5 and height 2 is: " << boxVolume(10, 5, 2)
+                                    << '\n';
+                            }
+                            
+                            // function boxVolume calculates the volume of a box
+                            int boxVolume(int length, int width, int height) {
+                                return length * width * height;
+                            }          
+                        </script>
+                    </code></pre>   
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="reference"><a>unary scope resolution operator</a>一元作用域操作符</h3>
+                    <pre data-id="unary" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            const int number{7}; // global variable named number
+                            
+                            int main() {
+                            const double number{10.5}; // local variable named number
+                            
+                            // display values of local and global variables
+                            cout << "Local double value of number = " << number
+                                << "\nGlobal int value of number = " << ::number << '\n';
+                            }          
+                        </script>
+                    </code></pre>   
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="overload"><a href="https://zh.cppreference.com/w/cpp/language/overload_resolution">overload</a>函数重载</h3>
+                    <pre data-id="overload" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            // function square for int values              
+                            int square(int x) {
+                                cout << "square of integer " << x << " is ";
+                                return x * x;
+                            }
+                            
+                            // function square for double values           
+                            double square(double y) {
+                                cout << "square of double " << y << " is ";
+                                return y * y;
+                            }
+                            
+                            int main() {
+                                cout << square(7); // calls int version
+                                cout << '\n';
+                                cout << square(7.5); // calls double version
+                                cout << '\n';
+                            }          
+                        </script>
+                    </code></pre> 
+                    <pre data-id="overload" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 ch05_11.cpp -o overloading
+                            $ objdump -d ./overloading | grep square
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="template"><a href="https://zh.cppreference.com/w/cpp/language/function_template">function template</a>函数模板</h3>
+                    <pre data-id="template" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        #include <iostream>
+                        // #include "maximum.h" // include definition of function template maximum
+                        using namespace std;
+                        
+                        template <typename T>  // or template<class T>      
+                        T maximum(T value1, T value2, T value3) {
+                            T maximumValue{value1}; // assume value1 is maximum    
+                        
+                            // determine whether value2 is greater than maximumValue
+                            if (value2 > maximumValue) {
+                                maximumValue = value2;
+                            }
+                        
+                            // determine whether value3 is greater than maximumValue
+                            if (value3 > maximumValue) {
+                                maximumValue = value3;
+                            }
+                        
+                            return maximumValue;
+                        }
+                        
+                        
+                        
+                        int main() {
+                            // demonstrate maximum with int values
+                            cout << "Input three integer values: ";
+                            int int1, int2, int3;
+                            cin >> int1 >> int2 >> int3;
+                        
+                            // invoke int version of maximum
+                            cout << "The maximum integer value is: "
+                                << maximum(int1, int2, int3);        
+                        
+                            // demonstrate maximum with double values
+                            cout << "\n\nInput three double values: ";
+                            double double1, double2, double3;
+                            cin >> double1 >> double2 >> double3;
+                        
+                            // invoke double version of maximum
+                            cout << "The maximum double value is: "
+                                << maximum(double1, double2, double3);
+                        
+                            // demonstrate maximum with char values
+                            cout << "\n\nInput three characters: ";
+                            char char1, char2, char3;
+                            cin >> char1 >> char2 >> char3;
+                        
+                            // invoke char version of maximum
+                            cout << "The maximum character value is: "
+                                << maximum(char1, char2, char3) << '\n';
+                        } // end main
+                                          
+                        </script>
+                    </code></pre> 
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="recursion"><a>recursive function</a>递归</h3>
+                    <pre data-id="recursion" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            using namespace std;
+                            
+                            long factorial(int number); // function prototype
+                            
+                            int main() {
+                                // calculate the factorials of 0 through 10
+                                for (int counter{0}; counter <= 10; ++counter) {
+                                    cout << setw(2) << counter << "! = " << factorial(counter)
+                                        << '\n';
+                                }
+                            }
+                            
+                            // recursive definition of function factorial   
+                            long factorial(int number) {
+                                if (number <= 1) { // test for base case     
+                                    return 1; // base cases: 0! = 1 and 1! = 1
+                                }
+                                else { // recursion step                     
+                                    return number * factorial(number - 1);
+                                }
+                            }                
+                        </script>
+                    </code></pre> 
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">自然对象学习方法</h2>
+                    <H4 class="fragment fade-in">凯撒密码</H4>
+                    <pre data-id="cpp" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            Caesar Cipher
+                            Fdhvdu Flskhu
+                        </script>
+                    </code></pre>
+                    <H4 class="fragment fade-in">维吉尼亚密码</H4>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="cpp">自然对象学习方法</h2>
+                    <H4 class="fragment fade-in">维吉尼亚密码</H4>
+                    <pre data-id="cpp" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include "cipher.h"
+                            #include <iostream>
+                            #include <string>
+                            using namespace std;
+
+                            int main() {
+                            string plainText;
+                            cout << "Enter the text to encrypt:\n";
+                            getline(cin, plainText);
+
+                            string secretKey;
+                            cout << "\nEnter the secret key:\n";
+                            getline(cin, secretKey);
+
+                            Cipher cipher; 
+
+                            // encrypt plainText using secretKey
+                            string cipherText{cipher.encrypt(plainText, secretKey)};
+                            cout << "\nEncrypted:\n   " << cipherText << '\n';
+
+                            // decrypt cipherText
+                            cout << "\nDecrypted:\n   "  
+                                << cipher.decrypt(cipherText, secretKey) << '\n';
+                            
+                            // decrypt ciphertext entered by the user
+                            cout << "\nEnter the ciphertext to decipher:\n";
+                            getline(cin, cipherText);
+                            cout << "\nDecrypted:\n   " 
+                                << cipher.decrypt(cipherText, secretKey) << '\n';
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <H1>DEMO</H1>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="template">数组</h2>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment fade-in"><a href="https://zh.cppreference.com/w/cpp/container/array">array</a> 固定数组 std::array&ltT, N&gt</li>
+                        <li class="fragment fade-in"><a href="https://zh.cppreference.com/w/cpp/container/vector">vector</a> 动态数组 std::vector&ltT, Allocator&gt</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="array" class="fragment fade-in">数组声明</h2>
+                    <pre data-id="array" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            std::array<type, size> arrayName;
+                        </script>
+                    </code></pre>
+                    <h2 data-id="array" class="fragment fade-in">数组实例化</h2>
+                    <pre data-id="array" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            std::array<int, 5> intArray;
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="array">Array 数组</h3>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h> // C++20: This will be #include <format>
+                            #include <iostream>
+                            #include <array>
+                            
+                            int main() {
+                                std::array<int, 5> values; // values is an array of 5 int values
+                            
+                                // initialize elements of array values to 0        
+                                for (size_t i{0}; i < values.size(); ++i) {
+                                    values[i] = 0; // set element at location i to 0
+                                }
+                            
+                                std::cout << fmt::format("{:>7}{:>10}\n", "Element", "Value");
+                            
+                                // output each array element's value
+                                for (size_t i{0}; i < values.size(); ++i) {
+                                    std::cout << fmt::format("{:>7}{:>10}\n", i, values[i]);
+                                }
+                            
+                                std::cout << fmt::format("\n{:>7}{:>10}\n", "Element", "Value");
+                            
+                                // access elements via the at member function
+                                for (size_t i{0}; i < values.size(); ++i) {
+                                    std::cout << fmt::format("{:>7}{:>10}\n", i, values.at(i));
+                                }
+                            
+                                // accessing an element outside the array's bounds with at
+                                values.at(10); // throws an exception
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="array">数组初始化列表<a href="https://zh.cppreference.com/w/cpp/language/list_initialization">initialize_list</a></h3>
+                    <pre data-id="array"><code data-line-numbers="6" data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <array>
+
+                            int main() {
+                            std::array<int, 5> values{32, 27, 64, 18, 95}; // braced initializer
+
+                            // output each array element's value
+                            for (size_t i{0}; i < values.size(); ++i) {
+                                std::cout << fmt::format("{}  ", values.at(i));
+                            }
+
+                            std::cout << "\n\n";
+
+                            // using class template argument deduction to determine values2's type
+                            std::array values2{1.1, 2.2, 3.3, 4.4};
+
+                            // output each array element's value
+                            for (size_t i{0}; i < values.size(); ++i) {
+                                std::cout << fmt::format("{}  ", values.at(i));
+                            }
+
+                            std::cout << "\n";
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="array">类模板实参推导<a href="https://en.cppreference.com/w/cpp/language/class_template_argument_deduction">CTAD</a></h3>
+                    <pre data-id="array"><code data-line-numbers="16" data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <array>
+
+                            int main() {
+                            std::array<int, 5> values{32, 27, 64, 18, 95}; // braced initializer
+
+                            // output each array element's value
+                            for (size_t i{0}; i < values.size(); ++i) {
+                                std::cout << fmt::format("{}  ", values.at(i));
+                            }
+
+                            std::cout << "\n\n";
+
+                            // using class template argument deduction to determine values2's type
+                            std::array values2{1.1, 2.2, 3.3, 4.4};
+
+                            // output each array element's value
+                            for (size_t i{0}; i < values.size(); ++i) {
+                                std::cout << fmt::format("{}  ", values.at(i));
+                            }
+
+                            std::cout << "\n";
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>纸上得来终觉浅</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>
