@@ -1,7 +1,13 @@
-# C++ Language Coding Guidelines
-**Note:** These coding guidelines are a part of the books *Big C++, Third Edition*, and *Brief C++, Third Edition*, by Cay S. Horstmann, copyright © 2018, by John Wiley & Sons. All Rights Reserved.
+# CPP Language Coding Guidelines
+**Note:** These coding guidelines are a part of the books *Big cpp, Third Edition*, and *Brief cpp, Third Edition*, by Cay S. Horstmann, copyright © 2018, by John Wiley & Sons. All Rights Reserved.
 
-This style guide may be freely distributed to students in any class that uses *Big C++* or *Brief C++* as a required text. The style guide may be modified for such use, provided that the modifications are clearly marked.
+<h2 style="text-align: center;">For Incompressible CFD, OpenFOAM</h2>
+
+$$\nabla\cdot{\mathbf{U}}=0\tag{1}$$
+$$\dfrac{\partial\mathbf{U}}{\partial{t}} + \nabla\cdot(\mathbf{UU})-\nabla\cdot
+(\nu\nabla\mathbf{U})=-\dfrac{\nabla{p}}{\rho}\tag{2}$$
+
+This style guide may be freely distributed to students in any class that uses *Big cpp* or *Brief cpp* as a required text. The style guide may be modified for such use, provided that the modifications are clearly marked.
 
 ## Introduction
 This coding style guide is a simplified version of one that has been used with good success both in industrial practice and for college courses. It lays down rules that you must follow for your programming assignments.
@@ -12,7 +18,7 @@ A style guide makes you a more productive programmer because it reduces gratuito
 
 In these guidelines a number of constructs are plainly outlawed. That doesn't mean that programmers using them are evil or incompetent. It does mean that the constructs are of marginal utility and can be expressed just as well or even better with other language constructs.
 
-If you have already programmed in C or C++, you may be initially uncomfortable about giving up some fond habits. However, it is a sign of professionalism to set aside personal preferences in minor matters and to compromise for the benefit of your group.
+If you have already programmed in C or cpp, you may be initially uncomfortable about giving up some fond habits. However, it is a sign of professionalism to set aside personal preferences in minor matters and to compromise for the benefit of your group.
 
 These guidelines are necessarily somewhat long and dull. They also mention features that you may not yet have seen in the class. Here are the most important highlights:
 
@@ -39,7 +45,7 @@ Each program is a collection of one or more files or modules. The executable pro
 5. Functions
 It is common to start each file with a comment block. Here is a typical format:
 
-```c++
+```cpp
  /**
     @file invoice.cpp
     @author Jenny Koo
@@ -48,7 +54,7 @@ It is common to start each file with a comment block. Here is a typical format:
  */
 ```
 You may also want to include a copyright notice, such as
-```c++
+```cpp
  /* Copyright 2022 Jenny Koo */
 ```
 A valid copyright notice consists of
@@ -60,21 +66,21 @@ A valid copyright notice consists of
 (Note: To save space, this header comment has been omitted from the programs in this book as well as the programs on disk so that the actual line numbers match those that are printed in the book.)
 
 Next, list all included header files.
-```c++
+```cpp
  #include <iostream> 
  #include "question.h"
 ```
 Do not embed absolute path names, such as
-```C++
+```cpp
 #include "c:\me\my_homework\widgets.h"  // Don't !!!
 ```
 After the header files, list constants that are needed throughout the program file.
-```C++
+```cpp
 const int GRID_SIZE = 20; 
 const double CLOCK_RADIUS = 5;
 ```
 Then supply the definitions of all classes.
-```C++
+```
  class Product 
  { 
     . . .
@@ -86,7 +92,7 @@ Finally, list all functions of the modules, including member functions of classe
 
 ## Functions
 Supply a comment of the following form for every function.
-```C++
+```cpp
  /**
     Explanation.    
     @param parameter variable1 explanation    
@@ -98,7 +104,7 @@ Supply a comment of the following form for every function.
 The introductory explanation is required for all functions except main. It should start with an uppercase letter and end with a period. Some documentation tools extract the first sentence of the explanation into a summary table. Thus, if you provide an explanation that consists of multiple sentences, formulate the explanation such that the first sentence is a concise explanation of the function's purpose.
 
 Omit the @param comment if the function takes no parameters. Omit the @return comment for void functions. Here is a typical example.
-```C++
+```cpp
  /**    
     Converts calendar date into Julian day. This algorithm is from Press     
     et al., Numerical Recipes in C, 2nd ed., Cambridge University Press, 1992.    
@@ -115,14 +121,14 @@ Omit the @param comment if the function takes no parameters. Omit the @return co
  }
 ```
 Parameter names must be explicit, especially if they are integers or Boolean.
-```C++
+```cpp
  Employee remove(int d, double s); // Huh?  
  Employee remove(int department, double severance_pay); // OK 
 ```
 Of course, for very generic functions, short names may be very appropriate.
 
 Do not write void functions that return exactly one answer through a reference. Instead, make the result into a return value.
-```C++
+```cpp
  void find(vector<Employee> c, bool& found); // Don't!
  bool find(vector<Employee> c); // OK 
 ```
@@ -134,16 +140,16 @@ Functions must have at most 30 lines of code. (Comments, blank lines, and lines 
 Do not define all local variables at the beginning of a block. Define each variable just before it is used for the first time.
 
 Every variable must be either explicitly initialized when defined or set in the immediately following statement (for example, through a `>>` instruction).
-```C++
+```cpp
  int pennies = 0;
 ```
 or
-```C++
+```cpp
  int pennies; 
  cin >> pennies;
 ```
 Move variables to the innermost block in which they are needed.
-```c++
+```cpp
  while (. . .) 
  { 
     double xnew = (xold + a / xold) / 2;    
@@ -151,57 +157,57 @@ Move variables to the innermost block in which they are needed.
  }
 ```
 Do not define two variables in one statement:
-```c++
+```cpp
  int dimes = 0, nickels = 0; // Don't
 ```
 When defining a pointer variable, place the * with the type, not the variable:
-```c++
+```cpp
  Link* p; // OK 
 ```
 **not**
-```c++
+```cpp
  Link *p; // Don't 
 ```
 
 Use auto only with types that are complex and not very informative, such as iterators. For example, prefer
 
-```c++
+```cpp
 unordered_map<string, double> scores = . . .;
 auto pos = scores.find("Harry");
 ```
 **over**
-```c++
+```cpp
 unordered_map<string, double>::iterator pos = scores.find("Harry");
 ```
 ## Constants
-In C++, do not use `#define` to define constants:
-```c++
+In cpp, do not use `#define` to define constants:
+```cpp
  #define CLOCK_RADIUS 5 // Don't 
 ```
 Use `const` instead:
-```c++
+```cpp
  const double CLOCK_RADIUS = 5; // The radius of the clock face
 ```
 You may not use magic numbers in your code. (A magic number is an integer constant embedded in code without a constant definition.) Any number except 0, 1, or 2 is considered magic:
-```c++
+```cpp
  if (p.get_x() < 10) // Don't 
 ```
 Use a const variable instead:
-```c++
+```cpp
  const double WINDOW_XMAX = 10; 
  if (p.get_x() < WINDOW_XMAX) // OK 
 ```
 Even the most reasonable cosmic constant is going to change one day. You think there are 365 days per year? Your customers on Mars are going to be pretty unhappy about your silly prejudice.
 
 Make a constant
-```c++
+```cpp
  const int DAYS_PER_YEAR = 365;
 ```
 so that you can easily produce a Martian version without trying to find all the 365's, 364's, 366's, 367's, and so on in your code.
 
 ## Classes
 Lay out the items of a class as follows:
-```c++
+```cpp
  class ClassName 
  { 
  public: 
@@ -218,14 +224,14 @@ All data fields of classes must be private.
 ## Control Flow
 ### The for Statement
 Use `for` loops only when a variable runs from somewhere to somewhere else with some constant increment/decrement.
-```c++
+```cpp
  for (int i = 0; i < a.size(); i++) 
  { 
     cout << a[i] << endl; 
  }
 ```
 Do not use the for loop for weird constructs such as
-```c++
+```cpp
  for (xnew = a / 2; count < ITERATIONS; cout << xnew) // Don't
  { 
     xold = xnew;    
@@ -234,7 +240,7 @@ Do not use the for loop for weird constructs such as
  }
 ```
 Make such a loop into a `while` loop, so the sequence of instructions is much clearer.
-```c++
+```cpp
  xnew = a / 2; 
  while (count < ITERATIONS) // OK
  { 
@@ -245,7 +251,7 @@ Make such a loop into a `while` loop, so the sequence of instructions is much cl
  }
 ```
 Consider using the `range-based for loop` when traversing a container such as a `vector` or `list`:
-```c++
+```cpp
 vector<int> values = . . .;
 for (int v : values)
 {
@@ -273,25 +279,25 @@ Use tab stops every three columns. Save your file so that it contains no tabs at
 Use blank lines freely to separate logically distinct parts of a function.
 
 Use a blank space around every binary operator:
-```c++
+```cpp
  x1 = (-b - sqrt(b * b - 4 * a * c)) / (2 * a); // Good 
  x1=(-b-sqrt(b*b-4*a*c))/(2*a); // Bad
 ```
 Leave a blank space after (and not before) each comma, semicolon, and reserved word, but not after a function name.
-```c++
+```cpp
  if (x == 0) ...  
  f(a, b[i]);
 ```
 Every line must fit on 80 columns. If you must break a statement, add an indentation level for the continuation:
 
-```c++
+```cpp
  a[n] = ................................................... 
     + .................;
 ```
 ### Braces
 Opening and closing braces must line up, either horizontally or vertically.
 
-```c++
+```cpp
  while (i < n) { cout << a[i] << endl; i++; } // OK 
  while (i < n) 
  { 
@@ -301,16 +307,16 @@ Opening and closing braces must line up, either horizontally or vertically.
 ```
 Some programmers don't line up vertical braces but place the `{` *behind* the while:
 
-```c++
- while (i < n) { // Don't  
-    cout << a[i] << endl;    
-    i++; 
- }
+```cpp
+while (i < n) { // Don't  
+   cout << a[i] << endl;    
+   i++; 
+}
 ```
 This style saves a line, but it is difficult to match the braces.
 
 Always use braces with `if, while, do`, and `for` statements, even if the body is only a single statement.
-```c++
+```cpp
  if (floor > 13)
  {
     floor--;
@@ -321,7 +327,7 @@ Always use braces with `if, while, do`, and `for` statements, even if the body i
     
 ## Unstable Layout
 Some programmers take great pride in lining up certain columns in their code:
-```c++
+```cpp
  class Employee 
  { 
     . . . 
@@ -334,7 +340,7 @@ Some programmers take great pride in lining up certain columns in their code:
 This is undeniably neat, and we recommend it if your editor does it for you, but don't do it manually. The layout is not **stable** under change. A data type that is longer than the preallotted number of columns requires that you move *all* entries around.
 
 Some programmers like to format multiline comments so that every line starts with **:
-```c++
+```cpp
  /* This is a comment 
  ** that extends over 
  ** three source lines 
