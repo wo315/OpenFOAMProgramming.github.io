@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        
+
+        <script>
+            // Configure MathJax settings
+            MathJax = {
+              tex: {
+                inlineMath: [
+                  ['$', '$'],
+                  ['\\(', '\\)']
+                ]
+              }
+            }
+            addEventListener('zero-md-rendered', () => MathJax.typeset())
+          </script>
+          <!-- Load MathJax library -->
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+          <!-- Load zero-md -->
+          <script
+            type="module"
+            src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
+          ></script>
+
+		<title>Coding Style</title>
+    </head>
+
+    <body>
+        <zero-md src="./指针.md" no-shadow></zero-md>
+    </body>
+
+</html>
