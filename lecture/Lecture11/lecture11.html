@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2306-Lecture11</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./mars.jpg" data-background-opacity="0.2">
+                    <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2023年09月05日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">类，Classes</li>
+                        </ul>
+                        <iframe src="" frameborder="0"></iframe>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">指针表达式和指针算术</h2>
+                    <p>传值，pass-by-value</p>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+
+                            int cubeByValue(int n); // prototype 
+
+                            int main() {
+                            int number{5};
+
+                            std::cout << fmt::format("Original value of number is {}\n", number);
+                            number = cubeByValue(number); // pass number by value to cubeByValue
+                            std::cout << fmt::format("New value of number is {}\n", number);
+                            }
+
+                            // calculate and return cube of integer argument                
+                            int cubeByValue(int n) {
+                            return n * n * n; // cube local variable n and return result 
+                            }
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">用指针传引用</h2>
+                    <p>传指针，pass-by-value</p>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+
+                            void cubeByReference(int* nPtr); // prototype 
+
+                            int main() {
+                                int number{5};
+
+                                std::cout << fmt::format("Original value of number is {}\n", number);
+                                cubeByReference(&number); // pass number address to cubeByReference
+                                std::cout << fmt::format("New value of number is {}\n", number);
+                            }
+
+                            // calculate cube of *nPtr; modifies variable number in main 
+                            void cubeByReference(int* nPtr) {
+                                *nPtr = *nPtr * *nPtr * *nPtr; // cube *nPtr              
+                            }
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">内置数组</h2>
+                    <p>用std::to_array转换为std::array</p>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            #include <array>
+
+                            int main() {
+                            // generic lambda to display a collection of items
+                            const auto display{
+                                [](const auto& items) {
+                                    for (const auto& item : items) {
+                                        std::cout << fmt::format("{} ", item);
+                                    }
+                                }
+                            };
+
+                            const int values1[]{10, 20, 30};
+
+                            // creating a std::array from a built-in array
+                            const auto array1{std::to_array(values1)};
+
+                            std::cout << fmt::format("array1.size() = {}\n", array1.size())
+                                << "array1: ";
+                            display(array1); // use lambda to display contents
+
+                            // creating a std::array from an initializer list
+                            const auto array2{std::to_array({1, 2, 3, 4})};
+                            std::cout << fmt::format("\n\narray2.size() = {}\n", array2.size())
+                                << "array2: ";
+                            display(array2); // use lambda to display contents
+
+                            std::cout << '\n';
+                            }
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">指针常量</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int main() {
+                                int y{0};
+                                const int* yPtr{&y};
+                                *yPtr = 100; // error: cannot modify a const object 
+                             }
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">常量指针</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int main() {
+                                int x, y;
+                             
+                                // ptr is a constant pointer to an integer that can be modified 
+                                // through ptr, but ptr always points to the same memory location.                                  
+                                int* const ptr{&x}; // const pointer must be initialized 
+                             
+                                *ptr = 7; // allowed: *ptr is not const
+                                ptr = &y; // error: ptr is const; cannot assign to it a new address
+                            }                             
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">指向常量的常量指针</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+                            using namespace std;
+                            
+                            int main() {
+                                int x{5}, y;
+                            
+                                // ptr is a constant pointer to a constant integer. 
+                                // ptr always points to the same location; the integer
+                                // at that location cannot be modified.
+                                const int* const ptr{&x};
+                            
+                                cout << *ptr << endl;
+                            
+                                *ptr = 7; // error: *ptr is const; cannot assign new value 
+                                ptr = &y; // error: ptr is const; cannot assign new address
+                            }                             
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">sizeof运算符</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+
+                            size_t getSize(double* ptr); // prototype
+
+                            int main() {
+                            double numbers[20]; // 20 doubles; occupies 160 bytes on our system
+
+                            std::cout << fmt::format("Number of bytes in numbers is {}\n\n",
+                                sizeof(numbers));
+
+                            std::cout << fmt::format("Number of bytes returned by getSize is {}\n",
+                                getSize(numbers));
+                            }
+
+                            // return size of ptr         
+                            size_t getSize(double* ptr) {
+                            return sizeof(ptr);
+                            }                            
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">sizeof运算符</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                        #include <iostream>
+
+                        int main() {
+                        constexpr char c{}; // variable of type char
+                        constexpr short s{}; // variable of type short
+                        constexpr int i{}; // variable of type int
+                        constexpr long l{}; // variable of type long
+                        constexpr long long ll{}; // variable of type long long
+                        constexpr float f{}; // variable of type float
+                        constexpr double d{}; // variable of type double
+                        constexpr long double ld{}; // variable of type long double
+                        constexpr int array[20]{}; // built-in array of int
+                        const int* const ptr{array}; // variable of type int*
+
+                        std::cout << fmt::format("sizeof c = {}\tsizeof(char) = {}\n",
+                            sizeof c, sizeof(char));
+                        std::cout << fmt::format("sizeof s = {}\tsizeof(short) = {}\n",
+                            sizeof s, sizeof(short));
+                        std::cout << fmt::format("sizeof i = {}\tsizeof(int) = {}\n",
+                            sizeof i, sizeof(int));
+                        std::cout << fmt::format("sizeof l = {}\tsizeof(long) = {}\n",
+                            sizeof l, sizeof(long));
+                        std::cout << fmt::format("sizeof ll = {}\tsizeof(long long) = {}\n",
+                            sizeof ll, sizeof(long long));
+                        std::cout << fmt::format("sizeof f = {}\tsizeof(float) = {}\n",
+                            sizeof f, sizeof(float));
+                        std::cout << fmt::format("sizeof d = {}\tsizeof(double) = {}\n",
+                            sizeof d, sizeof(double));
+                        std::cout << fmt::format("sizeof ld = {}\tsizeof(long double) = {}\n",
+                            sizeof ld, sizeof(long double));
+                        std::cout << fmt::format("sizeof array = {}\n", sizeof array);
+                        std::cout << fmt::format("sizeof ptr = {}\n", sizeof ptr);
+                        }                            
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>书山有路勤为径</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>
