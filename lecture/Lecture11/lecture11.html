@@ -63,7 +63,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-auto-animate data-background-image="./mars.jpg" data-background-opacity="0.2">
+				<section data-auto-animate data-background-image="./spacex.jpg" data-background-opacity="0.2">
                     <h2>2306<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
                     <h3>汪洋</h3>
                     <h4>2023年09月05日</h4>
@@ -76,231 +76,627 @@
 
                 <section data-auto-animate>
                     <h2 data-id="syllbus">CPP</h2>
-                        <ul style="line-height: 2em;">
+                        <ul>
                             <li class="fragment">类，Classes</li>
                         </ul>
-                        <iframe src="" frameborder="0"></iframe>
+                        <div class="colRCLI fragment fade-in-then-out">
+                            <iframe
+                                data-src="https://wo315.github.io/OpenFOAMProgramming.github.io/mis/Vector/html/index.html"
+                                width="1080"
+                                height="360"
+                                allowfullscreen="true"
+                                autoplay="false">
+                            </iframe>
+                        </div>
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="pointer">指针表达式和指针算术</h2>
-                    <p>传值，pass-by-value</p>
+                    <h2 data-id="account">体验Account对象</h2>
                     <pre data-id="array"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             #include <fmt/format.h>
                             #include <iostream>
-
-                            int cubeByValue(int n); // prototype 
+                            #include <string>
+                            #include "Account.h"
 
                             int main() {
-                            int number{5};
+                                Account myAccount{}; // create Account object myAccount
 
-                            std::cout << fmt::format("Original value of number is {}\n", number);
-                            number = cubeByValue(number); // pass number by value to cubeByValue
-                            std::cout << fmt::format("New value of number is {}\n", number);
-                            }
+                                // show that the initial value of myAccount's name is the empty string
+                                std::cout << fmt::format("Initial account name: {}\n",
+                                    myAccount.getName());
 
-                            // calculate and return cube of integer argument                
-                            int cubeByValue(int n) {
-                            return n * n * n; // cube local variable n and return result 
+                                // prompt for and read the name
+                                std::cout << "Enter the account name: ";
+                                std::string name{};
+                                std::getline(std::cin, name); // read a line of text       
+                                myAccount.setName(name); // put name in the myAccount object
+
+                                // display the name stored in object myAccount
+                                std::cout << fmt::format("Updated account name: {}\n",
+                                    myAccount.getName());
                             }
                         </script>
                     </code></pre>    
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="pointer">用指针传引用</h2>
-                    <p>传指针，pass-by-value</p>
+                    <h2 data-id="account">具有赋值和取值成员函数的Account类</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <string> 
+                            #include <string_view> 
+
+                            class Account {
+                            public:
+                                // member function that sets m_name in the object
+                                void setName(std::string_view name) {
+                                    m_name = name; // replace m_name's value with name
+                                }
+
+                                // member function that retrieves the account name from the object
+                                const std::string& getName() const {
+                                    return m_name; // return m_name's value to this function's caller 
+                                }
+                            private:
+                                std::string m_name; // data member containing account holder's name
+                            }; // end class Account
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="account">自定义构造函数</h2>
+                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <string>
+                            #include <string_view>
+
+                            class Account {
+                            public:
+                                // constructor initializes data member m_name with the parameter name
+                                explicit Account(std::string_view name)
+                                    : m_name{name} { // member initializer  
+                                    // empty body                                 
+                                }
+
+                                // function to set the account name
+                                void setName(std::string_view name) {
+                                    m_name = name;
+                                }
+
+                                // function to retrieve the account name
+                                const std::string& getName() const {
+                                    return m_name;
+                            }
+                            private:
+                                std::string m_name; // account name 
+                            };
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="pointer">创建Account对象</h2>
                     <pre data-id="array"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
                             #include <fmt/format.h>
                             #include <iostream>
-
-                            void cubeByReference(int* nPtr); // prototype 
+                            #include "Account.h"
 
                             int main() {
-                                int number{5};
+                                // create two Account objects
+                                Account account1{"Jane Green"};
+                                Account account2{"John Blue"};
 
-                                std::cout << fmt::format("Original value of number is {}\n", number);
-                                cubeByReference(&number); // pass number address to cubeByReference
-                                std::cout << fmt::format("New value of number is {}\n", number);
-                            }
-
-                            // calculate cube of *nPtr; modifies variable number in main 
-                            void cubeByReference(int* nPtr) {
-                                *nPtr = *nPtr * *nPtr * *nPtr; // cube *nPtr              
+                                // display each Account's corresponding name
+                                std::cout << fmt::format(
+                                    "account1 name is: {}\naccount2 name is: {}\n",
+                                    account1.getName(), account2.getName());
                             }
                         </script>
                     </code></pre>    
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="pointer">内置数组</h2>
-                    <p>用std::to_array转换为std::array</p>
+                    <h2 data-id="account">改进Account类</h2>
                     <pre data-id="array"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
-                            #include <fmt/format.h>
-                            #include <iostream>
-                            #include <array>
+                            #include <algorithm>
+                            #include <string>
+                            #include <string_view>
 
-                            int main() {
-                            // generic lambda to display a collection of items
-                            const auto display{
-                                [](const auto& items) {
-                                    for (const auto& item : items) {
-                                        std::cout << fmt::format("{} ", item);
+                            class Account {
+                            public:
+                                // Account constructor with two parameters  
+                                Account(std::string_view name, double balance)
+                                    : m_name{name}, m_balance{std::max(0.0, balance)} { // member init
+                                    // empty body
+                                }
+
+                                // function that deposits (adds) only a valid amount to the balance
+                                void deposit(double amount) {
+                                    if (amount > 0.0) { // if the amount is valid
+                                        m_balance += amount; // add it to m_balance      
                                     }
                                 }
-                            };
 
-                            const int values1[]{10, 20, 30};
+                                // function that returns the account balance
+                                double getBalance() const {
+                                    return m_balance;
+                                }
 
-                            // creating a std::array from a built-in array
-                            const auto array1{std::to_array(values1)};
+                                // function that sets the account name
+                                void setName(std::string_view name) {
+                                    m_name = name; // replace m_name's value with name
+                                }
 
-                            std::cout << fmt::format("array1.size() = {}\n", array1.size())
-                                << "array1: ";
-                            display(array1); // use lambda to display contents
-
-                            // creating a std::array from an initializer list
-                            const auto array2{std::to_array({1, 2, 3, 4})};
-                            std::cout << fmt::format("\n\narray2.size() = {}\n", array2.size())
-                                << "array2: ";
-                            display(array2); // use lambda to display contents
-
-                            std::cout << '\n';
-                            }
+                                // function that returns the account name
+                                const std::string& getName() const {
+                                    return m_name;
+                                }
+                            private:
+                                std::string m_name; 
+                                double m_balance; 
+                            }; // end class Account                           
                         </script>
                     </code></pre>    
                 </section>
 
                 <section data-auto-animate>
-                    <h2 data-id="pointer">指针常量</h2>
+                    <h2 data-id="account">使用改进后的Account类</h2>
                     <pre data-id="array"><code data-line-numbers data-trim class="c++">
                         <script type="text/template">
-                            int main() {
-                                int y{0};
-                                const int* yPtr{&y};
-                                *yPtr = 100; // error: cannot modify a const object 
-                             }
-                        </script>
-                    </code></pre>    
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="pointer">常量指针</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
-                        <script type="text/template">
-                            int main() {
-                                int x, y;
-                             
-                                // ptr is a constant pointer to an integer that can be modified 
-                                // through ptr, but ptr always points to the same memory location.                                  
-                                int* const ptr{&x}; // const pointer must be initialized 
-                             
-                                *ptr = 7; // allowed: *ptr is not const
-                                ptr = &y; // error: ptr is const; cannot assign to it a new address
-                            }                             
-                        </script>
-                    </code></pre>    
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="pointer">指向常量的常量指针</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
-                        <script type="text/template">
-                            #include <iostream>
-                            using namespace std;
-                            
-                            int main() {
-                                int x{5}, y;
-                            
-                                // ptr is a constant pointer to a constant integer. 
-                                // ptr always points to the same location; the integer
-                                // at that location cannot be modified.
-                                const int* const ptr{&x};
-                            
-                                cout << *ptr << endl;
-                            
-                                *ptr = 7; // error: *ptr is const; cannot assign new value 
-                                ptr = &y; // error: ptr is const; cannot assign new address
-                            }                             
-                        </script>
-                    </code></pre>    
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="pointer">sizeof运算符</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
-                        <script type="text/template">
-                            #include <fmt/format.h>
-                            #include <iostream>
-
-                            size_t getSize(double* ptr); // prototype
-
-                            int main() {
-                            double numbers[20]; // 20 doubles; occupies 160 bytes on our system
-
-                            std::cout << fmt::format("Number of bytes in numbers is {}\n\n",
-                                sizeof(numbers));
-
-                            std::cout << fmt::format("Number of bytes returned by getSize is {}\n",
-                                getSize(numbers));
-                            }
-
-                            // return size of ptr         
-                            size_t getSize(double* ptr) {
-                            return sizeof(ptr);
-                            }                            
-                        </script>
-                    </code></pre>    
-                </section>
-
-                <section data-auto-animate>
-                    <h2 data-id="pointer">sizeof运算符</h2>
-                    <pre data-id="array"><code data-line-numbers data-trim class="c++">
-                        <script type="text/template">
-                            #include <fmt/format.h>
+                        #include <fmt/format.h>
                         #include <iostream>
+                        #include "Account.h"
 
                         int main() {
-                        constexpr char c{}; // variable of type char
-                        constexpr short s{}; // variable of type short
-                        constexpr int i{}; // variable of type int
-                        constexpr long l{}; // variable of type long
-                        constexpr long long ll{}; // variable of type long long
-                        constexpr float f{}; // variable of type float
-                        constexpr double d{}; // variable of type double
-                        constexpr long double ld{}; // variable of type long double
-                        constexpr int array[20]{}; // built-in array of int
-                        const int* const ptr{array}; // variable of type int*
+                            Account account1{"Jane Green", 50.00};
+                            Account account2{"John Blue", -7.00};
 
-                        std::cout << fmt::format("sizeof c = {}\tsizeof(char) = {}\n",
-                            sizeof c, sizeof(char));
-                        std::cout << fmt::format("sizeof s = {}\tsizeof(short) = {}\n",
-                            sizeof s, sizeof(short));
-                        std::cout << fmt::format("sizeof i = {}\tsizeof(int) = {}\n",
-                            sizeof i, sizeof(int));
-                        std::cout << fmt::format("sizeof l = {}\tsizeof(long) = {}\n",
-                            sizeof l, sizeof(long));
-                        std::cout << fmt::format("sizeof ll = {}\tsizeof(long long) = {}\n",
-                            sizeof ll, sizeof(long long));
-                        std::cout << fmt::format("sizeof f = {}\tsizeof(float) = {}\n",
-                            sizeof f, sizeof(float));
-                        std::cout << fmt::format("sizeof d = {}\tsizeof(double) = {}\n",
-                            sizeof d, sizeof(double));
-                        std::cout << fmt::format("sizeof ld = {}\tsizeof(long double) = {}\n",
-                            sizeof ld, sizeof(long double));
-                        std::cout << fmt::format("sizeof array = {}\n", sizeof array);
-                        std::cout << fmt::format("sizeof ptr = {}\n", sizeof ptr);
+                            // display initial balance of each object
+                            std::cout << fmt::format("account1: {} balance is ${:.2f}\n",
+                                account1.getName(), account1.getBalance());
+                            std::cout << fmt::format("account2: {} balance is ${:.2f}\n\n",
+                                account2.getName(), account2.getBalance());
+
+                            std::cout << "Enter deposit amount for account1: "; // prompt
+                            double amount;
+                            std::cin >> amount; // obtain user input
+                            std::cout << fmt::format(
+                                "adding ${:.2f} to account1 balance\n\n", amount);
+                            account1.deposit(amount); // add to account1's balance
+
+                            // display balances
+                            std::cout << fmt::format("account1: {} balance is ${:.2f}\n",
+                                account1.getName(), account1.getBalance());
+                            std::cout << fmt::format("account2: {} balance is ${:.2f}\n\n",
+                                account2.getName(), account2.getBalance());
+
+                            std::cout << "Enter deposit amount for account2: "; // prompt
+                            std::cin >> amount; // obtain user input
+                            std::cout << fmt::format(
+                                "adding ${:.2f} to account2 balance\n\n", amount);
+                            account2.deposit(amount); // add to account2 balance
+
+                            // display balances
+                            std::cout << fmt::format("account1: {} balance is ${:.2f}\n",
+                                account1.getName(), account1.getBalance());
+                            std::cout << fmt::format("account2: {} balance is ${:.2f}\n",
+                                account2.getName(), account2.getBalance());
                         }                            
                         </script>
                     </code></pre>    
                 </section>
 
-                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+                <section data-auto-animate>
+                    <h3 data-id="time">Time类案例学习，分离接口与实现</h3>
+                    <ul style="line-height: 2em;">
+                        <li class="fragment">接口和实现的分开</li>
+                        <li class="fragment">通过预处理指令<a>#prama once</a>来防止头文件多次包含</li>
+                    </ul>   
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="time">Time类定义</h2>
+                    <pre data-id="time"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #pragma once // prevent multiple inclusions of header
+                            #include <string>
+
+                            // Time class definition
+                            class Time {
+                            public:
+                                void setTime(int hour, int minute, int second);
+                                std::string to24HourString() const; // 24-hour string format
+                                std::string to12HourString() const; // 12-hour string format
+                            private:
+                                int m_hour{0}; // 0 - 23 (24-hour clock format)
+                                int m_minute{0}; // 0 - 59
+                                int m_second{0}; // 0 - 59
+                            };                          
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="time">Time类实现</h2>
+                    <pre data-id="time"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <stdexcept> // for invalid_argument exception class     
+                            #include <string>
+                            #include "Time.h" // include definition of class Time from Time.h 
+
+                            // set new Time value using 24-hour time
+                            void Time::setTime(int hour, int minute, int second) {
+                                // validate hour, minute and second
+                                if ((hour < 0 || hour >= 24) || (minute < 0 || minute >= 60) ||
+                                    (second < 0 || second >= 60)) {
+                                    throw std::invalid_argument{
+                                        "hour, minute or second was out of range"};
+                            }
+
+                                m_hour = hour;
+                                m_minute = minute;
+                                m_second = second;
+                            }                     
+                        </script>
+                    </code></pre>    
+                </section>
+                
+                <section data-auto-animate>
+                    <h2 data-id="time">Time类使用</h2>
+                    <pre data-id="time"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                        #include <fmt/format.h>
+                        #include <iostream>
+                        #include <stdexcept> // invalid_argument exception class
+                        #include <string_view> 
+                        #include "Time.h" // definition of class Time from Time.h 
+
+                        // displays a Time in 24-hour and 12-hour formats
+                        void displayTime(std::string_view message, const Time& time) {
+                            std::cout << fmt::format("{}\n24-hour time: {}\n12-hour time: {}\n\n",
+                                message, time.to24HourString(), time.to12HourString());
+                        }
+
+                        int main() {
+                            Time t{}; // instantiate object t of class Time
+
+                            displayTime("Initial time:", t); // display t's initial value
+                            t.setTime(13, 27, 6); // change time
+                            displayTime("After setTime:", t); // display t's new value
+
+                            // attempt to set the time with invalid values
+                            try {
+                                t.setTime(99, 99, 99); // all values out of range
+                            }
+                            catch (const std::invalid_argument& e) {
+                                std::cout << fmt::format("Exception: {}\n\n", e.what());
+                            }
+
+                            // display t's value after attempting to set an invalid time
+                            displayTime("After attempting to set an invalid time:", t);
+                        }                    
+                        </script>
+                    </code></pre>    
+                </section>
+
+                <section data-auto-animate>
+                    <h2>Time类案例学习，带有默认参数的构造函数</h2>
+                        <pre data-id="time"><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #pragma once // prevent multiple inclusions of header
+                                #include <string>
+
+                                // Time class definition
+                                class Time {
+                                public:
+                                    // default constructor because it can be called with no arguments
+                                    explicit Time(int hour = 0, int minute = 0, int second = 0);
+
+                                    // set functions
+                                    void setTime(int hour, int minute, int second);
+                                    void setHour(int hour); // set hour (after validation)
+                                    void setMinute(int minute); // set minute (after validation)
+                                    void setSecond(int second); // set second (after validation)
+
+                                    // get functions
+                                    int getHour() const; // return hour
+                                    int getMinute() const; // return minute
+                                    int getSecond() const; // return second
+
+                                    std::string to24HourString() const; // 24-hour time format string
+                                    std::string to12HourString() const; // 12-hour time format string
+                                private:
+                                    int m_hour{0}; // 0 - 23 (24-hour clock format)
+                                    int m_minute{0}; // 0 - 59
+                                    int m_second{0}; // 0 - 59
+                                };
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="time">Time类，实现</h2>
+                        <pre ><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <fmt/format.h>
+                                #include <stdexcept>
+                                #include <string>
+                                #include "Time.h" // include definition of class Time from Time.h
+
+                                // Time constructor initializes each data member    
+                                Time::Time(int hour, int minute, int second) {             
+                                    setTime(hour, minute, second);
+                                }
+
+                                // set new Time value using 24-hour time
+                                void Time::setTime(int hour, int minute, int second) {
+                                    // validate hour, minute and second
+                                    if (hour < 0 || hour >= 24) {
+                                        throw std::invalid_argument{"hour was out of range"};
+                                    } 
+
+                                    if (minute < 0 || minute >= 60) { 
+                                        throw std::invalid_argument{"minute was out of range"};
+                                    } 
+
+                                    if (second < 0 || second >= 60) {
+                                        throw std::invalid_argument{"second was out of range"};
+                                    } 
+
+                                    m_hour = hour;
+                                    m_minute = minute;
+                                    m_second = second;
+                                } 
+
+                                // set hour value
+                                void Time::setHour(int hour) {setTime(hour, m_minute, m_second);}
+
+                                // set minute value
+                                void Time::setMinute(int minute) {setTime(m_hour, minute, m_second);}
+
+                                // set second value
+                                void Time::setSecond(int second) {setTime(m_hour, m_minute, second);}
+
+                                // return hour value
+                                int Time::getHour() const {return m_hour;}
+
+                                // return minute value
+                                int Time::getMinute() const {return m_minute;}
+
+                                // return second value
+                                int Time::getSecond() const {return m_second;}
+
+                                // return Time as a string in 24-hour format (HH:MM:SS)
+                                std::string Time::to24HourString() const {
+                                    return fmt::format("{:02d}:{:02d}:{:02d}", 
+                                        getHour(), getMinute(), getSecond());
+                                } 
+
+                                // return Time as a string in 12-hour format (HH:MM:SS AM or PM)
+                                std::string Time::to12HourString() const {
+                                    return fmt::format("{}:{:02d}:{:02d} {}", 
+                                        ((getHour() % 12 == 0) ? 12 : getHour() % 12), 
+                                        getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
+                                } 
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>使用Time类</a></h2>
+                        <pre data-id="time"><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <fmt/format.h>
+                                #include <iostream>
+                                #include <stdexcept>
+                                #include <string>
+                                #include "Time.h" // include definition of class Time from Time.h
+
+                                // displays a Time in 24-hour and 12-hour formats
+                                void displayTime(std::string_view message, const Time& time) {
+                                    std::cout << fmt::format("{}\n24-hour time: {}\n12-hour time: {}\n\n",
+                                        message, time.to24HourString(), time.to12HourString());
+                                }
+
+                                int main() {
+                                    const Time t1{}; // all arguments defaulted                            
+                                    const Time t2{2}; // hour specified; minute & second defaulted     
+                                    const Time t3{21, 34}; // hour & minute specified; second defaulted
+                                    const Time t4{12, 25, 42}; // hour, minute & second specified      
+
+                                    std::cout << "Constructed with:\n\n";
+                                    displayTime("t1: all arguments defaulted", t1);
+                                    displayTime("t2: hour specified; minute and second defaulted", t2);
+                                    displayTime("t3: hour and minute specified; second defaulted", t3);
+                                    displayTime("t4: hour, minute and second specified", t4);
+
+                                    // attempt to initialize t5 with invalid values
+                                    try {
+                                        const Time t5{27, 74, 99}; // all bad values specified
+                                    }
+                                    catch (const std::invalid_argument& e) {
+                                        std::cerr << fmt::format("t5 not created: {}\n", e.what());
+                                    }
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>默认拷贝构造函数，赋值操作符</h2>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                            #include <fmt/format.h>
+                            #include <iostream>
+                            // #include "Date.h" // include definition of class Date from Date.h
+                            using namespace std;
+                            class Date {
+                            public:
+                                Date(int year, int month, int day);
+                                std::string toString() const;
+                            private:
+                                int m_year;
+                                int m_month;
+                                int m_day;
+                            };
+
+
+                            // Date constructor (should do range checking)
+                            Date::Date(int year, int month, int day)
+                            : m_year{year}, m_month{month}, m_day{day} {}
+
+                            // return string representation of a Date in the format yyyy-mm-dd
+                            std::string Date::toString() const {
+                                return fmt::format("{}-{:02d}-{:02d}", m_year, m_month, m_day);
+                            }
+
+                            int main() {
+                                const Date date1{2006, 7, 4};
+                                Date date2{2022, 1, 1};
+
+                                std::cout << fmt::format("date1: {}\ndate2: {}\n\n",
+                                    date1.toString(), date2.toString());
+                                date2 = date1; // uses the default assignment operator
+                                std::cout << fmt::format("After assignment, date2: {}\n",
+                                    date2.toString());
+                            }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>const对象和const成员函数</h2>
+                        <pre data-id="const"><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include <fmt/format.h>
+                                #include <iostream>
+                                // #include "Date.h" // include definition of class Date from Date.h
+                                using namespace std;
+                                class Date {
+                                public:
+                                    Date(int year, int month, int day);
+                                    std::string toString() const;
+                                private:
+                                    int m_year;
+                                    int m_month;
+                                    int m_day;
+                                };
+    
+    
+                                // Date constructor (should do range checking)
+                                Date::Date(int year, int month, int day)
+                                : m_year{year}, m_month{month}, m_day{day} {}
+    
+                                // return string representation of a Date in the format yyyy-mm-dd
+                                std::string Date::toString() const {
+                                    return fmt::format("{}-{:02d}-{:02d}", m_year, m_month, m_day);
+                                }
+    
+                                int main() {
+                                    const Date date1{2006, 7, 4};
+                                    Date date2{2022, 1, 1};
+    
+                                    std::cout << fmt::format("date1: {}\ndate2: {}\n\n",
+                                        date1.toString(), date2.toString());
+                                    date2 = date1; // uses the default assignment operator
+                                    std::cout << fmt::format("After assignment, date2: {}\n",
+                                        date2.toString());
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+                
+                <section data-auto-animate>
+                    <h2>const对象和const成员函数</h2>
+                        <pre data-id="const"><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                                #include "Time.h" // include Time class definition
+
+                                int main() {
+                                    Time wakeUp{6, 45, 0}; // non-constant object
+                                    const Time noon{12, 0, 0}; // constant object
+
+                                                                // OBJECT      MEMBER FUNCTION
+                                    wakeUp.setHour(18);       // non-const   non-const
+                                    noon.setHour(12);         // const       non-const
+                                    wakeUp.getHour();         // non-const   const
+                                    noon.getMinute();         // const       const
+                                    noon.to24HourString();    // const       const
+                                    noon.to12HourString();    // const       non-const
+                                }
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2>什么时候调用构造函数和析构函数</h2>
+                        <pre><code data-line-numbers data-trim class="c++">
+                            <script type="text/template">
+                            #include <fmt/format.h>                                
+                            #include <iostream>
+                            #include "CreateAndDestroy.h" // include CreateAndDestroy class definition
+                            #include <string>
+                            #include <string_view>
+                            
+                            class CreateAndDestroy {
+                            public:
+                                CreateAndDestroy(int ID, std::string_view message); // constructor
+                                ~CreateAndDestroy(); // destructor                
+                            private:
+                                int m_ID; // ID number for object
+                                std::string m_message; // message describing object
+                            };
+                            
+                            // constructor sets object's ID number and descriptive message
+                            CreateAndDestroy::CreateAndDestroy(int ID, std::string_view message)
+                            : m_ID{ID}, m_message{message} {
+                                std::cout << fmt::format("Object {}   constructor runs   {}\n",
+                                    m_ID, m_message);
+                            }
+                            
+                            // destructor                                               
+                            CreateAndDestroy::~CreateAndDestroy() {
+                            // output newline for certain objects; helps readability 
+                                std::cout << fmt::format("{}Object {}   destructor runs    {}\n",
+                                    (m_ID == 1 || m_ID == 6 ? "\n" : ""), m_ID, m_message);
+                            }
+                            
+                            void create(); // prototype
+                            
+                            const CreateAndDestroy first{1, "(global before main)"}; // global object 
+                            
+                            int main() {
+                                std::cout << "\nMAIN FUNCTION: EXECUTION BEGINS\n";
+                                const CreateAndDestroy second{2, "(local in main)"};
+                                static const CreateAndDestroy third{3, "(local static in main)"};
+                                
+                                create(); // call function to create objects
+                                
+                                std::cout << "\nMAIN FUNCTION: EXECUTION RESUMES\n";
+                                const CreateAndDestroy fourth{4, "(local in main)"};
+                                std::cout << "\nMAIN FUNCTION: EXECUTION ENDS\n";
+                            }
+                                
+                                // function to create objects
+                            void create() {
+                                std::cout << "\nCREATE FUNCTION: EXECUTION BEGINS\n";
+                                const CreateAndDestroy fifth{5, "(local in create)"};
+                                static const CreateAndDestroy sixth{6, "(local static in create)"};
+                                const CreateAndDestroy seventh{7, "(local in create)"};
+                                std::cout << "\nCREATE FUNCTION: EXECUTION ENDS\n";
+                            }   
+                            </script>
+                        </code></pre>
+                </section>
+
+                <section data-background-image="./spacex.jpg" data-background-opacity="0.3">
 			    
-					<h1>书山有路勤为径</h1>
+					<h1>天下事有难易乎？</h1>
 				
 			    </section>
  
