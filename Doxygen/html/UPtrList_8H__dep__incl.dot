@@ -1,0 +1,53 @@
+digraph "src/OpenFOAM/containers/PtrLists/UPtrList/UPtrList.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/containers\l/PtrLists/UPtrList/UPtrList.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="applications/utilities\l/postProcessing/dataConversion\l/foamToVTK/reportFields.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$reportFields_8H.html",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="src/OpenFOAM/containers\l/HashTables/HashTable\l/HashTable.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$HashTable_8C.html",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="src/OpenFOAM/containers\l/PtrLists/PtrList/PtrList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$PtrList_8H.html",tooltip=" "];
+  Node4 -> Node202 [id="edge4_Node000004_Node000202",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node202 [id="Node000202",label="src/OpenFOAM/containers\l/PtrLists/UPtrList/UPtrList.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$UPtrList_8C.html",tooltip=" "];
+  Node1 -> Node202 [id="edge5_Node000001_Node000202",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5505 [id="edge6_Node000001_Node005505",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5505 [id="Node005505",label="src/OpenFOAM/db/IOobject\lList/IOobjectList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$IOobjectList_8H.html",tooltip=" "];
+  Node5505 -> Node2 [id="edge7_Node005505_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5510 [id="edge8_Node000001_Node005510",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5510 [id="Node005510",label="src/OpenFOAM/db/objectRegistry\l/objectRegistry.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$objectRegistry_8H.html",tooltip=" "];
+  Node1 -> Node5808 [id="edge9_Node000001_Node005808",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5808 [id="Node005808",label="src/OpenFOAM/matrices\l/LduMatrix/LduMatrix\l/LduInterfaceField/LduInterface\lFieldPtrsList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$LduInterfaceFieldPtrsList_8H.html",tooltip="List of coupled interface fields to be used in coupling."];
+  Node1 -> Node5809 [id="edge10_Node000001_Node005809",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5809 [id="Node005809",label="src/OpenFOAM/matrices\l/lduMatrix/lduAddressing\l/lduInterface/lduInterfacePtrsList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduInterfacePtrsList_8H.html",tooltip=" "];
+  Node1 -> Node5814 [id="edge11_Node000001_Node005814",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5814 [id="Node005814",label="src/OpenFOAM/matrices\l/lduMatrix/lduAddressing\l/lduInterfaceFields/lduInterface\lField/lduInterfaceFieldPtrsList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduInterfaceFieldPtrsList_8H.html",tooltip=" "];
+  Node1 -> Node4459 [id="edge12_Node000001_Node004459",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4459 [id="Node004459",label="src/dynamicMesh/polyTopo\lChange/polyTopoChange\l/hexRef8/hexRef8Data.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$hexRef8Data_8H.html",tooltip=" "];
+  Node1 -> Node4522 [id="edge13_Node000001_Node004522",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4522 [id="Node004522",label="src/finiteVolume/fvMatrices\l/solvers/MULES/MULES.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$MULES_8H.html",tooltip="MULES: Multidimensional universal limiter for explicit solution."];
+  Node1 -> Node587 [id="edge14_Node000001_Node000587",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node587 [id="Node000587",label="src/functionObjects\l/field/externalCoupled\l/externalCoupled.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$externalCoupled_8H.html",tooltip=" "];
+  Node1 -> Node5485 [id="edge15_Node000001_Node005485",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5485 [id="Node005485",label="src/lagrangian/intermediate\l/submodels/Kinematic/SurfaceFilm\lModel/KinematicSurfaceFilm/KinematicSurfaceFilm.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$KinematicSurfaceFilm_8H.html",tooltip=" "];
+  Node5485 -> Node5489 [id="edge16_Node005485_Node005489",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5489 [id="Node005489",label="src/lagrangian/intermediate\l/submodels/Thermodynamic\l/SurfaceFilmModel/ThermoSurfaceFilm\l/ThermoSurfaceFilm.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ThermoSurfaceFilm_8H.html",tooltip=" "];
+  Node1 -> Node5489 [id="edge17_Node000001_Node005489",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node153 [id="edge18_Node000001_Node000153",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node153 [id="Node000153",label="src/mesh/snappyHexMesh\l/refinementSurfaces/refinement\lSurfaces.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$refinementSurfaces_8C.html",tooltip=" "];
+  Node1 -> Node4667 [id="edge19_Node000001_Node004667",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4667 [id="Node004667",label="src/meshTools/cellDist\l/patchWave/patchDataWave.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$patchDataWave_8H.html",tooltip=" "];
+  Node1 -> Node112 [id="edge20_Node000001_Node000112",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node112 [id="Node000112",label="src/meshTools/coordSet\l/writers/common/coordSetWriter.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$coordSetWriter_8H.html",tooltip=" "];
+  Node1 -> Node5815 [id="edge21_Node000001_Node005815",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5815 [id="Node005815",label="src/meshTools/coordSet\l/writers/vtk/foamVtkCoordSet\lWriter.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$foamVtkCoordSetWriter_8H.html",tooltip=" "];
+  Node1 -> Node5763 [id="edge22_Node000001_Node005763",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5763 [id="Node005763",label="src/meshTools/searchable\lSurfaces/searchableSurfaceCollection\l/searchableSurfaceCollection.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$searchableSurfaceCollection_8H.html",tooltip=" "];
+  Node1 -> Node5764 [id="edge23_Node000001_Node005764",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5764 [id="Node005764",label="src/meshTools/searchable\lSurfaces/searchableSurfaceWith\lGaps/searchableSurfaceWithGaps.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$searchableSurfaceWithGaps_8H.html",tooltip=" "];
+  Node1 -> Node2242 [id="edge24_Node000001_Node002242",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2242 [id="Node002242",label="src/phaseSystemModels\l/multiphaseInter/phasesSystem\l/multiphaseSystem/multiphaseSystem.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$multiphaseInter_2phasesSystem_2multiphaseSystem_2multiphaseSystem_8H.html",tooltip=" "];
+}

@@ -1,0 +1,24 @@
+digraph "src/thermophysicalModels/SLGThermo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_2778d089ec5c4f66810b11f753867003 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="thermophysicalModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_2778d089ec5c4f66810b11f753867003.html",tooltip=""]
+  dir_38cb9973e0eaf6834e10b18bff965c4b [label="basic", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_38cb9973e0eaf6834e10b18bff965c4b.html",tooltip=""];
+  dir_87c7a4a86ffb283740ec390ea55551cb [label="reactionThermo", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_87c7a4a86ffb283740ec390ea55551cb.html",tooltip=""];
+  dir_e18d608ec106eacfb005ee36ef0e1b8f [label="thermophysicalProperties", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_e18d608ec106eacfb005ee36ef0e1b8f.html",tooltip=""];
+  subgraph clusterdir_f36cb8566f9af60a41b6fcbfb833c602 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_f36cb8566f9af60a41b6fcbfb833c602.html",tooltip=""]
+    dir_f36cb8566f9af60a41b6fcbfb833c602 [shape=plaintext, label="SLGThermo"];
+  dir_2f24aabd7b04e097804647f01e8577c7 [label="SLGThermo", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2f24aabd7b04e097804647f01e8577c7.html",tooltip=""];
+  }
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_2f24aabd7b04e097804647f01e8577c7->dir_38cb9973e0eaf6834e10b18bff965c4b [headlabel="1", labeldistance=1.5 headhref="dir_003577_000219.html" href="dir_003577_000219.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2f24aabd7b04e097804647f01e8577c7->dir_87c7a4a86ffb283740ec390ea55551cb [headlabel="1", labeldistance=1.5 headhref="dir_003577_003245.html" href="dir_003577_003245.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2f24aabd7b04e097804647f01e8577c7->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_003577_002695.html" href="dir_003577_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2f24aabd7b04e097804647f01e8577c7->dir_e18d608ec106eacfb005ee36ef0e1b8f [headlabel="2", labeldistance=1.5 headhref="dir_003577_004023.html" href="dir_003577_004023.html" color="steelblue1" fontcolor="steelblue1"];
+}

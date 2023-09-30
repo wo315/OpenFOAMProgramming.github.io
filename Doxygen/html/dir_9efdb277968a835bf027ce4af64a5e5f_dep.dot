@@ -1,0 +1,16 @@
+digraph "src/OpenFOAM/matrices/lduMatrix/preconditioners/GAMGPreconditioner"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_3f6e7e10cc3663a460947d1f6ad52004 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="preconditioners", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_3f6e7e10cc3663a460947d1f6ad52004.html",tooltip=""]
+  dir_9efdb277968a835bf027ce4af64a5e5f [label="GAMGPreconditioner", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_9efdb277968a835bf027ce4af64a5e5f.html",tooltip=""];
+  }
+  dir_385a22dcc2f7120acb0f1a7a832b3b8d [label="memory", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_385a22dcc2f7120acb0f1a7a832b3b8d.html",tooltip=""];
+  dir_f03e085f4fe95c9b32f7b904515484f9 [label="solvers", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_f03e085f4fe95c9b32f7b904515484f9.html",tooltip=""];
+  dir_9efdb277968a835bf027ce4af64a5e5f->dir_385a22dcc2f7120acb0f1a7a832b3b8d [headlabel="1", labeldistance=1.5 headhref="dir_001582_002352.html" href="dir_001582_002352.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_9efdb277968a835bf027ce4af64a5e5f->dir_f03e085f4fe95c9b32f7b904515484f9 [headlabel="1", labeldistance=1.5 headhref="dir_001582_003658.html" href="dir_001582_003658.html" color="steelblue1" fontcolor="steelblue1"];
+}

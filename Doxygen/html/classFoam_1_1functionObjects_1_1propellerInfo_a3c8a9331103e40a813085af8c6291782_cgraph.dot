@@ -1,0 +1,13 @@
+digraph "setSampleDiskSurface"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="setSampleDiskSurface",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::surfaceWriter\l::formatOptions",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1surfaceWriter.html#afd51dc05cdd9a6348cbdcb536a6705d0",tooltip=" "];
+  Node1 -> Node16 [id="edge2_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="Foam::surfaceWriter::New",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1surfaceWriter.html#a1feb24dd2161c11bc78d97934dd6908f",tooltip=" "];
+}

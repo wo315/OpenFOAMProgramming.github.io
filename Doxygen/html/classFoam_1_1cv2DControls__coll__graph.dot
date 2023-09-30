@@ -1,0 +1,10 @@
+digraph "cv2DControls"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="cv2DControls",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Controls for the 2D CV mesh generator."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" insertSurfaceNearPointPairs\l_\ninsertSurfaceNearestPoint\lPairs_\nmeshedSurfaceOutput\l_\nmirrorPoints_\nobjOutput_\nrandomiseInitialGrid_",fontcolor="grey" ];
+  Node2 [id="Node000002",label="Switch",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1Switch.html",tooltip="A simple wrapper around bool so that it can be read as a word: true/false, on/off,..."];
+}

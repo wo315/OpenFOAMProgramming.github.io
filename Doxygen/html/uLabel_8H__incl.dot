@@ -1,0 +1,12 @@
+digraph "src/OpenFOAM/primitives/ints/uLabel/uLabel.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/primitives\l/ints/uLabel/uLabel.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="uint.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$uint_8H.html",tooltip="System unsigned integer."];
+  Node1 -> Node22 [id="edge2_Node000001_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="labelFwd.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$labelFwd_8H.html",tooltip="Typedefs for label/uLabel without requiring label.H."];
+}

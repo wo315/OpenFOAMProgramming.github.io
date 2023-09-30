@@ -1,0 +1,18 @@
+digraph "PatchInteractionModel&lt; CloudType &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="PatchInteractionModel\l\< CloudType \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Templated patch interaction model class."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CloudSubModelBase\<\l CloudType \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1CloudSubModelBase.html",tooltip="Base class for cloud sub-models."];
+  Node30 -> Node1 [id="edge2_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node30 [id="Node000030",label="writeFile",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1functionObjects_1_1writeFile.html",tooltip="Base class for writing single files from the function objects."];
+  Node4 -> Node30 [id="edge3_Node000030_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" fileName_",fontcolor="grey" ];
+  Node4 [id="Node000004",label="word",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html",tooltip="A class for handling words, derived from Foam::string."];
+  Node4 -> Node4 [id="edge4_Node000004_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" null",fontcolor="grey" ];
+  Node34 -> Node1 [id="edge5_Node000001_Node000034",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" interactionTypeNames_",fontcolor="grey" ];
+  Node34 [id="Node000034",label="List\< T \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip="A 1D array of objects of type <T>, where the size of the vector is known and used for subscript bound..."];
+  Node4 -> Node1 [id="edge6_Node000001_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" UName_",fontcolor="grey" ];
+}

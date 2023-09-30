@@ -1,0 +1,31 @@
+digraph "objectiveIncompressible"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="objectiveIncompressible",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Abstract base class for objective functions in incompressible flows."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="objective",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1objective.html",tooltip="Abstract base class for objective functions. No point in making this runTime selectable since its chi..."];
+  Node1 -> Node12 [id="edge2_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="objectiveFlowRate",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveFlowRate.html",tooltip="Minimize/maximize flow rate through a given set of patches."];
+  Node1 -> Node13 [id="edge3_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="objectiveFlowRatePartition",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveFlowRatePartition.html",tooltip="Split inlet flow rate to given percentages at the prescribed outlet patches."];
+  Node1 -> Node14 [id="edge4_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="objectiveForce",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveForce.html",tooltip=" "];
+  Node1 -> Node15 [id="edge5_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="objectiveMoment",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveMoment.html",tooltip=" "];
+  Node1 -> Node16 [id="edge6_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="objectiveNutSqr",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveNutSqr.html",tooltip="Objective qualitatively quantifying noise through the integral of the squared turbulent viscosity ove..."];
+  Node1 -> Node17 [id="edge7_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="objectivePartialVolume",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectivePartialVolume.html",tooltip=" "];
+  Node1 -> Node18 [id="edge8_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="objectivePowerDissipation",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectivePowerDissipation.html",tooltip="Computes and minimizes the power dissipation within given cellZones. In the absence of significant vi..."];
+  Node1 -> Node19 [id="edge9_Node000001_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="objectivePtLosses",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectivePtLosses.html",tooltip=" "];
+  Node1 -> Node20 [id="edge10_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="objectiveUniformityCellZone",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveUniformityCellZone.html",tooltip="Computes and minimizes (half) the variance of the velocity distribution in a given set of cellZones."];
+  Node1 -> Node21 [id="edge11_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="objectiveUniformityPatch",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1objectives_1_1objectiveUniformityPatch.html",tooltip="Computes and minimizes (half) the variance of the velocity distribution in a given set of patches."];
+}

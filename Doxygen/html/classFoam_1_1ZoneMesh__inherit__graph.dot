@@ -1,0 +1,19 @@
+digraph "ZoneMesh&lt; ZoneType, MeshType &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="ZoneMesh\< ZoneType,\l MeshType \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="A list of mesh zones."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="PtrList\< ZoneType \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1PtrList.html",tooltip=" "];
+  Node6 -> Node1 [id="edge2_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="regIOobject",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1regIOobject.html",tooltip="regIOobject is an abstract class derived from IOobject to handle automatic object registration with t..."];
+  Node1 -> Node9 [id="edge3_Node000001_Node000009",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< pointZone, polyMesh \>",fontcolor="grey" ];
+  Node9 [id="Node000009",label="ZoneMesh\< pointZone,\l polyMesh \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1ZoneMesh.html",tooltip=" "];
+  Node1 -> Node10 [id="edge4_Node000001_Node000010",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< faceZone, polyMesh \>",fontcolor="grey" ];
+  Node10 [id="Node000010",label="ZoneMesh\< faceZone,\l polyMesh \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1ZoneMesh.html",tooltip=" "];
+  Node1 -> Node11 [id="edge5_Node000001_Node000011",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< cellZone, polyMesh \>",fontcolor="grey" ];
+  Node11 [id="Node000011",label="ZoneMesh\< cellZone,\l polyMesh \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1ZoneMesh.html",tooltip=" "];
+}

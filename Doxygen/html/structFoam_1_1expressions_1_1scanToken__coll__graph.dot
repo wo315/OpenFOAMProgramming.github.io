@@ -1,0 +1,13 @@
+digraph "scanToken"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="scanToken",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="A low-level input/scan token content. No defined constructors/destructors. All memory management is m..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" vectorPtr",fontcolor="grey" ];
+  Node2 [id="Node000002",label="Vector\< Cmpt \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1Vector.html",tooltip="Templated 3D Vector derived from VectorSpace adding construction from 3 components,..."];
+  Node5 -> Node1 [id="edge2_Node000001_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" name_\nwordPtr",fontcolor="grey" ];
+  Node5 [id="Node000005",label="word",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html",tooltip="A class for handling words, derived from Foam::string."];
+  Node5 -> Node5 [id="edge3_Node000005_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" null",fontcolor="grey" ];
+}

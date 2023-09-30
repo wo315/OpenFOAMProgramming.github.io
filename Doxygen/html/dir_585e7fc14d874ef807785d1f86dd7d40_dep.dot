@@ -1,0 +1,18 @@
+digraph "src/OpenFOAM/matrices/lduMatrix/smoothers/DILUGaussSeidel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_27bacb8e19b5862d96d869422b2be03b {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="smoothers", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_27bacb8e19b5862d96d869422b2be03b.html",tooltip=""]
+  dir_5e89c184c4a835c9e0c07194ae237305 [label="GaussSeidel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_5e89c184c4a835c9e0c07194ae237305.html",tooltip=""];
+  dir_88d102eae200c8daed19b189b42c3701 [label="DILU", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_88d102eae200c8daed19b189b42c3701.html",tooltip=""];
+  dir_585e7fc14d874ef807785d1f86dd7d40 [label="DILUGaussSeidel", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_585e7fc14d874ef807785d1f86dd7d40.html",tooltip=""];
+  }
+  dir_385a22dcc2f7120acb0f1a7a832b3b8d [label="memory", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_385a22dcc2f7120acb0f1a7a832b3b8d.html",tooltip=""];
+  dir_585e7fc14d874ef807785d1f86dd7d40->dir_385a22dcc2f7120acb0f1a7a832b3b8d [headlabel="1", labeldistance=1.5 headhref="dir_000933_002352.html" href="dir_000933_002352.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_585e7fc14d874ef807785d1f86dd7d40->dir_5e89c184c4a835c9e0c07194ae237305 [headlabel="1", labeldistance=1.5 headhref="dir_000933_001597.html" href="dir_000933_001597.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_585e7fc14d874ef807785d1f86dd7d40->dir_88d102eae200c8daed19b189b42c3701 [headlabel="1", labeldistance=1.5 headhref="dir_000933_000932.html" href="dir_000933_000932.html" color="steelblue1" fontcolor="steelblue1"];
+}

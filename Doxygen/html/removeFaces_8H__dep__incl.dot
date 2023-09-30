@@ -1,0 +1,14 @@
+digraph "src/dynamicMesh/polyTopoChange/polyTopoChange/removeFaces.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/dynamicMesh/polyTopo\lChange/polyTopoChange\l/removeFaces.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/dynamicMesh/meshCut\l/meshModifiers/undoableMeshCutter\l/undoableMeshCutter.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$undoableMeshCutter_8H.html",tooltip=" "];
+  Node1 -> Node6 [id="edge2_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="src/dynamicMesh/polyTopo\lChange/polyTopoChange\l/hexRef8/hexRef8.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$hexRef8_8H.html",tooltip=" "];
+  Node1 -> Node62 [id="edge3_Node000001_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node62 [id="Node000062",label="src/dynamicMesh/polyTopo\lChange/polyTopoChange\l/removeFaces.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$src_2dynamicMesh_2polyTopoChange_2polyTopoChange_2removeFaces_8C.html",tooltip=" "];
+}

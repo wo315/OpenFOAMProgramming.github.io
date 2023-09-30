@@ -1,0 +1,15 @@
+digraph "incompressibleAdjointVars"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="incompressibleAdjointVars",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Class including all adjoint fields for incompressible flows."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="incompressibleAdjointMean\lFlowVars",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1incompressibleAdjointMeanFlowVars.html",tooltip="Manages the adjoint mean flow fields and their mean values."];
+  Node66 -> Node1 [id="edge2_Node000001_Node000066",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" objectiveManager_",fontcolor="grey" ];
+  Node66 [id="Node000066",label="objectiveManager",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1objectiveManager.html",tooltip="class for managing incompressible objective functions."];
+  Node71 -> Node1 [id="edge3_Node000001_Node000071",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" adjointTurbulence_",fontcolor="grey" ];
+  Node71 [id="Node000071",label="autoPtr\< Foam::incompressible\lAdjoint::adjointRASModel \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1autoPtr.html",tooltip=" "];
+}

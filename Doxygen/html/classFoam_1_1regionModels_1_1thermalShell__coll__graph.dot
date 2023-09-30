@@ -1,0 +1,20 @@
+digraph "thermalShell"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="thermalShell",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="thermalShellModel",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1regionModels_1_1thermalShellModel.html",tooltip=" "];
+  Node24 -> Node2 [id="edge2_Node000002_Node000024",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" TName_",fontcolor="grey" ];
+  Node24 [id="Node000024",label="word",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html",tooltip="A class for handling words, derived from Foam::string."];
+  Node24 -> Node24 [id="edge3_Node000024_Node000024",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" null",fontcolor="grey" ];
+  Node77 -> Node2 [id="edge4_Node000002_Node000077",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" T_",fontcolor="grey" ];
+  Node77 [id="Node000077",label="GeometricField\< scalar,\l faPatchField, areaMesh \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1GeometricField.html",tooltip=" "];
+  Node84 -> Node1 [id="edge5_Node000001_Node000084",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" thermo_",fontcolor="grey" ];
+  Node84 [id="Node000084",label="solidProperties",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1solidProperties.html",tooltip="The thermophysical properties of a solid."];
+  Node77 -> Node1 [id="edge6_Node000001_Node000077",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" h_\nqs_",fontcolor="grey" ];
+  Node24 -> Node1 [id="edge7_Node000001_Node000024",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" qrName_",fontcolor="grey" ];
+}

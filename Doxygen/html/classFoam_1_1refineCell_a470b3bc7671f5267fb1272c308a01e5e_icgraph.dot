@@ -1,0 +1,15 @@
+digraph "direction"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="direction",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::operator\<\<",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#ade9ba0514969f942888722850cd32f3c",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::refinementIterator\l::setRefinement",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1refinementIterator.html#afd8b2c75ae43c5073eece728f11ed02a",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::edgeVertex::update\lLabels",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1edgeVertex.html#a77faed35c755a0d80c360a446fd4de3e",tooltip=" "];
+}

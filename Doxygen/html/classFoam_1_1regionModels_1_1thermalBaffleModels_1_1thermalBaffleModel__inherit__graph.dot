@@ -1,0 +1,14 @@
+digraph "thermalBaffleModel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="thermalBaffleModel",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="regionModel1D",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1regionModels_1_1regionModel1D.html",tooltip="Base class for 1-D region models."];
+  Node1 -> Node13 [id="edge2_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="noThermo",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1regionModels_1_1thermalBaffleModels_1_1noThermo.html",tooltip="Dummy surface pyrolysis model for 'none'."];
+  Node1 -> Node14 [id="edge3_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="thermalBaffle",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1regionModels_1_1thermalBaffleModels_1_1thermalBaffle.html",tooltip="2D thermal baffle"];
+}

@@ -1,0 +1,13 @@
+digraph "optimisationSwitches"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="optimisationSwitches",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="floatOptimisationSwitch",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam_1_1debug.html#a459f24eae181eea9a136c26f1cb80910",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="optimisationSwitch",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam_1_1debug.html#acb9c7db2014f512ea4f449be8e408ae3",tooltip=" "];
+}

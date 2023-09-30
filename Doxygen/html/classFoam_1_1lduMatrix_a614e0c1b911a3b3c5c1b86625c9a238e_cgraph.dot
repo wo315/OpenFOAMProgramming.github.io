@@ -1,0 +1,25 @@
+digraph "initMatrixInterfaces"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="initMatrixInterfaces",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#a8d90b63d17d5d750735638b24d06454c",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::exit",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#ae0529b088aefc9f83b89dce5c31fda64",tooltip=" "];
+  Node1 -> Node5 [id="edge3_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="lduAddr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1lduMatrix.html#a2265e867bb50449f5a0d7c14dcb466bd",tooltip=" "];
+  Node5 -> Node6 [id="edge4_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="mesh",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1lduMatrix.html#acb4cc4e06d8dc38de66f5d747092108d",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="patchSchedule",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1lduMatrix.html#a72d9329848478f3dfcf0fbaeb8247b3d",tooltip=" "];
+  Node7 -> Node5 [id="edge7_Node000007_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8 [id="edge8_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::UPtrList::set",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1UPtrList.html#a0e0a32f842b05e1d69f10292dc27198a",tooltip=" "];
+  Node1 -> Node10 [id="edge9_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Foam::UPtrList::size",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1UPtrList.html#a95603446b248fe1ecf5dc59bcc2eaff0",tooltip=" "];
+}

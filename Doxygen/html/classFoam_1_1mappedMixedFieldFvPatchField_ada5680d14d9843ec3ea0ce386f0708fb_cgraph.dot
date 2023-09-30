@@ -1,0 +1,15 @@
+digraph "mappedMixedFieldFvPatchField"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="mappedMixedFieldFvPatchField",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::mixedFvPatchField\l::refGrad",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1mixedFvPatchField.html#a7a478c5c5990903020a583e623cd4037",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::mixedFvPatchField\l::refValue",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1mixedFvPatchField.html#ade3927d9cd381ce9430b9a92b53d15f9",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::mixedFvPatchField\l::valueFraction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1mixedFvPatchField.html#af1b290620a57969bc5d80a626132ae82",tooltip=" "];
+}

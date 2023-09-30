@@ -1,0 +1,16 @@
+digraph "setPatchControls"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="setPatchControls",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="points0",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utilities_2postProcessing_2optimisation_2cumulativeDisplacement_2createFields_8H.html#a64bfeb67ab81d30c4ef8e23a852a3a38",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="points0Field",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam_1_1lumpedPointTools.html#adadbc898c735f731c47a92b9d3ad2819",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="setPatchControls",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam_1_1lumpedPointTools.html#a117da7707dd4abc6abafe15b3c97263d",tooltip=" "];
+  Node4 -> Node2 [id="edge4_Node000004_Node000002",color="steelblue1",style="solid",tooltip=" "];
+}

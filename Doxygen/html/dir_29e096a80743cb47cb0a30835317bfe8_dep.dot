@@ -1,0 +1,14 @@
+digraph "src/phaseSystemModels/reactingEuler/multiphaseSystem/interfacialModels/wallDependentModel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_ac9b567ee06e9b41f0fd1a36001841c5 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="interfacialModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_ac9b567ee06e9b41f0fd1a36001841c5.html",tooltip=""]
+  dir_29e096a80743cb47cb0a30835317bfe8 [label="wallDependentModel", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_29e096a80743cb47cb0a30835317bfe8.html",tooltip=""];
+  }
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_29e096a80743cb47cb0a30835317bfe8->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="3", labeldistance=1.5 headhref="dir_004336_001387.html" href="dir_004336_001387.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,17 @@
+digraph "Wall"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node2 [id="Node000002",label="Boundary conditions",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__grpBoundaryConditions.html",tooltip=" "];
+  Node4 [id="Node000004",label="Generic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__grpGenericBoundaryConditions.html",tooltip=" "];
+  Node3 [id="Node000003",label="Inlet",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__grpInletBoundaryConditions.html",tooltip=" "];
+  Node5 [id="Node000005",label="Thermophysical",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__grpThermoBoundaryConditions.html",tooltip=" "];
+  Node1 [id="Node000001",label="Wall",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="Foam::SRFVelocityFvPatch\lVectorField\nFoam::fixedFluxExtrapolated\lPressureFvPatchScalarField\nFoam::fixedFluxPressureFv\lPatchScalarField", color="orange", dir="none", style="dashed"];
+  Node1->Node4 [shape=plaintext, label="Foam::fixedNormalSlipFvPatch\lField\nFoam::partialSlipFvPatch\lField\nFoam::rotatingWallVelocity\lFvPatchVectorField\nFoam::slipFvPatchField\nFoam::translatingWallVelocity\lFvPatchVectorField\nFoam::alphaContactAngleTwo\lPhaseFvPatchScalarField", color="orange", dir="none", style="dashed"];
+  Node1->Node5 [shape=plaintext, label="Foam::externalWallHeatFlux\lTemperatureFvPatchScalarField\nFoam::lumpedMassWallTemperature\lFvPatchScalarField\nFoam::wallHeatTransferFv\lPatchScalarField", color="orange", dir="none", style="dashed"];
+}

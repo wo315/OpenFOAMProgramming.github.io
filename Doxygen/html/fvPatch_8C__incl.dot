@@ -1,0 +1,27 @@
+digraph "src/finiteVolume/fvMesh/fvPatches/fvPatch/fvPatch.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/finiteVolume/fvMesh\l/fvPatches/fvPatch/fvPatch.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="fvPatch.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fvPatch_8H.html",tooltip=" "];
+  Node1 -> Node232 [id="edge2_Node000001_Node000232",color="steelblue1",style="solid",tooltip=" "];
+  Node232 [id="Node000232",label="addToRunTimeSelectionTable.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$addToRunTimeSelectionTable_8H.html",tooltip="Macros for easy insertion into run-time selection tables."];
+  Node1 -> Node233 [id="edge3_Node000001_Node000233",color="steelblue1",style="solid",tooltip=" "];
+  Node233 [id="Node000233",label="fvBoundaryMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fvBoundaryMesh_8H.html",tooltip=" "];
+  Node233 -> Node2 [id="edge4_Node000233_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node237 [id="edge5_Node000001_Node000237",color="steelblue1",style="solid",tooltip=" "];
+  Node237 [id="Node000237",label="fvMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fvMesh_8H.html",tooltip=" "];
+  Node237 -> Node251 [id="edge6_Node000237_Node000251",color="steelblue1",style="solid",tooltip=" "];
+  Node251 [id="Node000251",label="primitiveMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$primitiveMesh_8H.html",tooltip=" "];
+  Node237 -> Node233 [id="edge7_Node000237_Node000233",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node251 [id="edge8_Node000001_Node000251",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node342 [id="edge9_Node000001_Node000342",color="steelblue1",style="solid",tooltip=" "];
+  Node342 [id="Node000342",label="volFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$volFields_8H.html",tooltip=" "];
+  Node342 -> Node237 [id="edge10_Node000342_Node000237",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node380 [id="edge11_Node000001_Node000380",color="steelblue1",style="solid",tooltip=" "];
+  Node380 [id="Node000380",label="surfaceFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$surfaceFields_8H.html",tooltip="Foam::surfaceFields."];
+  Node380 -> Node237 [id="edge12_Node000380_Node000237",color="steelblue1",style="solid",tooltip=" "];
+}

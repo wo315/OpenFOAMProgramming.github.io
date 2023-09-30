@@ -1,0 +1,23 @@
+digraph "operator="
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="operator=",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="exprResult",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResult.html#a77f0b489f0bdb7568cec5ec348e02ce2",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="exprResult",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResult.html#a07a536b69a96059a42c9aada0a3b0a89",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::expressions::\lexprResultStored::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResultStored.html#aa953d0b7c0d23c6394307ed9846bc82e",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::expressions::\lexprResultDelayed::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResultDelayed.html#a6d97130dda0d3462a9346867a6bda34f",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Foam::expressions::\lexprResultStored::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResultStored.html#a8b34b9f25b25cdef820876a7f26c73ad",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::expressions::\lexprResultStack::push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResultStack.html#adf59df6f19e3f8e561a04251ad93a52b",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::expressions::\lexprResultDelayed::setRead\lValue",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1expressions_1_1exprResultDelayed.html#adba050a6f678b223445cd460fbaccd99",tooltip=" "];
+}

@@ -1,0 +1,26 @@
+digraph "src/phaseSystemModels/twoPhaseEuler/phaseCompressibleTurbulenceModels/kineticTheoryModels/conductivityModel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_c85b273aaa84a78c2b3bf2614cf319dc {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="kineticTheoryModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_c85b273aaa84a78c2b3bf2614cf319dc.html",tooltip=""]
+  subgraph clusterdir_ee2f1c33072f218f02af80fb604e1fed {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_ee2f1c33072f218f02af80fb604e1fed.html",tooltip=""]
+    dir_ee2f1c33072f218f02af80fb604e1fed [shape=plaintext, label="conductivityModel"];
+  dir_570616e8e4ea6cc6c195ca56f7fa3744 [label="conductivityModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_570616e8e4ea6cc6c195ca56f7fa3744.html",tooltip=""];
+  dir_791d2e5f679716825b92eef5c82d536e [label="Gidaspow", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_791d2e5f679716825b92eef5c82d536e.html",tooltip=""];
+  dir_b2151ad4e956b6e5db478226d3efe483 [label="HrenyaSinclair", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_b2151ad4e956b6e5db478226d3efe483.html",tooltip=""];
+  dir_01814d8ce4977da0ae30890cd7b77d3d [label="Syamlal", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_01814d8ce4977da0ae30890cd7b77d3d.html",tooltip=""];
+  }
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_570616e8e4ea6cc6c195ca56f7fa3744->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="1", labeldistance=1.5 headhref="dir_000602_001387.html" href="dir_000602_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_570616e8e4ea6cc6c195ca56f7fa3744->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="3", labeldistance=1.5 headhref="dir_000602_002695.html" href="dir_000602_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_791d2e5f679716825b92eef5c82d536e->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_001637_002695.html" href="dir_001637_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_b2151ad4e956b6e5db478226d3efe483->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_001752_002695.html" href="dir_001752_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_01814d8ce4977da0ae30890cd7b77d3d->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_003906_002695.html" href="dir_003906_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

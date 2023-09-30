@@ -1,0 +1,14 @@
+digraph "logFiles"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="logFiles",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="functionObject base class for creating, maintaining and writing log files e.g. integrated or averaged..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="writeFile",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1functionObjects_1_1writeFile.html",tooltip="Base class for writing single files from the function objects."];
+  Node18 -> Node1 [id="edge2_Node000001_Node000018",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" names_",fontcolor="grey" ];
+  Node18 [id="Node000018",label="List\< word \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip=" "];
+  Node22 -> Node1 [id="edge3_Node000001_Node000022",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" filePtrs_",fontcolor="grey" ];
+  Node22 [id="Node000022",label="PtrList\< Foam::OFstream \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1PtrList.html",tooltip=" "];
+}

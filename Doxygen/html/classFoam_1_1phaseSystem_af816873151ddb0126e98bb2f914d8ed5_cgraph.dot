@@ -1,0 +1,13 @@
+digraph "read"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="read",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::regIOobject::read",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1regIOobject.html#af816873151ddb0126e98bb2f914d8ed5",tooltip=" "];
+  Node1 -> Node14 [id="edge2_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="Foam::phase::read",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1phase.html#af2ae470711212b9b1768b48afdff2431",tooltip=" "];
+}

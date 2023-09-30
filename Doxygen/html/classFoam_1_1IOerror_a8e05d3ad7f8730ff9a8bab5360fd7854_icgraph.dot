@@ -1,0 +1,15 @@
+digraph "exit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="exit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::exit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#ac3d143a27e8166040e796d739b745fe8",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::IFstream::operator()",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1IFstream.html#a1487864d0734dda74ccbbc26c8348d0a",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::Istream::operator()",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1Istream.html#a3038e7f37b2aac5853a485cab27abe77",tooltip=" "];
+}

@@ -1,0 +1,14 @@
+digraph "src/OpenFOAM/db/IOstreams/Pstreams/PstreamGather.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/db/IOstreams\l/Pstreams/PstreamGather.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gather data from all processors onto single processor according to some communication schedule (usual..."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="OPstream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$OPstream_8H.html",tooltip=" "];
+  Node1 -> Node147 [id="edge2_Node000001_Node000147",color="steelblue1",style="solid",tooltip=" "];
+  Node147 [id="Node000147",label="IPstream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$IPstream_8H.html",tooltip=" "];
+  Node1 -> Node82 [id="edge3_Node000001_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node82 [id="Node000082",label="contiguous.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$contiguous_8H.html",tooltip=" "];
+}

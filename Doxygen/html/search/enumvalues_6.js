@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['gas_0',['gas',['../classFoam_1_1chemkinReader.html#a4432ad5c680b2372adf2f56998516c6da2f8c1811788bfc5b79d3a73f641abba5',1,'Foam::chemkinReader::gas'],['../classFoam_1_1phaseProperties.html#a4f71dc10e5b076ba5df4d31d3abe8dd1a9584dc4fcb96c51dda36a881a6dbb212',1,'Foam::phaseProperties::GAS']]],
+  ['gather_1',['GATHER',['../classFoam_1_1profilingPstream.html#a8d6aa227d5598f504d627654d6bb70d9ad160b6c33590f95fe8a51d6cfcd450c7',1,'Foam::profilingPstream']]],
+  ['general_2',['general',['../classFoam_1_1Time.html#a5abf90220977ce51e40fabd5dffd2d67a132c313022974a87e1a962e64bade8d3',1,'Foam::Time::general'],['../classFoam_1_1searchableSphere.html#adaf8377a65ee7b5088a51bdbcb845c73aa965658e6a84d5502df1c1987b0a8466',1,'Foam::searchableSphere::GENERAL'],['../namespaceFoam_1_1parsing.html#a0455f547a8d97c35c868b184e0c92ffdab61773b9b3968a9988d765d728985862',1,'Foam::parsing::GENERAL']]],
+  ['geometric_3',['GEOMETRIC',['../classFoam_1_1meshRefinement.html#ac1410f0bfc256001c7dca9d4fcebcceca5cd52a3776ec2bd5243cc37a842baff2',1,'Foam::meshRefinement']]],
+  ['given_4',['GIVEN',['../classFoam_1_1ensightSurfaceReader.html#a490f539176985309e0751e4b28892028a0d6cf1dce39b9aca3be47ffd1ab117f9',1,'Foam::ensightSurfaceReader']]],
+  ['global_5',['GLOBAL',['../classFoam_1_1entry.html#a9dbcfbf76ab32a59844a2948530fb169a6eecfba72d12922ee1dead07a0ef3334',1,'Foam::entry']]],
+  ['gmauto_6',['gmAuto',['../classFoam_1_1fv_1_1rotorDiskSource.html#afe3cf9000f893464df847f76cecbb111a1d0e83abbb6cf46ec62aec42663721d9',1,'Foam::fv::rotorDiskSource']]],
+  ['gmcalculated_7',['gmCalculated',['../classFoam_1_1fv_1_1tabulatedNTUHeatTransfer.html#afe3cf9000f893464df847f76cecbb111a47cebcaea5e0a6da8919c8ef3940febf',1,'Foam::fv::tabulatedNTUHeatTransfer']]],
+  ['gmspecified_8',['gmSpecified',['../classFoam_1_1fv_1_1rotorDiskSource.html#afe3cf9000f893464df847f76cecbb111aad21ca4b1e119d19acd791202ebf78d1',1,'Foam::fv::rotorDiskSource']]],
+  ['gmuser_9',['gmUser',['../classFoam_1_1fv_1_1tabulatedNTUHeatTransfer.html#afe3cf9000f893464df847f76cecbb111a51ca6a5b592211782342d428965686f4',1,'Foam::fv::tabulatedNTUHeatTransfer']]],
+  ['good_10',['GOOD',['../classFoam_1_1IOobject.html#a0155511b28ed34c7b4ac41d095632d13a8eb0135a04a7e7daf1ca4abf2c87832c',1,'Foam::IOobject']]],
+  ['gradient_5ftype_11',['GRADIENT_TYPE',['../classFoam_1_1expressions_1_1patchExprFieldBase.html#a89ad655d0df42fdfb781c8c57b0441dcac43f92a05ba5ea4091006fd98ca24f33',1,'Foam::expressions::patchExprFieldBase']]],
+  ['grating_12',['GRATING',['../classFoam_1_1PDRobstacle.html#aeb4226b8ffd85b85a49a4546f74215bda645426aa6239a994181994e4aa4491d0',1,'Foam::PDRobstacle']]],
+  ['greater_13',['GREATER',['../classFoam_1_1predicates_1_1scalars.html#a93e9199481489386e662a717e273e7b7a25b5ca2f56d99ba6ffcb5316adac34c1',1,'Foam::predicates::scalars']]],
+  ['greater_5feq_14',['GREATER_EQ',['../classFoam_1_1predicates_1_1scalars.html#a93e9199481489386e662a717e273e7b7a58ad9b780f181fa2c3cf2b284654e095',1,'Foam::predicates::scalars']]],
+  ['greater_5fequal_15',['GREATER_EQUAL',['../classFoam_1_1predicates_1_1scalars.html#a93e9199481489386e662a717e273e7b7a4495f63771aa2060042a31363e16d4f9',1,'Foam::predicates::scalars']]],
+  ['greyscale_16',['GREYSCALE',['../classFoam_1_1colourTable.html#ad411abcab7891a1a034e0b339d0ab637a257ff77d28e19f7ef8a89ad9e44e0566',1,'Foam::colourTable']]]
+];

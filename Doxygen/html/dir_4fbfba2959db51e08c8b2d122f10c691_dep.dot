@@ -1,0 +1,12 @@
+digraph "applications/solvers/multiphase/reactingMultiphaseEulerFoam/pU"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_e7d5b21f51b77173d3cb7726ba739d15 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="reactingMultiphaseEulerFoam", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_e7d5b21f51b77173d3cb7726ba739d15.html",tooltip=""]
+  dir_4fbfba2959db51e08c8b2d122f10c691 [label="pU", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_4fbfba2959db51e08c8b2d122f10c691.html",tooltip=""];
+  }
+}

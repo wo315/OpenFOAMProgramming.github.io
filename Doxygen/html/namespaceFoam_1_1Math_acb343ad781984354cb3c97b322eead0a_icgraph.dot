@@ -1,0 +1,13 @@
+digraph "erfInv"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="erfInv",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::distributionModels\l::normal::sample",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1distributionModels_1_1normal.html#a523eae27d84403d08bdca843c0679d8a",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::distributionModels\l::multiNormal::sample",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1distributionModels_1_1multiNormal.html#a1025442f0de5c9c01541ef9c81af4ad6",tooltip=" "];
+}

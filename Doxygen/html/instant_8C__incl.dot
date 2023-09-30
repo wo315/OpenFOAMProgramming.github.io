@@ -1,0 +1,21 @@
+digraph "src/OpenFOAM/db/Time/instant/instant.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/db/Time\l/instant/instant.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="instant.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$instant_8H.html",tooltip=" "];
+  Node1 -> Node36 [id="edge2_Node000001_Node000036",color="steelblue1",style="solid",tooltip=" "];
+  Node36 [id="Node000036",label="Time.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Time_8H.html",tooltip=" "];
+  Node1 -> Node148 [id="edge3_Node000001_Node000148",color="steelblue1",style="solid",tooltip=" "];
+  Node148 [id="Node000148",label="Pair.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Pair_8H.html",tooltip=" "];
+  Node148 -> Node35 [id="edge4_Node000148_Node000035",color="steelblue1",style="solid",tooltip=" "];
+  Node35 [id="Node000035",label="utility",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node78 [id="edge5_Node000001_Node000078",color="steelblue1",style="solid",tooltip=" "];
+  Node78 [id="Node000078",label="UList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$UList_8H.html",tooltip=" "];
+  Node1 -> Node13 [id="edge6_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="cstdlib",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node35 [id="edge7_Node000001_Node000035",color="steelblue1",style="solid",tooltip=" "];
+}

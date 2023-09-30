@@ -1,0 +1,22 @@
+digraph "src/TurbulenceModels/incompressible/turbulentTransportModels/derivedFvPatchFields"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_1aa858ea368076f1cd8be38150a1c632 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="turbulentTransportModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_1aa858ea368076f1cd8be38150a1c632.html",tooltip=""]
+  subgraph clusterdir_c51ac1cf89736fc3dd478029a908b973 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_c51ac1cf89736fc3dd478029a908b973.html",tooltip=""]
+    dir_c51ac1cf89736fc3dd478029a908b973 [shape=plaintext, label="derivedFvPatchFields"];
+  dir_764c29f627bb16092ab41d68d9526cc0 [label="wallFunctions", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_764c29f627bb16092ab41d68d9526cc0.html",tooltip=""];
+  }
+  }
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_a3dc37bcacf99bb6122ed819dac99f09 [label="turbulenceModels", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_a3dc37bcacf99bb6122ed819dac99f09.html",tooltip=""];
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_764c29f627bb16092ab41d68d9526cc0->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="4", labeldistance=1.5 headhref="dir_004348_001387.html" href="dir_004348_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_764c29f627bb16092ab41d68d9526cc0->dir_a3dc37bcacf99bb6122ed819dac99f09 [headlabel="2", labeldistance=1.5 headhref="dir_004348_004144.html" href="dir_004348_004144.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_764c29f627bb16092ab41d68d9526cc0->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_004348_002695.html" href="dir_004348_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,21 @@
+digraph "applications/solvers/multiphase/multiphaseInterFoam/multiphaseMixture/multiphaseMixture.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="applications/solvers\l/multiphase/multiphaseInter\lFoam/multiphaseMixture/multiphase\lMixture.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="incompressible/transport\lModel/transportModel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$transportModel_8H.html",tooltip=" "];
+  Node1 -> Node131 [id="edge2_Node000001_Node000131",color="steelblue1",style="solid",tooltip=" "];
+  Node131 [id="Node000131",label="IOdictionary.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$IOdictionary_8H.html",tooltip=" "];
+  Node1 -> Node176 [id="edge3_Node000001_Node000176",color="steelblue1",style="solid",tooltip=" "];
+  Node176 [id="Node000176",label="phase.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$phase_8H.html",tooltip=" "];
+  Node176 -> Node177 [id="edge4_Node000176_Node000177",color="steelblue1",style="solid",tooltip=" "];
+  Node177 [id="Node000177",label="volFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$volFields_8H.html",tooltip=" "];
+  Node1 -> Node383 [id="edge5_Node000001_Node000383",color="steelblue1",style="solid",tooltip=" "];
+  Node383 [id="Node000383",label="PtrDictionary.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$PtrDictionary_8H.html",tooltip=" "];
+  Node1 -> Node177 [id="edge6_Node000001_Node000177",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node387 [id="edge7_Node000001_Node000387",color="steelblue1",style="solid",tooltip=" "];
+  Node387 [id="Node000387",label="surfaceFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$surfaceFields_8H.html",tooltip="Foam::surfaceFields."];
+}

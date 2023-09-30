@@ -1,0 +1,15 @@
+digraph "conj"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="conj",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::operator&",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#aa658f0bd62db9c12047023e907bcdff2",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::operator^",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#a962ed09d3b142fdb3606bc249b6fa31e",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::Matrix::T",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1Matrix.html#a957f7b649585d17c50ddd741e8271cdc",tooltip=" "];
+}

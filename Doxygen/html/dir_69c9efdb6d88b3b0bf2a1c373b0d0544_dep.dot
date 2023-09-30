@@ -1,0 +1,14 @@
+digraph "src/lagrangian/intermediate/submodels/MPPIC/IsotropyModels/Stochastic"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_5ebf5441bb19562900f53624daac8cc1 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="IsotropyModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_5ebf5441bb19562900f53624daac8cc1.html",tooltip=""]
+  dir_a90a64b49b311eb4730f048fb9c5d106 [label="IsotropyModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a90a64b49b311eb4730f048fb9c5d106.html",tooltip=""];
+  dir_69c9efdb6d88b3b0bf2a1c373b0d0544 [label="Stochastic", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_69c9efdb6d88b3b0bf2a1c373b0d0544.html",tooltip=""];
+  }
+  dir_69c9efdb6d88b3b0bf2a1c373b0d0544->dir_a90a64b49b311eb4730f048fb9c5d106 [headlabel="1", labeldistance=1.5 headhref="dir_003774_001985.html" href="dir_003774_001985.html" color="steelblue1" fontcolor="steelblue1"];
+}

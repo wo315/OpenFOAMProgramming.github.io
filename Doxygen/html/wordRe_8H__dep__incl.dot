@@ -1,0 +1,25 @@
+digraph "src/OpenFOAM/primitives/strings/wordRe/wordRe.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/primitives\l/strings/wordRe/wordRe.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/OpenFOAM/meshes\l/Identifiers/DynamicID\l/DynamicID.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$DynamicID_8H.html",tooltip=" "];
+  Node1 -> Node36 [id="edge2_Node000001_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node36 [id="Node000036",label="src/OpenFOAM/primitives\l/strings/fileName/fileName.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$fileName_8C.html",tooltip=" "];
+  Node1 -> Node37 [id="edge3_Node000001_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node37 [id="Node000037",label="src/OpenFOAM/primitives\l/strings/keyType/keyType.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$keyType_8H.html",tooltip=" "];
+  Node37 -> Node7049 [id="edge4_Node000037_Node007049",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7049 [id="Node007049",label="src/OpenFOAM/primitives\l/strings/wordRe/wordRe.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wordRe_8C.html",tooltip=" "];
+  Node1 -> Node7618 [id="edge5_Node000001_Node007618",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7618 [id="Node007618",label="src/OpenFOAM/primitives\l/strings/string/string.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$string_8C.html",tooltip=" "];
+  Node1 -> Node7049 [id="edge6_Node000001_Node007049",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8342 [id="edge7_Node000001_Node008342",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8342 [id="Node008342",label="src/OpenFOAM/primitives\l/strings/wordRes/wordRes.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$wordRes_8H.html",tooltip=" "];
+  Node1 -> Node8586 [id="edge8_Node000001_Node008586",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8586 [id="Node008586",label="src/lagrangian/intermediate\l/submodels/Kinematic/PatchInteraction\lModel/LocalInteraction/patchInteractionData.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$patchInteractionData_8H.html",tooltip=" "];
+  Node1 -> Node5773 [id="edge9_Node000001_Node005773",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5773 [id="Node005773",label="src/meshTools/cellDist\l/cellDistFuncs.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$cellDistFuncs_8H.html",tooltip=" "];
+}

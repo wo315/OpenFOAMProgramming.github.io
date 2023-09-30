@@ -1,0 +1,13 @@
+digraph "clearOut"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="clearOut",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::triSurfaceRegionSearch\l::clearOut",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1triSurfaceRegionSearch.html#af320697688df08f1438d37a86bcaf25d",tooltip=" "];
+  Node1 -> Node5 [id="edge2_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::triSurface::clearOut",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1triSurface.html#af320697688df08f1438d37a86bcaf25d",tooltip=" "];
+}

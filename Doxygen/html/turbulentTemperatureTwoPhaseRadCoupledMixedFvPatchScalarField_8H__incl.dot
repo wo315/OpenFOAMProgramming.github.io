@@ -1,0 +1,12 @@
+digraph "applications/solvers/heatTransfer/chtMultiRegionFoam/chtMultiRegionTwoPhaseEulerFoam/derivedFvPatchFields/turbulentTemperatureTwoPhaseRadCoupledMixed/turbulentTemperatureTwoPhaseRadCoupledMixedFvPatchScalarField.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="applications/solvers\l/heatTransfer/chtMultiRegion\lFoam/chtMultiRegionTwoPhaseEuler\lFoam/derivedFvPatchFields/turbulentTemperature\lTwoPhaseRadCoupledMixed/turbulentTemperatureTwoPhase\lRadCoupledMixedFvPatchScalarField.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="mixedFvPatchFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$mixedFvPatchFields_8H.html",tooltip=" "];
+  Node1 -> Node158 [id="edge2_Node000001_Node000158",color="steelblue1",style="solid",tooltip=" "];
+  Node158 [id="Node000158",label="scalarList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$scalarList_8H.html",tooltip=" "];
+}

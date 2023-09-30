@@ -1,0 +1,18 @@
+digraph "src/phaseSystemModels/multiphaseEuler/multiphaseSystem/multiphaseSystem"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_a738d6d40203858f5aaf3cf892e0ec68 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="multiphaseSystem", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_a738d6d40203858f5aaf3cf892e0ec68.html",tooltip=""]
+  dir_168c2eb1ce3a1d60d7255c00e341767e [label="multiphaseSystem", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_168c2eb1ce3a1d60d7255c00e341767e.html",tooltip=""];
+  }
+  dir_9415e59289a6feeb24164dafa70a594f [label="transportModels", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9415e59289a6feeb24164dafa70a594f.html",tooltip=""];
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_168c2eb1ce3a1d60d7255c00e341767e->dir_9415e59289a6feeb24164dafa70a594f [headlabel="1", labeldistance=1.5 headhref="dir_002494_004112.html" href="dir_002494_004112.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_168c2eb1ce3a1d60d7255c00e341767e->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="9", labeldistance=1.5 headhref="dir_002494_001387.html" href="dir_002494_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_168c2eb1ce3a1d60d7255c00e341767e->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="6", labeldistance=1.5 headhref="dir_002494_002695.html" href="dir_002494_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,27 @@
+digraph "src/finiteArea/fields/edgeFields/edgeFields.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/finiteArea/fields\l/edgeFields/edgeFields.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="objectRegistry.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$objectRegistry_8H.html",tooltip=" "];
+  Node1 -> Node151 [id="edge2_Node000001_Node000151",color="steelblue1",style="solid",tooltip=" "];
+  Node151 [id="Node000151",label="GeometricFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$GeometricFields_8H.html",tooltip="The standard GeometricField types."];
+  Node1 -> Node262 [id="edge3_Node000001_Node000262",color="steelblue1",style="solid",tooltip=" "];
+  Node262 [id="Node000262",label="edgeFaMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$edgeFaMesh_8H.html",tooltip=" "];
+  Node262 -> Node264 [id="edge4_Node000262_Node000264",color="steelblue1",style="solid",tooltip=" "];
+  Node264 [id="Node000264",label="faMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$faMesh_8H.html",tooltip=" "];
+  Node264 -> Node346 [id="edge5_Node000264_Node000346",color="steelblue1",style="solid",tooltip=" "];
+  Node346 [id="Node000346",label="edgeFieldsFwd.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$edgeFieldsFwd_8H.html",tooltip="Forwards for edge field types."];
+  Node346 -> Node246 [id="edge6_Node000346_Node000246",color="steelblue1",style="solid",tooltip=" "];
+  Node246 [id="Node000246",label="fieldTypes.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fieldTypes_8H.html",tooltip=" "];
+  Node1 -> Node246 [id="edge7_Node000001_Node000246",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node264 [id="edge8_Node000001_Node000264",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node379 [id="edge9_Node000001_Node000379",color="steelblue1",style="solid",tooltip=" "];
+  Node379 [id="Node000379",label="faePatchFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$faePatchFields_8H.html",tooltip="Declarations for faePatchField types."];
+  Node1 -> Node346 [id="edge10_Node000001_Node000346",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node383 [id="edge11_Node000001_Node000383",color="steelblue1",style="solid",tooltip=" "];
+  Node383 [id="Node000383",label="calculatedFaePatchFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$calculatedFaePatchFields_8H.html",tooltip=" "];
+}

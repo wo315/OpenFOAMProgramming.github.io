@@ -1,0 +1,17 @@
+digraph "setManipulated"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="setManipulated",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::fvPatchField\l::evaluate",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fvPatchField.html#a1a4ebfb8aa4dc581e54081a12bfbd0d3",tooltip=" "];
+  Node1 -> Node44 [id="edge2_Node000001_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node44 [id="Node000044",label="Foam::fvPatchField\l\< symmTensor \>::fvPatchField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1fvPatchField.html#af9f99709a1cb4854ac4bd4ea8b02f83c",tooltip=" "];
+  Node1 -> Node45 [id="edge3_Node000001_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 [id="Node000045",label="Foam::fvPatchField\l::manipulateMatrix",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fvPatchField.html#a918a7a9b6883ae2da430decb238332e0",tooltip=" "];
+  Node1 -> Node52 [id="edge4_Node000001_Node000052",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node52 [id="Node000052",label="Foam::fvPatchField\l::manipulateMatrix",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1fvPatchField.html#af912147e36cbac3e6aa36ac43e4660e1",tooltip=" "];
+}

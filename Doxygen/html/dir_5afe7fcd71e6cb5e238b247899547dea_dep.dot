@@ -1,0 +1,14 @@
+digraph "src/meshTools/algorithms/PatchEdgeFaceWave"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_488f81ac1e9f391f7800e42bf7f5bacd {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="algorithms", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_488f81ac1e9f391f7800e42bf7f5bacd.html",tooltip=""]
+  dir_5afe7fcd71e6cb5e238b247899547dea [label="PatchEdgeFaceWave", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_5afe7fcd71e6cb5e238b247899547dea.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_5afe7fcd71e6cb5e238b247899547dea->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="36", labeldistance=1.5 headhref="dir_002826_002695.html" href="dir_002826_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

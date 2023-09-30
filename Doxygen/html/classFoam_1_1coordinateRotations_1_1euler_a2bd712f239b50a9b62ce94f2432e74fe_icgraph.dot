@@ -1,0 +1,13 @@
+digraph "rotation"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="rotation",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="R",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1euler.html#a404ff2284fce8af4f811e0447c9e37f2",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::coordinateRotations\l::starcd::rotation",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1coordinateRotations_1_1starcd.html#ad4a19105c6320baee429ada18466a297",tooltip=" "];
+}

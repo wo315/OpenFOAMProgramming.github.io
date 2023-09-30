@@ -1,0 +1,33 @@
+digraph "src/OpenFOAM/global/fileOperations/fileOperation/fileOperation.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/global\l/fileOperations/fileOperation\l/fileOperation.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ISstream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ISstream_8H.html",tooltip=" "];
+  Node1 -> Node53 [id="edge2_Node000001_Node000053",color="steelblue1",style="solid",tooltip=" "];
+  Node53 [id="Node000053",label="Ostream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Ostream_8H.html",tooltip=" "];
+  Node1 -> Node97 [id="edge3_Node000001_Node000097",color="steelblue1",style="solid",tooltip=" "];
+  Node97 [id="Node000097",label="UPstream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$UPstream_8H.html",tooltip=" "];
+  Node97 -> Node123 [id="edge4_Node000097_Node000123",color="steelblue1",style="solid",tooltip=" "];
+  Node123 [id="Node000123",label="Enum.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Enum_8H.html",tooltip=" "];
+  Node1 -> Node145 [id="edge5_Node000001_Node000145",color="steelblue1",style="solid",tooltip=" "];
+  Node145 [id="Node000145",label="fileMonitor.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fileMonitor_8H.html",tooltip=" "];
+  Node145 -> Node123 [id="edge6_Node000145_Node000123",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node147 [id="edge7_Node000001_Node000147",color="steelblue1",style="solid",tooltip=" "];
+  Node147 [id="Node000147",label="fileNameList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fileNameList_8H.html",tooltip=" "];
+  Node1 -> Node148 [id="edge8_Node000001_Node000148",color="steelblue1",style="solid",tooltip=" "];
+  Node148 [id="Node000148",label="instantList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$instantList_8H.html",tooltip=" "];
+  Node1 -> Node151 [id="edge9_Node000001_Node000151",color="steelblue1",style="solid",tooltip=" "];
+  Node151 [id="Node000151",label="refPtr.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$refPtr_8H.html",tooltip=" "];
+  Node1 -> Node138 [id="edge10_Node000001_Node000138",color="steelblue1",style="solid",tooltip=" "];
+  Node138 [id="Node000138",label="bitSet.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$bitSet_8H.html",tooltip=" "];
+  Node1 -> Node123 [id="edge11_Node000001_Node000123",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node155 [id="edge12_Node000001_Node000155",color="steelblue1",style="solid",tooltip=" "];
+  Node155 [id="Node000155",label="Tuple2.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Tuple2_8H.html",tooltip=" "];
+  Node155 -> Node53 [id="edge13_Node000155_Node000053",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node45 [id="edge14_Node000001_Node000045",color="steelblue1",style="solid",tooltip=" "];
+  Node45 [id="Node000045",label="InfoProxy.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$InfoProxy_8H.html",tooltip=" "];
+}

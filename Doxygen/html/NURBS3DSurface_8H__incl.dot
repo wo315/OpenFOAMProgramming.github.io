@@ -1,0 +1,14 @@
+digraph "src/optimisation/adjointOptimisation/adjoint/parameterization/NURBS/NURBS3DSurface/NURBS3DSurface.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/optimisation/adjoint\lOptimisation/adjoint/parameterization\l/NURBS/NURBS3DSurface/NURBS3DSurface.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="NURBSbasis.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$NURBSbasis_8H.html",tooltip=" "];
+  Node1 -> Node175 [id="edge2_Node000001_Node000175",color="steelblue1",style="solid",tooltip=" "];
+  Node175 [id="Node000175",label="vectorField.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$vectorField_8H.html",tooltip=" "];
+  Node1 -> Node179 [id="edge3_Node000001_Node000179",color="steelblue1",style="solid",tooltip=" "];
+  Node179 [id="Node000179",label="vector2DField.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$vector2DField_8H.html",tooltip="Foam::vector2DField."];
+}

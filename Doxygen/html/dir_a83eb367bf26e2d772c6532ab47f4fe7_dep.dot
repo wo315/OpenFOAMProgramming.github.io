@@ -1,0 +1,22 @@
+digraph "src/OpenFOAM/primitives/strings/keyType"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_ce1ee507886310df0e74ee2e624fbc88 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="strings", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_ce1ee507886310df0e74ee2e624fbc88.html",tooltip=""]
+  dir_37e5616194788bea54b108232e896e64 [label="word", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_37e5616194788bea54b108232e896e64.html",tooltip=""];
+  dir_c3392db1efe9a2640802296c6b320902 [label="wordRe", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c3392db1efe9a2640802296c6b320902.html",tooltip=""];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7 [label="keyType", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_a83eb367bf26e2d772c6532ab47f4fe7.html",tooltip=""];
+  }
+  dir_1e7df7a7407fc4618be5c18f76eb7b99 [label="OSspecific", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_1e7df7a7407fc4618be5c18f76eb7b99.html",tooltip=""];
+  dir_e954e9f5966bc1c681a414ec8bd0ee15 [label="include", fillcolor="#edf0f7", color="grey50", style="filled", URL="dir_e954e9f5966bc1c681a414ec8bd0ee15.html",tooltip=""];
+  dir_63c634f7a7cfd679ac26c67fb30fc32f [label="db", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_63c634f7a7cfd679ac26c67fb30fc32f.html",tooltip=""];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7->dir_1e7df7a7407fc4618be5c18f76eb7b99 [headlabel="1", labeldistance=1.5 headhref="dir_002015_002727.html" href="dir_002015_002727.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7->dir_37e5616194788bea54b108232e896e64 [headlabel="1", labeldistance=1.5 headhref="dir_002015_004412.html" href="dir_002015_004412.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7->dir_63c634f7a7cfd679ac26c67fb30fc32f [headlabel="2", labeldistance=1.5 headhref="dir_002015_000817.html" href="dir_002015_000817.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7->dir_c3392db1efe9a2640802296c6b320902 [headlabel="1", labeldistance=1.5 headhref="dir_002015_004413.html" href="dir_002015_004413.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a83eb367bf26e2d772c6532ab47f4fe7->dir_e954e9f5966bc1c681a414ec8bd0ee15 [headlabel="1", labeldistance=1.5 headhref="dir_002015_001804.html" href="dir_002015_001804.html" color="steelblue1" fontcolor="steelblue1"];
+}

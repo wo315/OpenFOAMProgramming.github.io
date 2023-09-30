@@ -1,0 +1,12 @@
+digraph "genericFvsPatchField&lt; Type &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="genericFvsPatchField\l\< Type \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="This boundary condition provides a generic version of the calculated condition, useful as a fallback ..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="calculatedFvsPatchField\l\< Type \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1calculatedFvsPatchField.html",tooltip="Foam::calculatedFvsPatchField."];
+  Node12 -> Node1 [id="edge2_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="genericPatchFieldBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1genericPatchFieldBase.html",tooltip="Generic infrastructure for reading/writing unknown patch types."];
+}

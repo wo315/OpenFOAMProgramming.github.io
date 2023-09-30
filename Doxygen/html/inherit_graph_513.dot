@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="coordinateRotation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotation.html",tooltip="User specification of a coordinate rotation."];
+  Node0 -> Node1 [id="edge4434_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="axes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1axes.html",tooltip="A coordinateRotation specified using global axes."];
+  Node1 -> Node2 [id="edge4435_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="cylindrical",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1cylindrical.html",tooltip="A special purpose coordinateRotation that is generally for use in combination with a cylindricalCS wh..."];
+  Node0 -> Node3 [id="edge4436_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="axisAngle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1axisAngle.html",tooltip="A coordinateRotation specified by a rotation axis and a rotation angle about that axis."];
+  Node0 -> Node4 [id="edge4437_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="euler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1euler.html",tooltip="A coordinateRotation defined in the z-x-z (intrinsic) Euler convention."];
+  Node0 -> Node5 [id="edge4438_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="identity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1identity.html",tooltip="An identity coordinateRotation."];
+  Node0 -> Node6 [id="edge4439_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="specified",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1specified.html",tooltip="An user-specified coordinateRotation, primarily to be used internally within coding when the rotation..."];
+  Node0 -> Node7 [id="edge4440_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="starcd",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1coordinateRotations_1_1starcd.html",tooltip="A coordinateRotation defined by the STAR-CD convention."];
+}

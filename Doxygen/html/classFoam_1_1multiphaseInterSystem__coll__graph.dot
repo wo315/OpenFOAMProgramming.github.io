@@ -1,0 +1,38 @@
+digraph "multiphaseInterSystem"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="multiphaseInterSystem",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="basicThermo",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1basicThermo.html",tooltip="Abstract base-class for fluid and solid thermodynamic properties."];
+  Node16 -> Node2 [id="edge2_Node000002_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" dictName\nphaseName_",fontcolor="grey" ];
+  Node16 [id="Node000016",label="word",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html",tooltip="A class for handling words, derived from Foam::string."];
+  Node16 -> Node16 [id="edge3_Node000016_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" null",fontcolor="grey" ];
+  Node28 -> Node2 [id="edge4_Node000002_Node000028",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" alpha_",fontcolor="grey" ];
+  Node28 [id="Node000028",label="GeometricField\< scalar,\l fvPatchField, volMesh \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1GeometricField.html",tooltip=" "];
+  Node30 -> Node1 [id="edge5_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node30 [id="Node000030",label="compressibleTransportModel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1compressibleTransportModel.html",tooltip="Base-class for all transport models used by the compressible turbulence models."];
+  Node31 -> Node1 [id="edge6_Node000001_Node000031",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mesh_",fontcolor="grey" ];
+  Node31 [id="Node000031",label="fvMesh",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fvMesh.html",tooltip="Mesh data needed to do the Finite Volume discretisation."];
+  Node28 -> Node1 [id="edge7_Node000001_Node000028",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mu_",fontcolor="grey" ];
+  Node58 -> Node1 [id="edge8_Node000001_Node000058",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" phaseNames_",fontcolor="grey" ];
+  Node58 [id="Node000058",label="List\< word \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip=" "];
+  Node60 -> Node1 [id="edge9_Node000001_Node000060",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" phi_\nrhoPhi_",fontcolor="grey" ];
+  Node60 [id="Node000060",label="GeometricField\< scalar,\l fvsPatchField, surfaceMesh \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1GeometricField.html",tooltip=" "];
+  Node62 -> Node1 [id="edge10_Node000001_Node000062",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" phaseModels_",fontcolor="grey" ];
+  Node62 [id="Node000062",label="HashTable\< autoPtr\l\< multiphaseInter::phaseModel \> \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1HashTable.html",tooltip=" "];
+  Node63 -> Node1 [id="edge11_Node000001_Node000063",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" phasePairs_\ntotalPhasePairs_",fontcolor="grey" ];
+  Node63 [id="Node000063",label="HashTable\< autoPtr\l\< phasePair \>, phasePairKey,\l phasePairKey::hash \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1HashTable.html",tooltip=" "];
+  Node64 -> Node1 [id="edge12_Node000001_Node000064",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" Prt_",fontcolor="grey" ];
+  Node64 [id="Node000064",label="dimensioned\< scalar \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1dimensioned.html",tooltip=" "];
+  Node66 -> Node1 [id="edge13_Node000001_Node000066",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" turb_",fontcolor="grey" ];
+  Node66 [id="Node000066",label="compressibleTurbulenceModel",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1compressibleTurbulenceModel.html",tooltip="Abstract base class for turbulence models (RAS, LES and laminar)."];
+  Node86 -> Node1 [id="edge14_Node000001_Node000086",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" surfaceTensionModels_",fontcolor="grey" ];
+  Node86 [id="Node000086",label="HashTable\< autoPtr\l\< multiphaseInter::surface\lTensionModel \>, phasePairKey,\l phasePairKey::hash \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1HashTable.html",tooltip=" "];
+  Node87 -> Node1 [id="edge15_Node000001_Node000087",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" interfacePorousModelTable_",fontcolor="grey" ];
+  Node87 [id="Node000087",label="HashTable\< autoPtr\l\< porousModel \>, phasePair\lKey, phasePairKey::hash \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1HashTable.html",tooltip=" "];
+  Node16 -> Node1 [id="edge16_Node000001_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" phasePropertiesName",fontcolor="grey" ];
+}

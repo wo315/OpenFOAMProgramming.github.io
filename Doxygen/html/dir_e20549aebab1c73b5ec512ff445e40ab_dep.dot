@@ -1,0 +1,26 @@
+digraph "src/phaseSystemModels/reactingEuler/multiphaseSystem/diameterModels/velocityGroup"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_f13031f1dba119cd3d2bb6239f50db95 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="diameterModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_f13031f1dba119cd3d2bb6239f50db95.html",tooltip=""]
+  subgraph clusterdir_e20549aebab1c73b5ec512ff445e40ab {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_e20549aebab1c73b5ec512ff445e40ab.html",tooltip=""]
+    dir_e20549aebab1c73b5ec512ff445e40ab [shape=plaintext, label="velocityGroup"];
+  dir_262cc2b3def3310c11210c6746ce9ffa [label="sizeGroup", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_262cc2b3def3310c11210c6746ce9ffa.html",tooltip=""];
+  }
+  }
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_e9c594d8f3b0b5d00e00b870816d9586 [label="populationBalanceModel", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_e9c594d8f3b0b5d00e00b870816d9586.html",tooltip=""];
+  dir_e20549aebab1c73b5ec512ff445e40ab->dir_262cc2b3def3310c11210c6746ce9ffa [headlabel="1", labeldistance=1.5 headhref="dir_004270_003571.html" href="dir_004270_003571.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_e20549aebab1c73b5ec512ff445e40ab->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="4", labeldistance=1.5 headhref="dir_004270_001387.html" href="dir_004270_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_e20549aebab1c73b5ec512ff445e40ab->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_004270_002695.html" href="dir_004270_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_e20549aebab1c73b5ec512ff445e40ab->dir_e9c594d8f3b0b5d00e00b870816d9586 [headlabel="2", labeldistance=1.5 headhref="dir_004270_003002.html" href="dir_004270_003002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_262cc2b3def3310c11210c6746ce9ffa->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="1", labeldistance=1.5 headhref="dir_003571_001387.html" href="dir_003571_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_262cc2b3def3310c11210c6746ce9ffa->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_003571_002695.html" href="dir_003571_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_262cc2b3def3310c11210c6746ce9ffa->dir_e9c594d8f3b0b5d00e00b870816d9586 [headlabel="1", labeldistance=1.5 headhref="dir_003571_003002.html" href="dir_003571_003002.html" color="steelblue1" fontcolor="steelblue1"];
+}

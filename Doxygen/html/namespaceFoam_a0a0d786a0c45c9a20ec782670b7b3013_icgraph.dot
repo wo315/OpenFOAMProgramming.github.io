@@ -1,0 +1,44 @@
+digraph "getEnv"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="getEnv",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::argList::argList",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1argList.html#a2a0eac0668e629767974bbbc25fe8cea",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="attachOurBuffers",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Pstream_2mpi_2UPstream_8C.html#aebd9ce84c6bbf429cf79a2b582ffee6f",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::debug::controlDict",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam_1_1debug.html#a99ec32314c649e103ec5b70effea2d96",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::argList::displayDoc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1argList.html#a9b27b732ab8af61a9511f20b6d3c5abc",tooltip=" "];
+  Node1 -> Node5 [id="edge5_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge6_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Foam::argList::envExecutable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1argList.html#ae6aa32ba6fe21ede1858a30b83f79305",tooltip=" "];
+  Node1 -> Node12 [id="edge7_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Foam::argList::envGlobalPath",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1argList.html#a420bbc7af431d7760a39ddc479f23b89",tooltip=" "];
+  Node1 -> Node21 [id="edge8_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="expandLeadingTag",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#adaa00808a418093143c3ccff3548c260",tooltip=" "];
+  Node1 -> Node27 [id="edge9_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="Foam::fileOperation\l::fileHandler",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fileOperation.html#a04d5051c9ff037a58acee81e362598fc",tooltip=" "];
+  Node27 -> Node32 [id="edge10_Node000027_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node32 [id="Node000032",label="Foam::argList::parse",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1argList.html#a00aad68f835a5c0bcb8920505bb0bd10",tooltip=" "];
+  Node32 -> Node2 [id="edge11_Node000032_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node41 [id="edge12_Node000001_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node41 [id="Node000041",label="Foam::fileOperation\l::getGlobalIORanks",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fileOperation.html#abb4acf74d7a28494b0a56f9d3eba1864",tooltip=" "];
+  Node1 -> Node43 [id="edge13_Node000001_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node43 [id="Node000043",label="getVariable",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#a8735c1b3ef1e8ceb07b0525a476e6e12",tooltip=" "];
+  Node1 -> Node45 [id="edge14_Node000001_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 [id="Node000045",label="Foam::stringOps::inplace\lReplaceVar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam_1_1stringOps.html#a417e59a9573eb398811f1cb194090bc8",tooltip=" "];
+  Node1 -> Node46 [id="edge15_Node000001_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node46 [id="Node000046",label="isTrue",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$sigFpe_8C.html#a2262f4d63034dcfc09cf6bf986ffedde",tooltip=" "];
+  Node1 -> Node50 [id="edge16_Node000001_Node000050",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node50 [id="Node000050",label="Foam::JobInfo::JobInfo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1JobInfo.html#a37755ec761ec7d5d5d4b23a980f78097",tooltip=" "];
+  Node1 -> Node32 [id="edge17_Node000001_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node51 [id="edge18_Node000001_Node000051",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node51 [id="Node000051",label="Foam::dynamicCode::\lresolveTemplates",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1dynamicCode.html#a7056029919f25a2d23e9913df26223d9",tooltip=" "];
+  Node1 -> Node52 [id="edge19_Node000001_Node000052",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node52 [id="Node000052",label="Foam::error::useAbort",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1error.html#aba604d8b710676f634c51a3ec8608214",tooltip=" "];
+}

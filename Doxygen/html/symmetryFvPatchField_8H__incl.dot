@@ -1,0 +1,13 @@
+digraph "src/finiteVolume/fields/fvPatchFields/constraint/symmetry/symmetryFvPatchField.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/finiteVolume/fields\l/fvPatchFields/constraint\l/symmetry/symmetryFvPatchField.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="basicSymmetryFvPatchField.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$basicSymmetryFvPatchField_8H.html",tooltip=" "];
+  Node2 -> Node267 [id="edge2_Node000002_Node000267",color="steelblue1",style="solid",tooltip=" "];
+  Node267 [id="Node000267",label="symmetryFvPatch.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$symmetryFvPatch_8H.html",tooltip=" "];
+  Node1 -> Node267 [id="edge3_Node000001_Node000267",color="steelblue1",style="solid",tooltip=" "];
+}

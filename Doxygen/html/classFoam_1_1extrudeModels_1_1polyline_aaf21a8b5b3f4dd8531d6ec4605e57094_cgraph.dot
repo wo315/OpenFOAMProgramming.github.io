@@ -1,0 +1,18 @@
+digraph "operator()"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="operator()",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::endl",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#a7d5eca45a323264dc5fe811500ebda47",tooltip=" "];
+  Node1 -> Node6 [id="edge2_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Foam::mag",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceFoam.html#a8ac5b57f98f906c36b8a4e989a77dbba",tooltip=" "];
+  Node1 -> Node7 [id="edge3_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::normalised",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#a28414de435fdb36254b463728306dcaa",tooltip=" "];
+  Node7 -> Node6 [id="edge4_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node9 [id="edge5_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Foam::quaternion::transform",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1quaternion.html#a9238fc61b8fc08c41a1f1be6cc31b3e0",tooltip=" "];
+}

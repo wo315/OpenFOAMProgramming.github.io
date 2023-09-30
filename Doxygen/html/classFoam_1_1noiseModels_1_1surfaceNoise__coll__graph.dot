@@ -1,0 +1,22 @@
+digraph "surfaceNoise"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="surfaceNoise",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Perform noise analysis on surface-based pressure data."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="noiseModel",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1noiseModel.html",tooltip="Base class for noise models."];
+  Node32 -> Node1 [id="edge2_Node000001_Node000032",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" inputFileNames_",fontcolor="grey" ];
+  Node32 [id="Node000032",label="List\< Foam::fileName \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip=" "];
+  Node16 -> Node1 [id="edge3_Node000001_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" pName_\nreaderType_",fontcolor="grey" ];
+  Node16 [id="Node000016",label="word",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html",tooltip="A class for handling words, derived from Foam::string."];
+  Node16 -> Node16 [id="edge4_Node000016_Node000016",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" null",fontcolor="grey" ];
+  Node34 -> Node1 [id="edge5_Node000001_Node000034",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" times_",fontcolor="grey" ];
+  Node34 [id="Node000034",label="List\< scalar \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip=" "];
+  Node36 -> Node1 [id="edge6_Node000001_Node000036",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" readerPtr_",fontcolor="grey" ];
+  Node36 [id="Node000036",label="autoPtr\< Foam::surfaceReader \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1autoPtr.html",tooltip=" "];
+  Node37 -> Node1 [id="edge7_Node000001_Node000037",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" writerPtr_",fontcolor="grey" ];
+  Node37 [id="Node000037",label="autoPtr\< Foam::surfaceWriter \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1autoPtr.html",tooltip=" "];
+}

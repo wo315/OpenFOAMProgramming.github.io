@@ -1,0 +1,12 @@
+digraph "src/OpenFOAM/primitives/strings/word/word.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/primitives\l/strings/word/word.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="string.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$string_8H.html",tooltip=" "];
+  Node1 -> Node11 [id="edge2_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="wordI.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$wordI_8H.html",tooltip=" "];
+}

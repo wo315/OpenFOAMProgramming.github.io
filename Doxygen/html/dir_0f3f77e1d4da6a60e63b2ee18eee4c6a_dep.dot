@@ -1,0 +1,32 @@
+digraph "src/phaseSystemModels/reactingEuler/multiphaseSystem/derivedFvPatchFields/wallBoilingSubModels/partitioningModels"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_ea8b62f2044edae098ab01ad23036473 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="wallBoilingSubModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_ea8b62f2044edae098ab01ad23036473.html",tooltip=""]
+  subgraph clusterdir_0f3f77e1d4da6a60e63b2ee18eee4c6a {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_0f3f77e1d4da6a60e63b2ee18eee4c6a.html",tooltip=""]
+    dir_0f3f77e1d4da6a60e63b2ee18eee4c6a [shape=plaintext, label="partitioningModels"];
+  dir_ddab12c4970d59346ddf9ff8d0c14e09 [label="cosine", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_ddab12c4970d59346ddf9ff8d0c14e09.html",tooltip=""];
+  dir_3a051484c266bb597ba2f874a9ba71e0 [label="Lavieville", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_3a051484c266bb597ba2f874a9ba71e0.html",tooltip=""];
+  dir_71d6dc2fd0a5b22807b1ee1de340137e [label="linear", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_71d6dc2fd0a5b22807b1ee1de340137e.html",tooltip=""];
+  dir_7f92e579e10550d731637ba6b0b3e6d7 [label="partitioningModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_7f92e579e10550d731637ba6b0b3e6d7.html",tooltip=""];
+  dir_76b2602f806456e91fff8e36d9b88c3a [label="phaseFraction", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_76b2602f806456e91fff8e36d9b88c3a.html",tooltip=""];
+  }
+  }
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_ddab12c4970d59346ddf9ff8d0c14e09->dir_7f92e579e10550d731637ba6b0b3e6d7 [headlabel="1", labeldistance=1.5 headhref="dir_000698_002811.html" href="dir_000698_002811.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_ddab12c4970d59346ddf9ff8d0c14e09->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_000698_002695.html" href="dir_000698_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3a051484c266bb597ba2f874a9ba71e0->dir_7f92e579e10550d731637ba6b0b3e6d7 [headlabel="1", labeldistance=1.5 headhref="dir_002103_002811.html" href="dir_002103_002811.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3a051484c266bb597ba2f874a9ba71e0->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_002103_002695.html" href="dir_002103_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_71d6dc2fd0a5b22807b1ee1de340137e->dir_7f92e579e10550d731637ba6b0b3e6d7 [headlabel="1", labeldistance=1.5 headhref="dir_002183_002811.html" href="dir_002183_002811.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_71d6dc2fd0a5b22807b1ee1de340137e->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_002183_002695.html" href="dir_002183_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7f92e579e10550d731637ba6b0b3e6d7->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="1", labeldistance=1.5 headhref="dir_002811_001387.html" href="dir_002811_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_7f92e579e10550d731637ba6b0b3e6d7->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_002811_002695.html" href="dir_002811_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_76b2602f806456e91fff8e36d9b88c3a->dir_7f92e579e10550d731637ba6b0b3e6d7 [headlabel="1", labeldistance=1.5 headhref="dir_002885_002811.html" href="dir_002885_002811.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_76b2602f806456e91fff8e36d9b88c3a->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_002885_002695.html" href="dir_002885_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

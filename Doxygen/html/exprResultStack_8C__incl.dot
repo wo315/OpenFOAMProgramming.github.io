@@ -1,0 +1,26 @@
+digraph "src/OpenFOAM/expressions/exprResult/exprResultStack.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/expressions\l/exprResult/exprResultStack.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="exprResultStack.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$exprResultStack_8H.html",tooltip=" "];
+  Node1 -> Node36 [id="edge2_Node000001_Node000036",color="steelblue1",style="solid",tooltip=" "];
+  Node36 [id="Node000036",label="vector.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$vector_8H.html",tooltip=" "];
+  Node1 -> Node93 [id="edge3_Node000001_Node000093",color="steelblue1",style="solid",tooltip=" "];
+  Node93 [id="Node000093",label="tensor.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$tensor_8H.html",tooltip=" "];
+  Node93 -> Node36 [id="edge4_Node000093_Node000036",color="steelblue1",style="solid",tooltip=" "];
+  Node93 -> Node82 [id="edge5_Node000093_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node82 [id="Node000082",label="sphericalTensor.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$sphericalTensor_8H.html",tooltip=" "];
+  Node93 -> Node86 [id="edge6_Node000093_Node000086",color="steelblue1",style="solid",tooltip=" "];
+  Node86 [id="Node000086",label="symmTensor.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$symmTensor_8H.html",tooltip=" "];
+  Node86 -> Node36 [id="edge7_Node000086_Node000036",color="steelblue1",style="solid",tooltip=" "];
+  Node86 -> Node82 [id="edge8_Node000086_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node86 -> Node93 [id="edge9_Node000086_Node000093",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node86 [id="edge10_Node000001_Node000086",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node82 [id="edge11_Node000001_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node208 [id="edge12_Node000001_Node000208",color="steelblue1",style="solid",tooltip=" "];
+  Node208 [id="Node000208",label="addToRunTimeSelectionTable.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$addToRunTimeSelectionTable_8H.html",tooltip="Macros for easy insertion into run-time selection tables."];
+}

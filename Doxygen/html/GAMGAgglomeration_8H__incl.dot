@@ -1,0 +1,20 @@
+digraph "src/OpenFOAM/matrices/lduMatrix/solvers/GAMG/GAMGAgglomerations/GAMGAgglomeration/GAMGAgglomeration.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/matrices\l/lduMatrix/solvers/GAMG\l/GAMGAgglomerations/GAMGAgglomeration\l/GAMGAgglomeration.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="MeshObject.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$MeshObject_8H.html",tooltip=" "];
+  Node1 -> Node152 [id="edge2_Node000001_Node000152",color="steelblue1",style="solid",tooltip=" "];
+  Node152 [id="Node000152",label="lduPrimitiveMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduPrimitiveMesh_8H.html",tooltip=" "];
+  Node1 -> Node157 [id="edge3_Node000001_Node000157",color="steelblue1",style="solid",tooltip=" "];
+  Node157 [id="Node000157",label="lduInterfacePtrsList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduInterfacePtrsList_8H.html",tooltip=" "];
+  Node1 -> Node187 [id="edge4_Node000001_Node000187",color="steelblue1",style="solid",tooltip=" "];
+  Node187 [id="Node000187",label="primitiveFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$primitiveFields_8H.html",tooltip="Specialisations of Field<T> for scalar, vector and tensor."];
+  Node1 -> Node146 [id="edge5_Node000001_Node000146",color="steelblue1",style="solid",tooltip=" "];
+  Node146 [id="Node000146",label="runTimeSelectionTables.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$runTimeSelectionTables_8H.html",tooltip="Macros to ease declaration of run-time selection tables."];
+  Node1 -> Node211 [id="edge6_Node000001_Node000211",color="steelblue1",style="solid",tooltip=" "];
+  Node211 [id="Node000211",label="boolList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$boolList_8H.html",tooltip=" "];
+}

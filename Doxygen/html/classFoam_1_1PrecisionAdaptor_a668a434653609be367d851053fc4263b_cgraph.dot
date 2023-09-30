@@ -1,0 +1,13 @@
+digraph "active"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="active",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::refPtr::good",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1refPtr.html#a57a3459b7c5951cb10421aae5774450b",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::refPtr::is_pointer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1refPtr.html#a224673be2a0f8a261ad2e69127afcc01",tooltip=" "];
+}

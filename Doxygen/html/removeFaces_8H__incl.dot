@@ -1,0 +1,18 @@
+digraph "src/dynamicMesh/polyTopoChange/polyTopoChange/removeFaces.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/dynamicMesh/polyTopo\lChange/polyTopoChange\l/removeFaces.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Pstream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Pstream_8H.html",tooltip=" "];
+  Node1 -> Node135 [id="edge2_Node000001_Node000135",color="steelblue1",style="solid",tooltip=" "];
+  Node135 [id="Node000135",label="HashSet.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$HashSet_8H.html",tooltip=" "];
+  Node1 -> Node136 [id="edge3_Node000001_Node000136",color="steelblue1",style="solid",tooltip=" "];
+  Node136 [id="Node000136",label="Map.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Map_8H.html",tooltip=" "];
+  Node1 -> Node144 [id="edge4_Node000001_Node000144",color="steelblue1",style="solid",tooltip=" "];
+  Node144 [id="Node000144",label="boolList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$boolList_8H.html",tooltip=" "];
+  Node1 -> Node145 [id="edge5_Node000001_Node000145",color="steelblue1",style="solid",tooltip=" "];
+  Node145 [id="Node000145",label="indirectPrimitivePatch.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$indirectPrimitivePatch_8H.html",tooltip=" "];
+}

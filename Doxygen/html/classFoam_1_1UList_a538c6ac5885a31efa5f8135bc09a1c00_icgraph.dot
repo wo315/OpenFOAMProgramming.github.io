@@ -1,0 +1,15 @@
+digraph "cdata"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="cdata",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::processorLduInterface\l::compressedSend",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1processorLduInterface.html#a8b92f0365504355ae51fcba507dd695b",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::face::hash_code",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1face.html#a43877da67964c881d2735b003ff3307e",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::processorLduInterface\l::send",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1processorLduInterface.html#acb7f4c62868ee0b88f81109e5764b62d",tooltip=" "];
+}

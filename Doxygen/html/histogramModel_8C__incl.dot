@@ -1,0 +1,14 @@
+digraph "src/functionObjects/field/histogram/histogramModels/histogramModel/histogramModel.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/functionObjects\l/field/histogram/histogram\lModels/histogramModel/histogram\lModel.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="histogramModel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$histogramModel_8H.html",tooltip=" "];
+  Node1 -> Node271 [id="edge2_Node000001_Node000271",color="steelblue1",style="solid",tooltip=" "];
+  Node271 [id="Node000271",label="fvMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fvMesh_8H.html",tooltip=" "];
+  Node1 -> Node179 [id="edge3_Node000001_Node000179",color="steelblue1",style="solid",tooltip=" "];
+  Node179 [id="Node000179",label="ListOps.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ListOps_8H.html",tooltip="Various functions to operate on Lists."];
+}

@@ -1,0 +1,45 @@
+digraph "rm"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="rm",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::functionObjects\l::abort::abort",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1functionObjects_1_1abort.html#a18b60dfa7a84a62e47d5c295d2b72292",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::functionObjects\l::abort::end",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1functionObjects_1_1abort.html#af545ab12986d2fe462f1013c3bafb5f3",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::ofstreamPointer\l::ofstreamPointer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1ofstreamPointer.html#a4fc31ce38c82b2dbff45d1ffb8b90782",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::fileOperations\l::masterUncollatedFileOperation\l::rmOp::operator()",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1fileOperations_1_1masterUncollatedFileOperation_1_1rmOp.html#a91ee7ad62498a410ce43769e2311c642",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Foam::functionObjects\l::externalCoupled::removeData\lMaster",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1functionObjects_1_1externalCoupled.html#ac02d160ca59bd638159e4638761888d4",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::functionObjects\l::externalCoupled::removeData\lSlave",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1functionObjects_1_1externalCoupled.html#a3ee2cedb1d21a80b2fe0c77e034ad3cb",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::fileFormats::\lSTARCDCore::removeFiles",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fileFormats_1_1STARCDCore.html#acfda7b35bb7be97471e1ab3d4f704a2a",tooltip=" "];
+  Node1 -> Node10 [id="edge8_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Foam::faMesh::removeFiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1faMesh.html#ab5e5cb1a8fff66e20916f2cb55598650",tooltip=" "];
+  Node1 -> Node11 [id="edge9_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Foam::polyMesh::removeFiles",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1polyMesh.html#ab5e5cb1a8fff66e20916f2cb55598650",tooltip=" "];
+  Node1 -> Node13 [id="edge10_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Foam::surfMesh::removeFiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1surfMesh.html#ab5e5cb1a8fff66e20916f2cb55598650",tooltip=" "];
+  Node1 -> Node14 [id="edge11_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="Foam::hexRef8::removeFiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1hexRef8.html#a257d112b33d6d4b4edb27c98f49fc1ce",tooltip=" "];
+  Node14 -> Node15 [id="edge12_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="Foam::meshRefinement\l::removeFiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1meshRefinement.html#a257d112b33d6d4b4edb27c98f49fc1ce",tooltip=" "];
+  Node1 -> Node16 [id="edge13_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="Foam::refinementHistory\l::removeFiles",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1refinementHistory.html#a257d112b33d6d4b4edb27c98f49fc1ce",tooltip=" "];
+  Node16 -> Node14 [id="edge14_Node000016_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge15_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node18 [id="edge16_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="Foam::fileOperations\l::uncollatedFileOperation::rm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1fileOperations_1_1uncollatedFileOperation.html#a90a03f9c5afd5f506aa16084df8da27a",tooltip=" "];
+  Node1 -> Node19 [id="edge17_Node000001_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="rmDir",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#aa669e750fef4a1227c3cad70c7ddb3ca",tooltip=" "];
+  Node19 -> Node11 [id="edge18_Node000019_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 -> Node19 [id="edge19_Node000019_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node23 [id="edge20_Node000001_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="Foam::externalFileCoupler\l::useSlave",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1externalFileCoupler.html#a09e718bb4e6722eb2d8f6c09e02eb2b3",tooltip=" "];
+}

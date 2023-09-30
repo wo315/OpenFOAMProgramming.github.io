@@ -1,0 +1,15 @@
+digraph "read"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="read",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::dictionary::optional\lSubDict",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1dictionary.html#a1bcd34840e5cde507dd31f0ef4047a64",tooltip=" "];
+  Node1 -> Node7 [id="edge2_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::laminarModels\l::generalizedNewtonianViscosity\lModel::read",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1laminarModels_1_1generalizedNewtonianViscosityModel.html#af5af8741714c81b5fafbf9eaea75abdb",tooltip=" "];
+  Node1 -> Node8 [id="edge3_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::dictionary::readEntry",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1dictionary.html#a32e06812ab7dedd7ffe59fc7d8102346",tooltip=" "];
+}

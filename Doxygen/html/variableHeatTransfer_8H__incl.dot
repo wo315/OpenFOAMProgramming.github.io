@@ -1,0 +1,12 @@
+digraph "src/fvOptions/sources/interRegion/interRegionHeatTransfer/variableHeatTransfer/variableHeatTransfer.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/fvOptions/sources\l/interRegion/interRegionHeat\lTransfer/variableHeatTransfer\l/variableHeatTransfer.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="interRegionHeatTransferModel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$interRegionHeatTransferModel_8H.html",tooltip=" "];
+  Node1 -> Node104 [id="edge2_Node000001_Node000104",color="steelblue1",style="solid",tooltip=" "];
+  Node104 [id="Node000104",label="autoPtr.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$autoPtr_8H.html",tooltip=" "];
+}

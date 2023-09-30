@@ -1,0 +1,11 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="departureFrequencyModel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1wallBoilingModels_1_1departureFrequencyModel.html",tooltip="Base class for bubble departure frequency models for boiling flows."];
+  Node0 -> Node1 [id="edge4517_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Cole",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1wallBoilingModels_1_1departureFrequencyModels_1_1Cole.html",tooltip="A correlation for bubble departure frequency modelling based on Cole (1960) for boiling flows."];
+}

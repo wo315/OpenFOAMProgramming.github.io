@@ -1,0 +1,16 @@
+digraph "src/lagrangian/intermediate/submodels/HeterogeneousReactingModel/MUCSheterogeneousRate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_fb1c2bb12d2b85259453545b2631e6a2 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="HeterogeneousReactingModel", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_fb1c2bb12d2b85259453545b2631e6a2.html",tooltip=""]
+  dir_06141f6634409701a7cfd6670fa1b702 [label="HeterogeneousReactingModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_06141f6634409701a7cfd6670fa1b702.html",tooltip=""];
+  dir_11cfd43793c43f9b4b46f534b21d6cd8 [label="MUCSheterogeneousRate", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_11cfd43793c43f9b4b46f534b21d6cd8.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_11cfd43793c43f9b4b46f534b21d6cd8->dir_06141f6634409701a7cfd6670fa1b702 [headlabel="1", labeldistance=1.5 headhref="dir_002464_001735.html" href="dir_002464_001735.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_11cfd43793c43f9b4b46f534b21d6cd8->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_002464_002695.html" href="dir_002464_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

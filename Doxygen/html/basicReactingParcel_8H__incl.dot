@@ -1,0 +1,21 @@
+digraph "src/lagrangian/intermediate/parcels/derived/basicReactingParcel/basicReactingParcel.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/lagrangian/intermediate\l/parcels/derived/basicReactingParcel\l/basicReactingParcel.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="contiguous.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$contiguous_8H.html",tooltip=" "];
+  Node1 -> Node7 [id="edge2_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="particle.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$particle_8H.html",tooltip=" "];
+  Node1 -> Node386 [id="edge3_Node000001_Node000386",color="steelblue1",style="solid",tooltip=" "];
+  Node386 [id="Node000386",label="KinematicParcel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$KinematicParcel_8H.html",tooltip=" "];
+  Node386 -> Node7 [id="edge4_Node000386_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node447 [id="edge5_Node000001_Node000447",color="steelblue1",style="solid",tooltip=" "];
+  Node447 [id="Node000447",label="ThermoParcel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ThermoParcel_8H.html",tooltip=" "];
+  Node447 -> Node7 [id="edge6_Node000447_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node502 [id="edge7_Node000001_Node000502",color="steelblue1",style="solid",tooltip=" "];
+  Node502 [id="Node000502",label="ReactingParcel.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ReactingParcel_8H.html",tooltip=" "];
+  Node502 -> Node7 [id="edge8_Node000502_Node000007",color="steelblue1",style="solid",tooltip=" "];
+}

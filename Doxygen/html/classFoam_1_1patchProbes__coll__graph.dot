@@ -1,0 +1,13 @@
+digraph "patchProbes"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="patchProbes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Set of locations to sample at patches."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="probes",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1probes.html",tooltip="Set of locations to sample."];
+  Node80 -> Node2 [id="edge2_Node000002_Node000080",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" fieldSelection_",fontcolor="grey" ];
+  Node80 [id="Node000080",label="wordRes",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1wordRes.html",tooltip="A List of wordRe with additional matching capabilities."];
+  Node80 -> Node1 [id="edge3_Node000001_Node000080",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" patchNames_",fontcolor="grey" ];
+}

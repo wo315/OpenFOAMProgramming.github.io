@@ -1,0 +1,12 @@
+digraph "lduPrimitiveProcessorInterface"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="lduPrimitiveProcessorInterface",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Concrete implementation of processor interface. Used to temporarily store settings."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="lduInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1lduInterface.html",tooltip="An abstract base class for implicitly-coupled interfaces e.g. processor and cyclic patches."];
+  Node3 -> Node1 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="processorLduInterface",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1processorLduInterface.html",tooltip="An abstract base class for processor coupled interfaces."];
+}

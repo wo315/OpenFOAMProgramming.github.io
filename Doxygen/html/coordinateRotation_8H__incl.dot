@@ -1,0 +1,23 @@
+digraph "src/OpenFOAM/primitives/coordinate/rotation/coordinateRotation.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/primitives\l/coordinate/rotation/coordinate\lRotation.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="autoPtr.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$autoPtr_8H.html",tooltip=" "];
+  Node1 -> Node72 [id="edge2_Node000001_Node000072",color="steelblue1",style="solid",tooltip=" "];
+  Node72 [id="Node000072",label="vector.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$vector_8H.html",tooltip=" "];
+  Node1 -> Node82 [id="edge3_Node000001_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node82 [id="Node000082",label="tensor.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$tensor_8H.html",tooltip=" "];
+  Node82 -> Node72 [id="edge4_Node000082_Node000072",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node97 [id="edge5_Node000001_Node000097",color="steelblue1",style="solid",tooltip=" "];
+  Node97 [id="Node000097",label="dictionary.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$dictionary_8H.html",tooltip=" "];
+  Node97 -> Node153 [id="edge6_Node000097_Node000153",color="steelblue1",style="solid",tooltip=" "];
+  Node153 [id="Node000153",label="IOobjectOption.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$IOobjectOption_8H.html",tooltip=" "];
+  Node1 -> Node153 [id="edge7_Node000001_Node000153",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node116 [id="edge8_Node000001_Node000116",color="steelblue1",style="solid",tooltip=" "];
+  Node116 [id="Node000116",label="runTimeSelectionTables.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$runTimeSelectionTables_8H.html",tooltip="Macros to ease declaration of run-time selection tables."];
+  Node116 -> Node2 [id="edge9_Node000116_Node000002",color="steelblue1",style="solid",tooltip=" "];
+}

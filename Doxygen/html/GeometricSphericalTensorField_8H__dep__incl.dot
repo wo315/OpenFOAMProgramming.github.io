@@ -1,0 +1,15 @@
+digraph "src/OpenFOAM/fields/GeometricFields/GeometricSphericalTensorField/GeometricSphericalTensorField.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/fields\l/GeometricFields/Geometric\lSphericalTensorField/GeometricSpherical\lTensorField.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="SphericalTensor specific part of the implementation of GeometricField."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/OpenFOAM/fields\l/GeometricFields/Geometric\lField/GeometricFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$GeometricFields_8H.html",tooltip="The standard GeometricField types."];
+  Node1 -> Node2556 [id="edge2_Node000001_Node002556",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2556 [id="Node002556",label="src/OpenFOAM/fields\l/GeometricFields/Geometric\lSphericalTensorField/GeometricSpherical\lTensorField.C",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$GeometricSphericalTensorField_8C.html",tooltip=" "];
+  Node1 -> Node2557 [id="edge3_Node000001_Node002557",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2557 [id="Node002557",label="src/OpenFOAM/fields\l/GeometricFields/Geometric\lTensorField/GeometricTensorField.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$GeometricTensorField_8H.html",tooltip="Tensor specific part of the implementation of GeometricField."];
+  Node2557 -> Node2 [id="edge4_Node002557_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

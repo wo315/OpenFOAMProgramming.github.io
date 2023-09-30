@@ -1,0 +1,30 @@
+digraph "execute"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="execute",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::Detail::STLAsciiParse\l::addVertexComponent",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1Detail_1_1STLAsciiParse.html#a702fcd66c3b6e657e8474d69cc9b12d1",tooltip=" "];
+  Node1 -> Node7 [id="edge2_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::Detail::STLAsciiParse\l::beginFacet",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1Detail_1_1STLAsciiParse.html#a29ccb927a683afec8253f48592f6228d",tooltip=" "];
+  Node1 -> Node8 [id="edge3_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::Detail::STLAsciiParse\l::beginSolid",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1Detail_1_1STLAsciiParse.html#a5c0f63d63a16845fd46b2c565353dede",tooltip=" "];
+  Node8 -> Node18 [id="edge4_Node000008_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="Foam::UList::size",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1UList.html#ac1fc1d9dab324bb1b8452c7aa4813026",tooltip=" "];
+  Node1 -> Node20 [id="edge5_Node000001_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="Foam::UList::empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1UList.html#a3f6fc5de06a318920d84f3c3742db07f",tooltip=" "];
+  Node1 -> Node21 [id="edge6_Node000001_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="Foam::Detail::STLAsciiParse\l::endFacet",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1Detail_1_1STLAsciiParse.html#a88caaa3555ea452d5bee0c0bcf958d61",tooltip=" "];
+  Node1 -> Node23 [id="edge7_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="Foam::stringOps::lower",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam_1_1stringOps.html#a2eec5a1c47996a50e6b0170bd1398491",tooltip=" "];
+  Node1 -> Node25 [id="edge8_Node000001_Node000025",color="steelblue1",style="solid",tooltip=" "];
+  Node25 [id="Node000025",label="perrorEOF",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$STLAsciiParseManual_8C.html#aaa4244502330afced9399d035ebc16a6",tooltip=" "];
+  Node1 -> Node26 [id="edge9_Node000001_Node000026",color="steelblue1",style="solid",tooltip=" "];
+  Node26 [id="Node000026",label="perrorParse",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$STLAsciiParseManual_8C.html#a598a42b20b58702de23d97da09343d1e",tooltip=" "];
+  Node1 -> Node18 [id="edge10_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node27 [id="edge11_Node000001_Node000027",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="Foam::word::validate",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1word.html#a1f57dcfc5cc0abd9bf53fd29f641dbe6",tooltip=" "];
+}

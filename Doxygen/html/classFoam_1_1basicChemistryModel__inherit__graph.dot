@@ -1,0 +1,18 @@
+digraph "BasicChemistryModel&lt; ReactionThermo &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="BasicChemistryModel\l\< ReactionThermo \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Basic chemistry model templated on thermodynamics."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="basicChemistryModel",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1basicChemistryModel.html",tooltip="Base class for chemistry models."];
+  Node1 -> Node12 [id="edge2_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="StandardChemistryModel\l\< CompType, ThermoType \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1StandardChemistryModel.html",tooltip=" "];
+  Node1 -> Node13 [id="edge3_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="StandardChemistryModel\l\< ReactionThermo, ThermoType \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1StandardChemistryModel.html",tooltip="Extends base chemistry model by adding a thermo package, and ODE functions. Introduces chemistry equa..."];
+  Node13 -> Node12 [id="edge4_Node000013_Node000012",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< CompType, ThermoType \>",fontcolor="grey" ];
+  Node1 -> Node16 [id="edge5_Node000001_Node000016",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< CompType \>",fontcolor="grey" ];
+  Node16 [id="Node000016",label="BasicChemistryModel\l\< CompType \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1BasicChemistryModel.html",tooltip=" "];
+}

@@ -1,0 +1,25 @@
+digraph "incompressibleTwoPhaseMixture"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="incompressibleTwoPhaseMixture",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="A two-phase incompressible transportModel."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="IOdictionary",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1IOdictionary.html",tooltip="IOdictionary is derived from dictionary and IOobject to give the dictionary automatic IO functionalit..."];
+  Node15 -> Node1 [id="edge2_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="transportModel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1transportModel.html",tooltip="Base-class for all transport models used by the incompressible turbulence models."];
+  Node16 -> Node1 [id="edge3_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="twoPhaseMixture",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1twoPhaseMixture.html",tooltip="A two-phase mixture model."];
+  Node20 -> Node16 [id="edge4_Node000016_Node000020",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" alpha1_\nalpha2_",fontcolor="grey" ];
+  Node20 [id="Node000020",label="GeometricField\< scalar,\l fvPatchField, volMesh \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1GeometricField.html",tooltip=" "];
+  Node29 -> Node20 [id="edge5_Node000020_Node000029",dir="back",color="orange",style="dashed",tooltip=" ",label=" \< scalar, fvPatchField,\l volMesh \>",fontcolor="grey" ];
+  Node29 [id="Node000029",label="GeometricField\< Type,\l PatchField, GeoMesh \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1GeometricField.html",tooltip="Generic GeometricField class."];
+  Node31 -> Node1 [id="edge6_Node000001_Node000031",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" nuModel1_\nnuModel2_",fontcolor="grey" ];
+  Node31 [id="Node000031",label="autoPtr\< Foam::viscosity\lModel \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1autoPtr.html",tooltip=" "];
+  Node33 -> Node1 [id="edge7_Node000001_Node000033",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" rho1_\nrho2_",fontcolor="grey" ];
+  Node33 [id="Node000033",label="dimensioned\< scalar \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1dimensioned.html",tooltip=" "];
+  Node29 -> Node1 [id="edge8_Node000001_Node000029",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" U_\nphi_",fontcolor="grey" ];
+  Node20 -> Node1 [id="edge9_Node000001_Node000020",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" nu_",fontcolor="grey" ];
+}

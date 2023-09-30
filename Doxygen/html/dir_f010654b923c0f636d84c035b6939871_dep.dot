@@ -1,0 +1,12 @@
+digraph "applications/utilities/preProcessing/PDR/pdrFields/optionalData"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_7e260c65fd0e43bc3877b8f21b8c73d9 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="pdrFields", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_7e260c65fd0e43bc3877b8f21b8c73d9.html",tooltip=""]
+  dir_f010654b923c0f636d84c035b6939871 [label="optionalData", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_f010654b923c0f636d84c035b6939871.html",tooltip=""];
+  }
+}

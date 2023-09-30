@@ -1,0 +1,15 @@
+digraph "sensitivityMultiple"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="sensitivityMultiple",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Calculation of adjoint based sensitivities of multiple types."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="adjointSensitivity",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1incompressible_1_1adjointSensitivity.html",tooltip="Abstract base class for adjoint-based sensitivities in incompressible flows."];
+  Node84 -> Node1 [id="edge2_Node000001_Node000084",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" sensTypes_",fontcolor="grey" ];
+  Node84 [id="Node000084",label="List\< word \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1List.html",tooltip=" "];
+  Node86 -> Node1 [id="edge3_Node000001_Node000086",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" sens_",fontcolor="grey" ];
+  Node86 [id="Node000086",label="PtrList\< Foam::incompressible\l::adjointSensitivity \>",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1PtrList.html",tooltip=" "];
+}

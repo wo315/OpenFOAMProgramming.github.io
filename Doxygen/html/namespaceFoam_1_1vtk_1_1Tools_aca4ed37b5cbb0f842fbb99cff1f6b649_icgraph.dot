@@ -1,0 +1,13 @@
+digraph "Faces"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Faces",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::vtk::Tools::Patch\l::faces",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structFoam_1_1vtk_1_1Tools_1_1Patch.html#a695936c9815bcb045931b91366762c54",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::vtk::Tools::Patch\l::mesh",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structFoam_1_1vtk_1_1Tools_1_1Patch.html#a3bb5e1d2543383618d2766c15549b06e",tooltip=" "];
+}

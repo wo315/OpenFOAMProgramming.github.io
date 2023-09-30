@@ -1,0 +1,14 @@
+digraph "faceOnlySet"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="faceOnlySet",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Sample on faces along a specified path."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sampledSet",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1sampledSet.html",tooltip="Holds list of sampling points which is filled at construction time. Various implementations of this b..."];
+  Node1 -> Node13 [id="edge2_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="midPointAndFaceSet",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1midPointAndFaceSet.html",tooltip=" "];
+  Node1 -> Node14 [id="edge3_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="midPointSet",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1midPointSet.html",tooltip=" "];
+}

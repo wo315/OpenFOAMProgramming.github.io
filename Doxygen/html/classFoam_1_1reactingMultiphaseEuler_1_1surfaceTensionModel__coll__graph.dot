@@ -1,0 +1,14 @@
+digraph "surfaceTensionModel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="surfaceTensionModel",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="regIOobject",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1regIOobject.html",tooltip="regIOobject is an abstract class derived from IOobject to handle automatic object registration with t..."];
+  Node7 -> Node1 [id="edge2_Node000001_Node000007",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" pair_",fontcolor="grey" ];
+  Node7 [id="Node000007",label="phasePair",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1phasePair.html",tooltip="Description for mass transfer between a pair of phases. The direction of the mass transfer is from th..."];
+  Node14 -> Node1 [id="edge3_Node000001_Node000014",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" dimSigma",fontcolor="grey" ];
+  Node14 [id="Node000014",label="dimensionSet",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1dimensionSet.html",tooltip="Dimension set for the base types, which can be used to implement rigorous dimension checking for alge..."];
+}

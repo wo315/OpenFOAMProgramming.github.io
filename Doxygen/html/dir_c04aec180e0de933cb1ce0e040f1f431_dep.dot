@@ -1,0 +1,26 @@
+digraph "src/lagrangian/spray/submodels/AtomizationModel"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_03a209607acdac05f1cb82250460b2d6 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="submodels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_03a209607acdac05f1cb82250460b2d6.html",tooltip=""]
+  subgraph clusterdir_c04aec180e0de933cb1ce0e040f1f431 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_c04aec180e0de933cb1ce0e040f1f431.html",tooltip=""]
+    dir_c04aec180e0de933cb1ce0e040f1f431 [shape=plaintext, label="AtomizationModel"];
+  dir_c5140c70a0de325936e2f0836d17f5d3 [label="AtomizationModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c5140c70a0de325936e2f0836d17f5d3.html",tooltip=""];
+  dir_fb5963dee1db80f8d3aceda69b23b88b [label="BlobsSheetAtomization", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_fb5963dee1db80f8d3aceda69b23b88b.html",tooltip=""];
+  dir_20940d1de9510184f44af54ae5cf7195 [label="LISAAtomization", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_20940d1de9510184f44af54ae5cf7195.html",tooltip=""];
+  dir_aae326796e4de325bee85f9c1a610e88 [label="NoAtomization", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_aae326796e4de325bee85f9c1a610e88.html",tooltip=""];
+  }
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_d3c32a493136c130c1f0d51f4f35c297 [label="intermediate", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_d3c32a493136c130c1f0d51f4f35c297.html",tooltip=""];
+  dir_c5140c70a0de325936e2f0836d17f5d3->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="3", labeldistance=1.5 headhref="dir_000163_002695.html" href="dir_000163_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_c5140c70a0de325936e2f0836d17f5d3->dir_d3c32a493136c130c1f0d51f4f35c297 [headlabel="1", labeldistance=1.5 headhref="dir_000163_001913.html" href="dir_000163_001913.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fb5963dee1db80f8d3aceda69b23b88b->dir_c5140c70a0de325936e2f0836d17f5d3 [headlabel="1", labeldistance=1.5 headhref="dir_000297_000163.html" href="dir_000297_000163.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_20940d1de9510184f44af54ae5cf7195->dir_c5140c70a0de325936e2f0836d17f5d3 [headlabel="1", labeldistance=1.5 headhref="dir_002233_000163.html" href="dir_002233_000163.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_aae326796e4de325bee85f9c1a610e88->dir_c5140c70a0de325936e2f0836d17f5d3 [headlabel="1", labeldistance=1.5 headhref="dir_002532_000163.html" href="dir_002532_000163.html" color="steelblue1" fontcolor="steelblue1"];
+}

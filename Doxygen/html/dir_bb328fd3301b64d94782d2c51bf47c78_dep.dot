@@ -1,0 +1,16 @@
+digraph "src/lagrangian/coalCombustion/submodels/surfaceReactionModel/COxidationKineticDiffusionLimitedRate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_39175ac9bc62ba09a35292aef1677b92 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="surfaceReactionModel", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_39175ac9bc62ba09a35292aef1677b92.html",tooltip=""]
+  dir_bb328fd3301b64d94782d2c51bf47c78 [label="COxidationKineticDiffusion\lLimitedRate", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_bb328fd3301b64d94782d2c51bf47c78.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_d3c32a493136c130c1f0d51f4f35c297 [label="intermediate", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_d3c32a493136c130c1f0d51f4f35c297.html",tooltip=""];
+  dir_bb328fd3301b64d94782d2c51bf47c78->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_000718_002695.html" href="dir_000718_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_bb328fd3301b64d94782d2c51bf47c78->dir_d3c32a493136c130c1f0d51f4f35c297 [headlabel="1", labeldistance=1.5 headhref="dir_000718_001913.html" href="dir_000718_001913.html" color="steelblue1" fontcolor="steelblue1"];
+}

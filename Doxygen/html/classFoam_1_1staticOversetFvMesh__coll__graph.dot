@@ -1,0 +1,12 @@
+digraph "staticOversetFvMesh"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="staticOversetFvMesh",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="fvMesh with support for overset meshes."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="staticFvMesh",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1staticFvMesh.html",tooltip="Foam::staticFvMesh."];
+  Node56 -> Node1 [id="edge2_Node000001_Node000056",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node56 [id="Node000056",label="oversetFvMeshBase",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1oversetFvMeshBase.html",tooltip="Support for overset functionality."];
+}

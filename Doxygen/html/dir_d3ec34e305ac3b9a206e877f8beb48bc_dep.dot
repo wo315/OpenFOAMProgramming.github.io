@@ -1,0 +1,16 @@
+digraph "src/OpenFOAM/db/functionObjects/timeFunctionObject"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_b1391b8691e21d3cff54e51a698f3c2b {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="functionObjects", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_b1391b8691e21d3cff54e51a698f3c2b.html",tooltip=""]
+  dir_54771b73ae8d00c119965aead573f78a [label="functionObject", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_54771b73ae8d00c119965aead573f78a.html",tooltip=""];
+  dir_d3ec34e305ac3b9a206e877f8beb48bc [label="timeFunctionObject", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_d3ec34e305ac3b9a206e877f8beb48bc.html",tooltip=""];
+  }
+  dir_ec5b63092fb55ef516ddf05b3841c89d [label="Time", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_ec5b63092fb55ef516ddf05b3841c89d.html",tooltip=""];
+  dir_d3ec34e305ac3b9a206e877f8beb48bc->dir_54771b73ae8d00c119965aead573f78a [headlabel="1", labeldistance=1.5 headhref="dir_004040_001514.html" href="dir_004040_001514.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d3ec34e305ac3b9a206e877f8beb48bc->dir_ec5b63092fb55ef516ddf05b3841c89d [headlabel="2", labeldistance=1.5 headhref="dir_004040_004036.html" href="dir_004040_004036.html" color="steelblue1" fontcolor="steelblue1"];
+}

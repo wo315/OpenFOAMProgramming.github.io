@@ -1,0 +1,13 @@
+digraph "connects"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="connects",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="connected",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1edge.html#a569e5e99536e1c1314c8321c3bd18d66",tooltip=" "];
+  Node1 -> Node4 [id="edge2_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::Pair\< label \>\l::other",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1Pair.html#a8336bc757398eb87caff1de1c3fc99d5",tooltip=" "];
+}

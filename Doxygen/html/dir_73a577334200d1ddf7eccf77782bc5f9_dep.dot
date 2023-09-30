@@ -1,0 +1,26 @@
+digraph "applications/solvers/multiphase/icoReactingMultiphaseInterFoam/laserDTRM"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_1ff87e91ba7f0e4bf8179bd47788b26b {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="icoReactingMultiphaseInterFoam", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_1ff87e91ba7f0e4bf8179bd47788b26b.html",tooltip=""]
+  subgraph clusterdir_73a577334200d1ddf7eccf77782bc5f9 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_73a577334200d1ddf7eccf77782bc5f9.html",tooltip=""]
+    dir_73a577334200d1ddf7eccf77782bc5f9 [shape=plaintext, label="laserDTRM"];
+  dir_2bb3a3346b46f8df5f22ac6a69065b2a [label="DTRMParticle", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2bb3a3346b46f8df5f22ac6a69065b2a.html",tooltip=""];
+  dir_fefbab021127890418f9f623ad09a789 [label="localDensityAbsorptionEmission", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_fefbab021127890418f9f623ad09a789.html",tooltip=""];
+  dir_e944b23a9482893a0f1e38eaa537ebd2 [label="reflectionModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_e944b23a9482893a0f1e38eaa537ebd2.html",tooltip=""];
+  }
+  }
+  dir_68267d1309a1af8e8297ef4c3efbcdba [label="src", fillcolor="#edf0f7", color="red", style="filled", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html",tooltip=""];
+  dir_73a577334200d1ddf7eccf77782bc5f9->dir_2bb3a3346b46f8df5f22ac6a69065b2a [headlabel="1", labeldistance=1.5 headhref="dir_002100_001063.html" href="dir_002100_001063.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_73a577334200d1ddf7eccf77782bc5f9->dir_68267d1309a1af8e8297ef4c3efbcdba [headlabel="20", labeldistance=1.5 headhref="dir_002100_003729.html" href="dir_002100_003729.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_73a577334200d1ddf7eccf77782bc5f9->dir_e944b23a9482893a0f1e38eaa537ebd2 [headlabel="5", labeldistance=1.5 headhref="dir_002100_003280.html" href="dir_002100_003280.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2bb3a3346b46f8df5f22ac6a69065b2a->dir_68267d1309a1af8e8297ef4c3efbcdba [headlabel="6", labeldistance=1.5 headhref="dir_001063_003729.html" href="dir_001063_003729.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_2bb3a3346b46f8df5f22ac6a69065b2a->dir_e944b23a9482893a0f1e38eaa537ebd2 [headlabel="1", labeldistance=1.5 headhref="dir_001063_003280.html" href="dir_001063_003280.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fefbab021127890418f9f623ad09a789->dir_68267d1309a1af8e8297ef4c3efbcdba [headlabel="1", labeldistance=1.5 headhref="dir_002250_003729.html" href="dir_002250_003729.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_e944b23a9482893a0f1e38eaa537ebd2->dir_68267d1309a1af8e8297ef4c3efbcdba [headlabel="5", labeldistance=1.5 headhref="dir_003280_003729.html" href="dir_003280_003729.html" color="steelblue1" fontcolor="steelblue1"];
+}

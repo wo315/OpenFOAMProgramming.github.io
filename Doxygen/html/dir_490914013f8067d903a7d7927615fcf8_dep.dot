@@ -1,0 +1,14 @@
+digraph "src/phaseSystemModels/twoPhaseEuler/phaseCompressibleTurbulenceModels/kineticTheoryModels/viscosityModel/HrenyaSinclair"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_5644ccddc21f55bfbc9d7279fcb61981 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="viscosityModel", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_5644ccddc21f55bfbc9d7279fcb61981.html",tooltip=""]
+  dir_490914013f8067d903a7d7927615fcf8 [label="HrenyaSinclair", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_490914013f8067d903a7d7927615fcf8.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_490914013f8067d903a7d7927615fcf8->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_001753_002695.html" href="dir_001753_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

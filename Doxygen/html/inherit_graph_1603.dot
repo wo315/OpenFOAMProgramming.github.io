@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="renumberMethod",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1renumberMethod.html",tooltip="Abstract base class for renumbering."];
+  Node0 -> Node1 [id="edge5255_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="CuthillMcKeeRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1CuthillMcKeeRenumber.html",tooltip="Cuthill-McKee renumbering."];
+  Node0 -> Node2 [id="edge5256_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="SloanRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1SloanRenumber.html",tooltip="Sloan renumbering algorithm."];
+  Node0 -> Node3 [id="edge5257_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="manualRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1manualRenumber.html",tooltip="Renumber given a ordered-to-original cell association in a file."];
+  Node0 -> Node4 [id="edge5258_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="randomRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1randomRenumber.html",tooltip="Random renumber. Just to see effect of renumbering."];
+  Node0 -> Node5 [id="edge5259_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="springRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1springRenumber.html",tooltip="Use spring analogy - attract neighbouring cells according to the distance of their cell indices."];
+  Node0 -> Node6 [id="edge5260_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="structuredRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1structuredRenumber.html",tooltip="Renumbering according to mesh layers. depthFirst = true: first column gets ids 0....."];
+  Node0 -> Node7 [id="edge5261_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="zoltanRenumber",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1zoltanRenumber.html",tooltip="Renumber using Zoltan."];
+}

@@ -1,0 +1,18 @@
+digraph "src/phaseSystemModels/reactingEuler/multiphaseSystem/interfacialModels/phaseTransferModels/deposition"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_9aae34e1ba0cd32b53ec3b316692381f {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="phaseTransferModels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_9aae34e1ba0cd32b53ec3b316692381f.html",tooltip=""]
+  dir_8014c490544d1b6cf364c5072d4a6985 [label="phaseTransferModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_8014c490544d1b6cf364c5072d4a6985.html",tooltip=""];
+  dir_8e9a90afb7f6ab1217cd88cc3077e167 [label="deposition", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_8e9a90afb7f6ab1217cd88cc3077e167.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_dfe19b54a98af0254be9d6c989217747 [label="phaseSystem", fillcolor="#edf0f7", color="grey50", style="filled", URL="dir_dfe19b54a98af0254be9d6c989217747.html",tooltip=""];
+  dir_8e9a90afb7f6ab1217cd88cc3077e167->dir_8014c490544d1b6cf364c5072d4a6985 [headlabel="1", labeldistance=1.5 headhref="dir_000847_002910.html" href="dir_000847_002910.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_8e9a90afb7f6ab1217cd88cc3077e167->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_000847_002695.html" href="dir_000847_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_8e9a90afb7f6ab1217cd88cc3077e167->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_000847_002906.html" href="dir_000847_002906.html" color="steelblue1" fontcolor="steelblue1"];
+}

@@ -1,0 +1,32 @@
+digraph "src/finiteVolume/fvMatrices/fvMatrix/fvMatrix.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/finiteVolume/fvMatrices\l/fvMatrix/fvMatrix.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="volFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$volFields_8H.html",tooltip=" "];
+  Node1 -> Node379 [id="edge2_Node000001_Node000379",color="steelblue1",style="solid",tooltip=" "];
+  Node379 [id="Node000379",label="surfaceFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$surfaceFields_8H.html",tooltip="Foam::surfaceFields."];
+  Node1 -> Node387 [id="edge3_Node000001_Node000387",color="steelblue1",style="solid",tooltip=" "];
+  Node387 [id="Node000387",label="lduMatrix.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduMatrix_8H.html",tooltip=" "];
+  Node387 -> Node340 [id="edge4_Node000387_Node000340",color="steelblue1",style="solid",tooltip=" "];
+  Node340 [id="Node000340",label="lduMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduMesh_8H.html",tooltip=" "];
+  Node387 -> Node82 [id="edge5_Node000387_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node82 [id="Node000082",label="autoPtr.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$autoPtr_8H.html",tooltip=" "];
+  Node1 -> Node84 [id="edge6_Node000001_Node000084",color="steelblue1",style="solid",tooltip=" "];
+  Node84 [id="Node000084",label="tmp.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$tmp_8H.html",tooltip=" "];
+  Node84 -> Node82 [id="edge7_Node000084_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node82 [id="edge8_Node000001_Node000082",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node128 [id="edge9_Node000001_Node000128",color="steelblue1",style="solid",tooltip=" "];
+  Node128 [id="Node000128",label="dimensionedTypes.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$dimensionedTypes_8H.html",tooltip=" "];
+  Node1 -> Node76 [id="edge10_Node000001_Node000076",color="steelblue1",style="solid",tooltip=" "];
+  Node76 [id="Node000076",label="className.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$className_8H.html",tooltip="Macro definitions for declaring ClassName(), NamespaceName(), etc."];
+  Node1 -> Node389 [id="edge11_Node000001_Node000389",color="steelblue1",style="solid",tooltip=" "];
+  Node389 [id="Node000389",label="lduPrimitiveMeshAssembly.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$lduPrimitiveMeshAssembly_8H.html",tooltip=" "];
+  Node1 -> Node340 [id="edge12_Node000001_Node000340",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node391 [id="edge13_Node000001_Node000391",color="steelblue1",style="solid",tooltip=" "];
+  Node391 [id="Node000391",label="fvScalarMatrix.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$fvScalarMatrix_8H.html",tooltip="A scalar instance of fvMatrix."];
+  Node391 -> Node1 [id="edge14_Node000391_Node000001",color="steelblue1",style="solid",tooltip=" "];
+}

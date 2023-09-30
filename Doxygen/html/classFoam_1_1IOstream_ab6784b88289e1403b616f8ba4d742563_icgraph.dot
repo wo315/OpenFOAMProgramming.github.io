@@ -1,0 +1,15 @@
+digraph "flags"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="flags",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="setf",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1IOstream.html#a7496d7abe05bdd8cffe2be14798ac34f",tooltip=" "];
+  Node1 -> Node42 [id="edge2_Node000001_Node000042",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node42 [id="Node000042",label="setf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1IOstream.html#a7c8972f80cfc853d1b78253abee55f04",tooltip=" "];
+  Node1 -> Node43 [id="edge3_Node000001_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node43 [id="Node000043",label="unsetf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1IOstream.html#a6215a425470b1a58a0f3e0407f8683ca",tooltip=" "];
+}

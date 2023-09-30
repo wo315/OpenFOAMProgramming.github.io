@@ -1,0 +1,17 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="simpleRegIOobject",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1simpleRegIOobject.html",tooltip="Abstract base class for registered object with I/O. Used in debug symbol registration."];
+  Node0 -> Node1 [id="edge5305_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="RegisterDebugSwitch\l\< Type \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1RegisterDebugSwitch.html",tooltip=" "];
+  Node0 -> Node2 [id="edge5306_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="RegisterSwitch\< Type \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1RegisterSwitch.html",tooltip="Class and registration macros for InfoSwitches and OptimisationSwitches to support reading from syste..."];
+  Node0 -> Node3 [id="edge5307_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="addstopAtWriteNowSignalToOpt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1addstopAtWriteNowSignalToOpt.html",tooltip=" "];
+  Node0 -> Node4 [id="edge5308_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="addwriteNowSignalToOpt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1addwriteNowSignalToOpt.html",tooltip=" "];
+}

@@ -1,0 +1,23 @@
+digraph "src/OpenFOAM/matrices/Matrix/MatrixIO.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/matrices\l/Matrix/MatrixIO.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Matrix.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Matrix_8H.html",tooltip=" "];
+  Node1 -> Node94 [id="edge2_Node000001_Node000094",color="steelblue1",style="solid",tooltip=" "];
+  Node94 [id="Node000094",label="Istream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Istream_8H.html",tooltip=" "];
+  Node94 -> Node95 [id="edge3_Node000094_Node000095",color="steelblue1",style="solid",tooltip=" "];
+  Node95 [id="Node000095",label="token.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$token_8H.html",tooltip=" "];
+  Node95 -> Node94 [id="edge4_Node000095_Node000094",color="steelblue1",style="solid",tooltip=" "];
+  Node94 -> Node45 [id="edge5_Node000094_Node000045",color="steelblue1",style="solid",tooltip=" "];
+  Node45 [id="Node000045",label="contiguous.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$contiguous_8H.html",tooltip=" "];
+  Node1 -> Node57 [id="edge6_Node000001_Node000057",color="steelblue1",style="solid",tooltip=" "];
+  Node57 [id="Node000057",label="Ostream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Ostream_8H.html",tooltip=" "];
+  Node1 -> Node95 [id="edge7_Node000001_Node000095",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node45 [id="edge8_Node000001_Node000045",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node80 [id="edge9_Node000001_Node000080",color="steelblue1",style="solid",tooltip=" "];
+  Node80 [id="Node000080",label="ListPolicy.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ListPolicy_8H.html",tooltip=" "];
+}

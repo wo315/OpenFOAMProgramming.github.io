@@ -1,0 +1,12 @@
+digraph "timeInfo"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="timeInfo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Writes the run time (time-step), cpuTime and clockTime - optionally with cpuTime and clockTime change..."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="timeFunctionObject",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1functionObjects_1_1timeFunctionObject.html",tooltip="Virtual base class for function objects with a reference to Time."];
+  Node4 -> Node1 [id="edge2_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="writeFile",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classFoam_1_1functionObjects_1_1writeFile.html",tooltip="Base class for writing single files from the function objects."];
+}

@@ -1,0 +1,25 @@
+digraph "src/lagrangian/intermediate/submodels/Thermodynamic"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_825de5f87f0ef3ae7d76ccd6a5458244 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="submodels", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_825de5f87f0ef3ae7d76ccd6a5458244.html",tooltip=""]
+  dir_280ce042c33ce1e00a1fb89491254772 [label="Kinematic", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_280ce042c33ce1e00a1fb89491254772.html",tooltip=""];
+  subgraph clusterdir_1eb96833a2ea895c5b0d51c02e19e221 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_1eb96833a2ea895c5b0d51c02e19e221.html",tooltip=""]
+    dir_1eb96833a2ea895c5b0d51c02e19e221 [shape=plaintext, label="Thermodynamic"];
+  dir_89131fa3386e14a0e147ebbe4f4fe0d7 [label="HeatTransferModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_89131fa3386e14a0e147ebbe4f4fe0d7.html",tooltip=""];
+  dir_d6cfcce7cb01000f00d3012d70fdee4f [label="InjectionModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d6cfcce7cb01000f00d3012d70fdee4f.html",tooltip=""];
+  dir_685b5eb119739f2702439e0c19587c12 [label="SurfaceFilmModel", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_685b5eb119739f2702439e0c19587c12.html",tooltip=""];
+  }
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_89131fa3386e14a0e147ebbe4f4fe0d7->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="3", labeldistance=1.5 headhref="dir_001716_002695.html" href="dir_001716_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d6cfcce7cb01000f00d3012d70fdee4f->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_001859_002695.html" href="dir_001859_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d6cfcce7cb01000f00d3012d70fdee4f->dir_280ce042c33ce1e00a1fb89491254772 [headlabel="3", labeldistance=1.5 headhref="dir_001859_002016.html" href="dir_001859_002016.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_685b5eb119739f2702439e0c19587c12->dir_280ce042c33ce1e00a1fb89491254772 [headlabel="1", labeldistance=1.5 headhref="dir_003836_002016.html" href="dir_003836_002016.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_685b5eb119739f2702439e0c19587c12->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_003836_002695.html" href="dir_003836_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

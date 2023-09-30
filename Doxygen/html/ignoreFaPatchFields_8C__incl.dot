@@ -1,0 +1,14 @@
+digraph "src/finiteArea/fields/faPatchFields/derived/ignore/ignoreFaPatchFields.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/finiteArea/fields\l/faPatchFields/derived\l/ignore/ignoreFaPatchFields.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ignoreFaPatchFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$ignoreFaPatchFields_8H.html",tooltip=" "];
+  Node1 -> Node241 [id="edge2_Node000001_Node000241",color="steelblue1",style="solid",tooltip=" "];
+  Node241 [id="Node000241",label="addToRunTimeSelectionTable.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$addToRunTimeSelectionTable_8H.html",tooltip="Macros for easy insertion into run-time selection tables."];
+  Node1 -> Node242 [id="edge3_Node000001_Node000242",color="steelblue1",style="solid",tooltip=" "];
+  Node242 [id="Node000242",label="areaFields.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$areaFields_8H.html",tooltip=" "];
+}

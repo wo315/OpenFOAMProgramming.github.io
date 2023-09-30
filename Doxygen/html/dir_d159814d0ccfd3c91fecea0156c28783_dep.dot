@@ -1,0 +1,18 @@
+digraph "src/thermophysicalModels/chemistryModel/chemistryModel/TDACChemistryModel/tabulation/ISAT/binaryTree"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_7219e9beda73e4f7f74dfa284027691b {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="ISAT", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_7219e9beda73e4f7f74dfa284027691b.html",tooltip=""]
+  dir_08fbe5e166154598ca39f40c1ab0549c [label="binaryNode", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_08fbe5e166154598ca39f40c1ab0549c.html",tooltip=""];
+  dir_5770e3c71c220b1215a25797f67fb21b [label="chemPointISAT", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_5770e3c71c220b1215a25797f67fb21b.html",tooltip=""];
+  dir_d159814d0ccfd3c91fecea0156c28783 [label="binaryTree", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_d159814d0ccfd3c91fecea0156c28783.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_d159814d0ccfd3c91fecea0156c28783->dir_08fbe5e166154598ca39f40c1ab0549c [headlabel="1", labeldistance=1.5 headhref="dir_000271_000270.html" href="dir_000271_000270.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d159814d0ccfd3c91fecea0156c28783->dir_5770e3c71c220b1215a25797f67fb21b [headlabel="1", labeldistance=1.5 headhref="dir_000271_000479.html" href="dir_000271_000479.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d159814d0ccfd3c91fecea0156c28783->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_000271_002695.html" href="dir_000271_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}

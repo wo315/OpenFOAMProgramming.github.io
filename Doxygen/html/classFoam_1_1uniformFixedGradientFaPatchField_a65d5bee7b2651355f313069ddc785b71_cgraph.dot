@@ -1,0 +1,15 @@
+digraph "uniformFixedGradientFaPatchField"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="uniformFixedGradientFaPatch\lField",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::fixedGradientFaPatch\lField::evaluate",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1fixedGradientFaPatchField.html#a1a4ebfb8aa4dc581e54081a12bfbd0d3",tooltip=" "];
+  Node1 -> Node5 [id="edge2_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::faPatchField\l::extrapolateInternal",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1faPatchField.html#ad941697e32aa2ca9e41107ff773d5d60",tooltip=" "];
+  Node1 -> Node7 [id="edge3_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::faPatchField\l::readValueEntry",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1faPatchField.html#acc37ee6906b724e1f390ed08e55df367",tooltip=" "];
+}

@@ -1,0 +1,15 @@
+digraph "src/OpenFOAM/primitives/strings/string/stringIO.C"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/OpenFOAM/primitives\l/strings/string/stringIO.C",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="string.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$string_8H.html",tooltip=" "];
+  Node1 -> Node11 [id="edge2_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="token.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$token_8H.html",tooltip=" "];
+  Node1 -> Node94 [id="edge3_Node000001_Node000094",color="steelblue1",style="solid",tooltip=" "];
+  Node94 [id="Node000094",label="IOstreams.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$IOstreams_8H.html",tooltip="Useful combination of include files which define Sin, Sout and Serr and the use of IO streams general..."];
+  Node94 -> Node11 [id="edge4_Node000094_Node000011",color="steelblue1",style="solid",tooltip=" "];
+}

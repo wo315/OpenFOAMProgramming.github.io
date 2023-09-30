@@ -1,0 +1,35 @@
+digraph "F"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="F",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::ReactingHeterogeneous\lParcel::calcHeterogeneousReactions",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1ReactingHeterogeneousParcel.html#a73204d2d2666e0799c09f2605c7e9558",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Foam::MUCSheterogeneousRate\l::calculate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1MUCSheterogeneousRate.html#a54e3cd1b78ff4e5c8b6da4cc2a8e6e01",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::dragModels::IshiiZuber\l::CdRe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1dragModels_1_1IshiiZuber.html#afca72aca1f9087001bc21f6a2dedbe3d",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Foam::dragModels::Tomiyama\lAnalytic::CdRe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1dragModels_1_1TomiyamaAnalytic.html#afca72aca1f9087001bc21f6a2dedbe3d",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Foam::wallDampingModels\l::interpolated::damp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1wallDampingModels_1_1interpolated.html#af21ca90ee3692e6518c2468e5b748545",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Foam::wallDampingModels\l::interpolated::damp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1wallDampingModels_1_1interpolated.html#aa005eb6c31c93b9a5ca09aaf8b9f8695",tooltip=" "];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Foam::wallDampingModels\l::noWallDamping::damp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1wallDampingModels_1_1noWallDamping.html#aa005eb6c31c93b9a5ca09aaf8b9f8695",tooltip=" "];
+  Node1 -> Node9 [id="edge8_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Foam::radiation::viewFactor\l::initialise",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1radiation_1_1viewFactor.html#a18abf8b19283101238a77c9e6865b673",tooltip=" "];
+  Node1 -> Node12 [id="edge9_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Foam::MomentumTransferPhase\lSystem::phiFs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1MomentumTransferPhaseSystem.html#a2188dc7d3e0ff84caaf7b56e833d3b7a",tooltip=" "];
+  Node1 -> Node13 [id="edge10_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Foam::ReactingHeterogeneous\lParcel::readFields",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classFoam_1_1ReactingHeterogeneousParcel.html#aef842d059922eaaa167c7b8c37378e17",tooltip=" "];
+  Node1 -> Node15 [id="edge11_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="Foam::pairPotentials\l::azizChen::unscaledEnergy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1pairPotentials_1_1azizChen.html#a83578b87f1b5c24f33e63b3327599dff",tooltip=" "];
+  Node1 -> Node16 [id="edge12_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="Foam::ReactingHeterogeneous\lParcel::writeFields",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1ReactingHeterogeneousParcel.html#a64adf0008b4736131ce199c3a2c5ffd7",tooltip=" "];
+  Node1 -> Node17 [id="edge13_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="Foam::ReactingHeterogeneous\lParcel::writeObjects",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1ReactingHeterogeneousParcel.html#a254fa20d475237c6a9ae01bf4fe0e361",tooltip=" "];
+}

@@ -1,0 +1,14 @@
+digraph "src/sixDoFRigidBodyMotion/sixDoFSolvers/sixDoFSolver/sixDoFSolver.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/sixDoFRigidBodyMotion\l/sixDoFSolvers/sixDoFSolver\l/sixDoFSolver.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="sixDoFRigidBodyMotion.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$sixDoFRigidBodyMotion_8H.html",tooltip=" "];
+  Node1 -> Node122 [id="edge2_Node000001_Node000122",color="steelblue1",style="solid",tooltip=" "];
+  Node122 [id="Node000122",label="runTimeSelectionTables.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$runTimeSelectionTables_8H.html",tooltip="Macros to ease declaration of run-time selection tables."];
+  Node1 -> Node284 [id="edge3_Node000001_Node000284",color="steelblue1",style="solid",tooltip=" "];
+  Node284 [id="Node000284",label="sixDoFSolverI.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sixDoFSolverI_8H.html",tooltip=" "];
+}

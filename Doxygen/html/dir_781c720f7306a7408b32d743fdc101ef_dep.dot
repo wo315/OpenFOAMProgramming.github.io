@@ -1,0 +1,50 @@
+digraph "src/phaseSystemModels/reactingEuler/multiphaseSystem/PhaseSystems"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_4edcd2f80655d7be3718758b13a7ab40 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="multiphaseSystem", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_4edcd2f80655d7be3718758b13a7ab40.html",tooltip=""]
+  dir_c9eb74ea5be55f867422cccc8fbf9bc7 [label="interfacialCompositionModels", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_c9eb74ea5be55f867422cccc8fbf9bc7.html",tooltip=""];
+  dir_dfe19b54a98af0254be9d6c989217747 [label="phaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_dfe19b54a98af0254be9d6c989217747.html",tooltip=""];
+  dir_ac9b567ee06e9b41f0fd1a36001841c5 [label="interfacialModels", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_ac9b567ee06e9b41f0fd1a36001841c5.html",tooltip=""];
+  dir_e9c594d8f3b0b5d00e00b870816d9586 [label="populationBalanceModel", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_e9c594d8f3b0b5d00e00b870816d9586.html",tooltip=""];
+  dir_7ea7ebc28dfda8fecb83ce8abc03c082 [label="derivedFvPatchFields", fillcolor="#a2b4d6", color="red", style="filled", URL="dir_7ea7ebc28dfda8fecb83ce8abc03c082.html",tooltip=""];
+  subgraph clusterdir_781c720f7306a7408b32d743fdc101ef {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_781c720f7306a7408b32d743fdc101ef.html",tooltip=""]
+    dir_781c720f7306a7408b32d743fdc101ef [shape=plaintext, label="PhaseSystems"];
+  dir_990d9f5d8323e5fe65f2ab3e77896907 [label="InterfaceCompositionPhase\lChangePhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_990d9f5d8323e5fe65f2ab3e77896907.html",tooltip=""];
+  dir_d1a802c91cd8a3c30f2f1f64a46382c0 [label="MomentumTransferPhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d1a802c91cd8a3c30f2f1f64a46382c0.html",tooltip=""];
+  dir_b0be13b6da4bbffdc24bf267cdd131f8 [label="OneResistanceHeatTransfer\lPhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_b0be13b6da4bbffdc24bf267cdd131f8.html",tooltip=""];
+  dir_a31d244350c71b33d6bf577b97c4726d [label="PhaseTransferPhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a31d244350c71b33d6bf577b97c4726d.html",tooltip=""];
+  dir_8b590373d8fccfb756bbcc6e65ede593 [label="PopulationBalancePhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_8b590373d8fccfb756bbcc6e65ede593.html",tooltip=""];
+  dir_fdfb1a4fb776b092b7788054f5f615d2 [label="ThermalPhaseChangePhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_fdfb1a4fb776b092b7788054f5f615d2.html",tooltip=""];
+  dir_3ebc2023fff248ce707a049bedaa51e6 [label="TwoResistanceHeatTransfer\lPhaseSystem", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_3ebc2023fff248ce707a049bedaa51e6.html",tooltip=""];
+  }
+  }
+  dir_9bd15774b555cf7259a6fa18f99fe99b [label="finiteVolume", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_9bd15774b555cf7259a6fa18f99fe99b.html",tooltip=""];
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_0a821bd01650f974c2b9a25b952bd325 [label="saturationModels", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_0a821bd01650f974c2b9a25b952bd325.html",tooltip=""];
+  dir_990d9f5d8323e5fe65f2ab3e77896907->dir_c9eb74ea5be55f867422cccc8fbf9bc7 [headlabel="1", labeldistance=1.5 headhref="dir_001893_001907.html" href="dir_001893_001907.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_990d9f5d8323e5fe65f2ab3e77896907->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_001893_002906.html" href="dir_001893_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d1a802c91cd8a3c30f2f1f64a46382c0->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="9", labeldistance=1.5 headhref="dir_002435_001387.html" href="dir_002435_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d1a802c91cd8a3c30f2f1f64a46382c0->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="2", labeldistance=1.5 headhref="dir_002435_002695.html" href="dir_002435_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_d1a802c91cd8a3c30f2f1f64a46382c0->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_002435_002906.html" href="dir_002435_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_b0be13b6da4bbffdc24bf267cdd131f8->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="1", labeldistance=1.5 headhref="dir_002691_001387.html" href="dir_002691_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_b0be13b6da4bbffdc24bf267cdd131f8->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_002691_002906.html" href="dir_002691_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a31d244350c71b33d6bf577b97c4726d->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="1", labeldistance=1.5 headhref="dir_002912_001387.html" href="dir_002912_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a31d244350c71b33d6bf577b97c4726d->dir_ac9b567ee06e9b41f0fd1a36001841c5 [headlabel="1", labeldistance=1.5 headhref="dir_002912_001909.html" href="dir_002912_001909.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_a31d244350c71b33d6bf577b97c4726d->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_002912_002906.html" href="dir_002912_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_8b590373d8fccfb756bbcc6e65ede593->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_003004_002906.html" href="dir_003004_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_8b590373d8fccfb756bbcc6e65ede593->dir_e9c594d8f3b0b5d00e00b870816d9586 [headlabel="1", labeldistance=1.5 headhref="dir_003004_003002.html" href="dir_003004_003002.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fdfb1a4fb776b092b7788054f5f615d2->dir_0a821bd01650f974c2b9a25b952bd325 [headlabel="1", labeldistance=1.5 headhref="dir_003998_003412.html" href="dir_003998_003412.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fdfb1a4fb776b092b7788054f5f615d2->dir_7ea7ebc28dfda8fecb83ce8abc03c082 [headlabel="1", labeldistance=1.5 headhref="dir_003998_000882.html" href="dir_003998_000882.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fdfb1a4fb776b092b7788054f5f615d2->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="2", labeldistance=1.5 headhref="dir_003998_001387.html" href="dir_003998_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fdfb1a4fb776b092b7788054f5f615d2->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_003998_002695.html" href="dir_003998_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_fdfb1a4fb776b092b7788054f5f615d2->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_003998_002906.html" href="dir_003998_002906.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3ebc2023fff248ce707a049bedaa51e6->dir_9bd15774b555cf7259a6fa18f99fe99b [headlabel="4", labeldistance=1.5 headhref="dir_004177_001387.html" href="dir_004177_001387.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3ebc2023fff248ce707a049bedaa51e6->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="1", labeldistance=1.5 headhref="dir_004177_002695.html" href="dir_004177_002695.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3ebc2023fff248ce707a049bedaa51e6->dir_dfe19b54a98af0254be9d6c989217747 [headlabel="1", labeldistance=1.5 headhref="dir_004177_002906.html" href="dir_004177_002906.html" color="steelblue1" fontcolor="steelblue1"];
+}

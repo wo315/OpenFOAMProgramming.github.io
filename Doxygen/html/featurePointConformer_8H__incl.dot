@@ -1,0 +1,23 @@
+digraph "applications/utilities/mesh/generation/foamyMesh/conformalVoronoiMesh/conformalVoronoiMesh/featurePointConformer/featurePointConformer.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="applications/utilities\l/mesh/generation/foamyMesh\l/conformalVoronoiMesh/conformalVoronoi\lMesh/featurePointConformer/featurePointConformer.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CGALTriangulation3Ddefs.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$CGALTriangulation3Ddefs_8H.html",tooltip="CGAL data structures used for 3D Delaunay meshing."];
+  Node1 -> Node163 [id="edge2_Node000001_Node000163",color="steelblue1",style="solid",tooltip=" "];
+  Node163 [id="Node000163",label="vector.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$vector_8H.html",tooltip=" "];
+  Node1 -> Node114 [id="edge3_Node000001_Node000114",color="steelblue1",style="solid",tooltip=" "];
+  Node114 [id="Node000114",label="DynamicList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$DynamicList_8H.html",tooltip=" "];
+  Node114 -> Node11 [id="edge4_Node000114_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="List.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$List_8H.html",tooltip=" "];
+  Node1 -> Node11 [id="edge5_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node257 [id="edge6_Node000001_Node000257",color="steelblue1",style="solid",tooltip=" "];
+  Node257 [id="Node000257",label="extendedFeatureEdgeMesh.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$extendedFeatureEdgeMesh_8H.html",tooltip=" "];
+  Node1 -> Node297 [id="edge7_Node000001_Node000297",color="steelblue1",style="solid",tooltip=" "];
+  Node297 [id="Node000297",label="pointPairs.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$pointPairs_8H.html",tooltip=" "];
+  Node1 -> Node299 [id="edge8_Node000001_Node000299",color="steelblue1",style="solid",tooltip=" "];
+  Node299 [id="Node000299",label="featurePointConformerI.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$featurePointConformerI_8H.html",tooltip=" "];
+}

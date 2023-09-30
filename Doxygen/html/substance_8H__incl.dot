@@ -1,0 +1,14 @@
+digraph "applications/utilities/thermophysical/mixtureAdiabaticFlameT/substance.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="applications/utilities\l/thermophysical/mixtureAdiabatic\lFlameT/substance.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="scalar.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$scalar_8H.html",tooltip=" "];
+  Node1 -> Node15 [id="edge2_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="word.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$word_8H.html",tooltip=" "];
+  Node1 -> Node33 [id="edge3_Node000001_Node000033",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="Istream.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Istream_8H.html",tooltip=" "];
+}

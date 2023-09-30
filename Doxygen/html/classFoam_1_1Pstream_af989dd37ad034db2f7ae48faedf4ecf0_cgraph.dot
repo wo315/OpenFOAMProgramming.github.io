@@ -1,0 +1,21 @@
+digraph "exchangeConsensus"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="exchangeConsensus",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Foam::abort",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam.html#aa346d711a4494a48e7c8aa9316f24263",tooltip=" "];
+  Node1 -> Node4 [id="edge2_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Foam::PstreamDetail\l::exchangeConsensus",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$namespaceFoam_1_1PstreamDetail.html#afe83de1d422bb3e240090bc44126b104",tooltip=" "];
+  Node4 -> Node2 [id="edge3_Node000004_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node14 [id="edge4_Node000004_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="Foam::UPstream::nProcs",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1UPstream.html#a7db00ff752d312e8138599b99537f5e4",tooltip=" "];
+  Node14 -> Node15 [id="edge5_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="Foam::UPtrList::size",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1UPtrList.html#a95603446b248fe1ecf5dc59bcc2eaff0",tooltip=" "];
+  Node4 -> Node15 [id="edge6_Node000004_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge7_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge8_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+}

@@ -1,0 +1,18 @@
+digraph "src/fileFormats/nastran/NASCore.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/fileFormats/nastran\l/NASCore.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="scalar.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$scalar_8H.html",tooltip=" "];
+  Node1 -> Node33 [id="edge2_Node000001_Node000033",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="Enum.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$Enum_8H.html",tooltip=" "];
+  Node1 -> Node104 [id="edge3_Node000001_Node000104",color="steelblue1",style="solid",tooltip=" "];
+  Node104 [id="Node000104",label="face.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$face_8H.html",tooltip=" "];
+  Node1 -> Node106 [id="edge4_Node000001_Node000106",color="steelblue1",style="solid",tooltip=" "];
+  Node106 [id="Node000106",label="point.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$point_8H.html",tooltip=" "];
+  Node1 -> Node127 [id="edge5_Node000001_Node000127",color="steelblue1",style="solid",tooltip=" "];
+  Node127 [id="Node000127",label="DynamicList.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$DynamicList_8H.html",tooltip=" "];
+}

@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="mixedFvPatchVectorField",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge5080_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="freestreamVelocityFvPatch\lVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1freestreamVelocityFvPatchVectorField.html",tooltip="This boundary condition provides a free-stream condition for velocity."];
+  Node0 -> Node2 [id="edge5081_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="outletPhaseMeanVelocityFv\lPatchVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1outletPhaseMeanVelocityFvPatchVectorField.html",tooltip="This boundary condition adjusts the velocity for the given phase to achieve the specified mean thus c..."];
+  Node0 -> Node3 [id="edge5082_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="pressureDirectedInletOutlet\lVelocityFvPatchVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1pressureDirectedInletOutletVelocityFvPatchVectorField.html",tooltip="This velocity inlet/outlet boundary condition is applied to velocity boundaries where the pressure is..."];
+  Node0 -> Node4 [id="edge5083_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="pressureInletOutletParSlip\lVelocityFvPatchVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1pressureInletOutletParSlipVelocityFvPatchVectorField.html",tooltip="This velocity inlet/outlet boundary condition for pressure boundary where the pressure is specified...."];
+  Node0 -> Node5 [id="edge5084_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="pressureNormalInletOutlet\lVelocityFvPatchVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1pressureNormalInletOutletVelocityFvPatchVectorField.html",tooltip="This velocity inlet/outlet boundary condition is applied to patches where the pressure is specified...."];
+  Node0 -> Node6 [id="edge5085_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="pressurePermeableAlphaInlet\lOutletVelocityFvPatchVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1pressurePermeableAlphaInletOutletVelocityFvPatchVectorField.html",tooltip="The pressurePermeableAlphaInletOutletVelocity is a velocity inlet-outlet boundary condition which can..."];
+  Node0 -> Node7 [id="edge5086_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="supersonicFreestreamFvPatch\lVectorField",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1supersonicFreestreamFvPatchVectorField.html",tooltip="This boundary condition provides a supersonic free-stream condition."];
+}

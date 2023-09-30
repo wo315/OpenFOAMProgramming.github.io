@@ -1,0 +1,12 @@
+digraph "applications/utilities/mesh/generation/foamyMesh/conformalVoronoiMesh/conformalVoronoiMesh/CGALTriangulation3DKernel.H"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="applications/utilities\l/mesh/generation/foamyMesh\l/conformalVoronoiMesh/conformalVoronoi\lMesh/CGALTriangulation3DKernel.H",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="applications/utilities\l/mesh/generation/foamyMesh\l/conformalVoronoiMesh/conformalVoronoi\lMesh/CGALTriangulation3Ddefs.H",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$CGALTriangulation3Ddefs_8H.html",tooltip="CGAL data structures used for 3D Delaunay meshing."];
+  Node1 -> Node27 [id="edge2_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="applications/utilities\l/mesh/generation/foamyMesh\l/conformalVoronoiMesh/conformalVoronoi\lMesh/indexedVertex/indexedVertex.H",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$conformalVoronoiMesh_2conformalVoronoiMesh_2indexedVertex_2indexedVertex_8H.html",tooltip=" "];
+}

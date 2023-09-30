@@ -1,0 +1,14 @@
+digraph "src/finiteVolume/fvMatrices/solvers/multiDimPolyFitter/multiDimPolyFunctions"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_dd0a2bf48281b4f6ef390870064f62a8 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="multiDimPolyFitter", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_dd0a2bf48281b4f6ef390870064f62a8.html",tooltip=""]
+  dir_0f623fd337ab7f134284d4d08a6a5e37 [label="multiDimPolyFunctions", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_0f623fd337ab7f134284d4d08a6a5e37.html",tooltip=""];
+  }
+  dir_c5473ff19b20e6ec4dfe5c310b3778a8 [label="OpenFOAM", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_c5473ff19b20e6ec4dfe5c310b3778a8.html",tooltip=""];
+  dir_0f623fd337ab7f134284d4d08a6a5e37->dir_c5473ff19b20e6ec4dfe5c310b3778a8 [headlabel="10", labeldistance=1.5 headhref="dir_002474_002695.html" href="dir_002474_002695.html" color="steelblue1" fontcolor="steelblue1"];
+}
