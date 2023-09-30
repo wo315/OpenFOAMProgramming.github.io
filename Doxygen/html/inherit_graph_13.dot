@@ -1,9 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  rankdir="LR";
-  Node0 [id="Node000000",label="adjointMeshMovementSolver",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFoam_1_1incompressible_1_1adjointMeshMovementSolver.html",tooltip="Solver of the adjoint to the Laplace grid displacement equation."];
-}
