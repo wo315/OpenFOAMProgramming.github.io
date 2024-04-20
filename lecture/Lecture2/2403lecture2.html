@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2403-Lecture02</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/earth.jpg" data-background-opacity="0.2">
+                    <h2>2403<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2024年04月09日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="syllbus">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">基本数据类型</li>
+                            <li class="fragment">数组和指针</li>
+                            <li class="fragment">循环</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="data-id">变量</h2>
+                    <h4 data-id="data-id">变量定义</h4>
+                    <pre><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int bottles = 10;
+                            double rho = 1000;
+                            scalar alpha = 0.5;
+                            dimensionedScalar nu
+                                                (
+                                                    "nu",
+                                                    dimensionSet(0,2,-1,0,0,0,0),
+                                                    transportProperties
+                                                );
+                            volScalarField p =  2000
+                                                (
+                                                    7.73434
+                                                    ...
+                                                    5.84151
+                                                )
+                            volVectorField U =  2000
+                                                (
+                                                    (0.630392 0.0570042 0)
+                                                    ...
+                                                    (0.281456 0.0448477 0)
+                                                )
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="data-id">代码示例一</h2>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                            /*
+                                This program computes the volume (in liters) of a six-pack of soda
+                                cans and the total volume of a six-pack and a two-liter bottle.
+                            */
+                            int main()
+                            {  
+                                int cans_per_pack = 6;
+                                const double CAN_VOLUME = 0.355; // Liters in a 12-ounce can
+                                double total_volume = cans_per_pack * CAN_VOLUME;
+                            
+                                cout << "A six-pack of 12-ounce cans contains "
+                                    << total_volume << " liters." << endl;
+                            
+                                const double BOTTLE_VOLUME = 2; // Two-liter bottle
+                            
+                                total_volume = total_volume + BOTTLE_VOLUME;
+                            
+                                cout << "A six-pack and a two-liter bottle contain "
+                                    << total_volume << " liters." << endl;
+                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 volume.cpp -o volume
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="data-id">代码示例二</h3>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        #include <iostream>
+                        #include <cmath>
+                        
+                        using namespace std;
+                        
+                        int main()
+                        {
+                            int pennies = 1729;   
+                            int dollars = pennies / 100; // The remainder is discarded
+                            int cents = pennies % 100; // The % operator yields the remainder
+                            cout << "Dollars: " << dollars << endl;
+                            cout << "Cents: " << cents << endl;
+                        
+                            double price = 2.55;
+                            dollars = price; // Assigning to an int drops the fractional part
+                            cout << "Integer part of " << price << ": " << dollars << endl;
+                            dollars = price + 0.5; // Rounds to nearest integer
+                            cout << "Nearest integer to " << price << ": " << dollars << endl;
+                        
+                            // The decimal logarithm of a number can be used
+                            // to determine the number of digits.
+                            double population = 73693997551.0; 
+                            double decimal_log = log10(population);
+                            int digits = decimal_log; // Drop fractional part
+                            cout << "Decimal log of " << population << ": "
+                                << decimal_log << endl;
+                            cout << "Digits: " << digits << endl;
+                            
+                            return 0;
+                        }                 
+                        </script>
+                    </code></pre> 
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 numbers.cpp -o numbers
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="data-id">代码示例三</h3>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                // Read price per pack
+                            
+                                cout << "Please enter the price for a six-pack: ";
+                                double pack_price;
+                                cin >> pack_price;   
+                            
+                                // Read can volume
+                            
+                                cout << "Please enter the volume for each can (in ounces): ";
+                                double can_volume;
+                                cin >> can_volume;   
+                            
+                                // Compute pack volume 
+                                
+                                const double CANS_PER_PACK = 6;
+                                double pack_volume = can_volume * CANS_PER_PACK;
+                            
+                                // Compute and print price per ounce
+                            
+                                double price_per_ounce = pack_price / pack_volume;
+                            
+                                cout << fixed << setprecision(2);
+                                cout << "Price per ounce: " << price_per_ounce << endl;
+                            
+                                return 0;
+                            }
+                                
+                                                
+                        </script>
+                    </code></pre> 
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 volumes2.cpp -o volumes2
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="data-id">代码示例四</h3>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <string>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {  
+                                cout << "Enter your first name: ";
+                                string first;
+                                cin >> first;
+                                cout << "Enter your significant other's first name: ";
+                                string second;
+                                cin >> second;
+                                string initials = first.substr(0, 1) 
+                                    + "&" + second.substr(0, 1);
+                                cout << initials << endl;
+                            
+                                return 0;
+                            }                         
+                        </script>
+                    </code></pre> 
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 initials.cpp -o initials
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="data-id">小项目</h3>
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                                
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                const int FIRST_CLASS_STAMP_PRICE = 80; // Price in fen
+                            
+                                cout << "Enter number of yuan: ";
+                                int yuan; 
+                                cin >> yuan;
+                            
+                                int first_class_stamps = 100 * yuan / FIRST_CLASS_STAMP_PRICE;
+                                int fen_stamps = 100 * yuan - first_class_stamps 
+                                    * FIRST_CLASS_STAMP_PRICE;
+                                cout << "First class stamps: " << setw(6) << first_class_stamps << endl
+                                    << "fen stamps:       " << setw(6) << fen_stamps << endl;
+                            
+                                return 0;
+                            }
+                                
+                                                        
+                        </script>
+                    </code></pre> 
+                    <pre data-id="data-id" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 stamps.cpp -o stamps
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h4 data-id="if_stat" class="fragment fade-in">分支语句一</h4>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            if(condition) {
+
+                            } else {
+
+                            };
+                        </script>
+                    </code></pre>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            actual_floor = floor > 13 ? floor - 1 : floor; //更优雅
+                        </script>
+                    </code></pre>
+                    <h4 data-id="if_stat" class="fragment fade-in">分支语句二</h4>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            if(condition) {
+
+                            } else if () {
+
+                            } else {
+                                 
+                            };
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                <h3 data-id="if_stat">代码示例一</h3>
+                <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                    <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                            int main()
+                            {  
+                                int floor;
+                                cout << "Floor: ";
+                                cin >> floor;
+                                int actual_floor;
+                                if (floor > 13)
+                                {  
+                                    actual_floor = floor - 1;
+                                }
+                                else
+                                {
+                                    actual_floor = floor;
+                                }
+                            
+                                cout << "The elevator will travel to the actual floor "
+                                    << actual_floor << endl;
+                            
+                                return 0;
+                            }
+                                
+                                
+                        </script>
+                    </code></pre>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 elevator.cpp -o elevator
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="if_stat">代码示例二</h3>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <cmath>
+                            #include <iostream>
+                            #include <iomanip>
+                            #include <string>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                // Integers
+                            
+                                int m = 2;
+                                int n = 4;
+                            
+                                if (m * m == n)
+                                {
+                                    cout << "2 times 2 is 4" << endl;
+                                }
+                            
+                                // Floating-point numbers
+                            
+                                double x = sqrt(2);
+                                double y = 2.0;
+                            
+                                if (x * x == y)
+                                {
+                                    cout << "sqrt(2) times sqrt(2) is 2" << endl;
+                                }
+                                else
+                                {
+                                    cout << "sqrt(2) times sqrt(2) is not 2 but "
+                                        << fixed << setprecision(18) << x * x << endl;
+                                }
+                            
+                                const double EPSILON = 1E-14;
+                                if (abs(x * x - y) < EPSILON)
+                                {
+                                    cout << "sqrt(2) times sqrt(2) is approximately 2" << endl;
+                                }
+                            
+                                // Strings
+                            
+                                string s = "120";
+                                string t = "20";
+                            
+                                if (s < t)
+                                {
+                                    cout << s << " comes before " << t << endl;
+                                }
+                                else if (s > t)
+                                {
+                                    cout << s << " comes after " << t << endl;
+                                }
+                                else
+                                {
+                                    cout << s << " is the same as " << t << endl;
+                                }
+                                
+                                return 0;
+                            }
+                                
+                                                
+                        </script>
+                    </code></pre> 
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 compare.cpp -o compare
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="if_stat">代码示例三，分支嵌套</h3>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <string>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {  
+                                const double RATE1 = 0.10;
+                                const double RATE2 = 0.25;
+                                const double RATE1_SINGLE_LIMIT = 32000;
+                                const double RATE1_MARRIED_LIMIT = 64000;
+                            
+                                double tax1 = 0;
+                                double tax2 = 0;
+                            
+                                double income;
+                                cout << "Please enter your income: ";
+                                cin >> income;
+                            
+                                cout << "Please enter s for single, m for married: ";
+                                string marital_status;
+                                cin >> marital_status;
+                            
+                                if (marital_status == "s")
+                                {
+                                    if (income <= RATE1_SINGLE_LIMIT)
+                                    {
+                                        tax1 = RATE1 * income;
+                                    }
+                                    else
+                                    {
+                                        tax1 = RATE1 * RATE1_SINGLE_LIMIT;
+                                        tax2 = RATE2 * (income - RATE1_SINGLE_LIMIT);
+                                    }
+                                }
+                                else
+                                {  
+                                    if (income <= RATE1_MARRIED_LIMIT)
+                                    {
+                                        tax1 = RATE1 * income;
+                                    }
+                                    else 
+                                    {
+                                        tax1 = RATE1 * RATE1_MARRIED_LIMIT;
+                                        tax2 = RATE2 * (income - RATE1_MARRIED_LIMIT);
+                                    }
+                                }
+                                
+                                double total_tax = tax1 + tax2;
+                                
+                                cout << "The tax is $" << total_tax << endl;
+                                return 0;
+                            }
+                                                 
+                        </script>
+                    </code></pre> 
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 tax.cpp -o tax
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="if_stat">小项目</h3>
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <string>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                cout << "Enter a string: ";
+                                string str;
+                                cin >> str;
+                            
+                                int position;
+                                int length;
+                                if (str.length() % 2 == 1)
+                                {
+                                    position = str.length() / 2;
+                                    length = 1;
+                                }
+                                else
+                                {
+                                    position = str.length() / 2 - 1;
+                                    length = 2;
+                                }
+                                string result = str.substr(position, length);
+                            
+                                cout << "Middle: " << result << endl;
+                                return 0;
+                            }
+                               
+                        </script>
+                    </code></pre> 
+                    <pre data-id="if_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 middle.cpp -o middle
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="loop_stat" class="fragment fade-in">while循环</h4>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            while(i < 100){
+                                do something
+                                i++;
+                            }
+                        </script>
+                    </code></pre>
+                    <h4 data-id="loop_stat" class="fragment fade-in">for循环</h4>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            for(int i = 0; i < 100; i++) {
+                                do something
+                            }
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section>
+                <h2>代码示例一 正整数累加</h2>
+                    <pre><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                cout << "Enter an integer: ";
+                                int n;
+                                cin >> n;
+                            
+                                int sum = 0;
+                                while (n > 0)
+                                {
+                                    int digit = n % 10;
+                                    sum = sum + digit;
+                                    n = n / 10;
+                                }
+                                cout << sum << endl;
+                                
+                                return 0;
+                            }
+       
+                        </script>
+                    </code></pre>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 digits.cpp -o digits
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="loop_stat">代码示例二</h3>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <string>
+                            #include <cmath>
+                            
+                            using namespace std;
+                            
+                            /**
+                                This program shows how you can prompt for input that fulfills
+                                a certain condition. Try entering negative values, such as
+                                -2 or -0.5, to see how they are rejected.
+                            */
+                            int main()
+                            {
+                                double value;
+                                do
+                                {
+                                    cout << "Enter a number >= 0: ";
+                                    cin >> value;
+                                }
+                                while (value < 0);
+                                double root = sqrt(value);
+                                cout << "The square root of the number is " << root << endl;   
+                            } 
+                                                      
+                        </script>
+                    </code></pre> 
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 do_loop.cpp -o do_loop
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="loop_stat">代码示例三，哨兵</h3>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                            int main()
+                            {  
+                                double sum = 0;
+                                int count = 0;
+                                double value = 0;
+                                cout << "Enter values, Q to quit: ";
+                                bool done = false;
+                                while (!done)
+                                {  
+                                    cin >> value;
+                                    if (cin.fail())
+                                    {
+                                        done = true;
+                                    }
+                                    else 
+                                    {  
+                                        sum = sum + value;
+                                        count++;
+                                    }
+                                }
+                                if (count > 0)
+                                {
+                                    double average = sum / count;
+                                    cout << "Average: " << average << endl;
+                                }
+                                else
+                                {
+                                    cout << "No data" << endl;
+                                }
+                                return 0;
+                            }
+                                
+                                                    
+                        </script>
+                    </code></pre> 
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 sentinel.cpp -o sentinel
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="loop_stat">代码示例四，for loop</h3>
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            #include <cmath>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {  
+                                const int NMAX = 4;
+                                const double XMAX = 10;
+                            
+                                // Print table header
+                            
+                                for (int n = 1; n <= NMAX; n++)
+                                {
+                                    cout << setw(10) << n;
+                                }
+                                cout << endl;
+                                for (int n = 1; n <= NMAX; n++)
+                                {
+                                    cout << setw(10) << "x ";
+                                }
+                                cout << endl << endl;
+                            
+                                // Print table body
+                            
+                                for (double x = 1; x <= XMAX; x++)
+                                {
+                                    // Print table row
+                            
+                                    for (int n = 1; n <= NMAX; n++)
+                                    {
+                                        cout << setw(10) << pow(x, n);
+                                    }
+                                    cout << endl;
+                                }
+                            
+                                return 0;
+                            }
+                                
+                                
+                        </script>
+                    </code></pre> 
+                    <pre data-id="loop_stat" class="fragment fade-in"><code data-line-numbers data-trim class="shell">
+                        <script type="text/template">
+                            $ g++ -std=c++17 powtable.cpp -o powtable
+                        </script>
+                    </code></pre>
+                </section>
+                
+                <section>
+			    
+					<h1>Project DEMO</h1>
+				
+			    </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>纸上得来终觉浅</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>

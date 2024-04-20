@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2403-Lecture05</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/earth.jpg" data-background-opacity="0.2">
+                    <h2>2403<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2024年04月19日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="func">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">指针</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">普通指针</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            int *i_ptr;
+                            const int *ci_ptr;
+                            std::vector<std::string> *v_s_ptr;
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">智能指针</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            std::shared_ptr<int> sp1 = std::make_shared<int>(42);
+                            std::shared_ptr<int> sp2(new int(42));
+                            std::unique_ptr<int> up1(new int(42));
+                            std::unique_ptr<int[]> up2 = std::make_unique<int[]>(5); //C++14
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">栈内存自动管理</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            int i = 42;
+                            int *pi = &i;
+                            std::string str = "OpenFOAM";
+                            std::string *pstr = &str;  
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">堆内存非自动管理</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            int *i_ptr = new int(42);
+                            std::string *v_s_ptr = new std::string("OpenFOAM");
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">函数指针</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            return_type (*func_name)(type parameter_name);
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例一</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                double harrys_account = 0;
+                                double joint_account = 2000;
+                                double* account_pointer = &harrys_account; 
+                                
+                                *account_pointer = 1000; // Initial deposit
+                            
+                                *account_pointer = *account_pointer - 100; // Withdraw $100
+                                cout << "Balance: " << *account_pointer << endl; // Print balance
+                            
+                                // Change the pointer value
+                                account_pointer = &joint_account; 
+                            
+                                // The same statements affect a different account
+                                *account_pointer = *account_pointer - 100; // Withdraw $100
+                                cout << "Balance: " << *account_pointer << endl; // Print balance
+                            
+                                return 0;
+                            }             
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            clang++ -std=c++14 main.cpp -o main           
+                        </script>
+                    </code></pre>
+                </section>
+ 
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例二</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            using namespace std;
+                            
+                                                        
+                            double sum(double values[], int size)
+                            {
+                                cout << "Value of values: " << reinterpret_cast<long>(values) << endl;
+                                double total = 0;
+                                for (int i = 0; i < size; i++)
+                                {
+                                    total = total + values[i];
+                                }
+                                return total;
+                            }
+                            
+                            int main()
+                            {
+                                double a[10];
+                                for (int i = 0; i < 10; i++) { a[i] = i * i; }
+                            
+                                double* p = a; // Points to a[0]
+                                cout << "Initial element: " << *p << endl;
+                                cout << "Three elements further: " << *(p + 3) << endl;
+                            
+                                cout << "Value of p: " << reinterpret_cast<long>(p) << endl;
+                                cout << "Value of p + 3: " << reinterpret_cast<long>(p + 3) << endl;
+                                cout << "Note that p + 3 is 24 bytes further than p." << endl;
+                            
+                                double s = sum(a, 10);
+                                cout << "Note that the address of a was passed to sum." << endl;
+                                cout << "Sum: " << s << endl;
+                                return 0;
+                            }
+                                                        
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in >
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例三</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <string>
+                            #include <cstdlib>
+                            #include <cctype>
+                            
+                            using namespace std;
+                            
+                            /**
+                                Makes an uppercase version of a string.
+                                @param str a string
+                                @return a string with the characters in str converted to uppercase
+                            */
+                            string uppercase(string str)
+                            {
+                                string result = str; // Make a copy of str
+                                for (int i = 0; i < result.length(); i++)
+                                {
+                                    result[i] = toupper(result[i]); // Convert each character to uppercase
+                                }
+                                return result;
+                            }
+                            
+                            int main()
+                            {
+                                /*
+                                    To print character values in decimal, you must convert them to int.
+                                */
+                                cout << "Some common char values:" << endl;
+                                cout << "The letter H: " << static_cast<int>('H') << endl;
+                                cout << "The digit 0: " << static_cast<int>('0') << endl;
+                                cout << "The space character: " << static_cast<int>(' ') << endl;
+                                cout << "The newline character: " << static_cast<int>('\n') << endl;
+                                cout << endl;
+                            
+                                const char* char_pointer = "Harry";
+                                cout << "char_pointer points to: " << *char_pointer << endl;
+                                cout << "Or in decimal: " << static_cast<int>(*char_pointer) << endl;
+                                cout << "Here is the zero terminator: "
+                                    << static_cast<int>(*(char_pointer + 5)) << endl;
+                            
+                                char char_array[] = "Harry";
+                                cout << "Here is the zero terminator: "
+                                    << static_cast<int>(char_array[5]) << endl;
+                                char_array[0] = 'L';
+                                cout << "Now char_array holds " << char_array << endl;
+                                cout << endl;
+                            
+                                string year = "2012"; // A C++ string
+                                char_pointer = year.c_str(); // Converted to char*
+                                int y = atoi(char_pointer); // atoi requires a C style string   
+                                cout << "string " << year << " converted to an int: " << y << endl;
+                            
+                                string name = "Harry";
+                                string sub3 = name.substr(3, 1);
+                                char ch3 = name[3];
+                                cout << "Substring of length 1 at index 3: " << sub3 << endl;
+                                cout << "Substring of length 1 at index 3: " << ch3 << endl;
+                                name[3] = 'd';
+                                cout << "After changing name[3]: " << name << endl;
+                                cout << "Uppercase: " << uppercase(name) << endl;
+                                
+                                return 0;
+                            }
+                                
+                                             
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">动态分配内存</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            double *d_value = new double;
+                            double *d_value = new double[];  
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">内存泄漏检测</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            valgrind ./a.out
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例四</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        #include <iostream>
+
+                        using namespace std;
+                        
+                        int main()
+                        {
+                            double* account_pointer = new double;
+                            *account_pointer = 1000;
+                            cout << "Allocated one new variable containing " << *account_pointer
+                                << endl;
+                            cout << endl;
+                        
+                            int n = 10;
+                            double* account_array = new double[n];
+                            for (int i = 0; i < n; i++)
+                            {
+                                account_array[i] = 1000 * i;
+                            }   
+                            cout << "Allocated an array of size " << n << endl;
+                            for (int i = 0; i < n; i++)
+                            {
+                                cout << i << ": " << account_array[i] << endl;
+                            }
+                            cout << endl;
+                        
+                            // Doubling the array capacity 
+                            double* bigger_array = new double[2 * n];
+                            for (int i = 0; i < n; i++)
+                            {
+                                bigger_array[i] = account_array[i];
+                            }
+                            delete[] account_array; // Deleting smaller array
+                            account_array = bigger_array;
+                            n = 2 * n;
+                        
+                            cout << "Now there is room for an additional element:" << endl;
+                            account_array[10] = 10000;
+                            cout << 10 << ": " << account_array[10] << endl;    
+                            
+                            delete account_pointer;
+                            delete[] account_array; // Deleting larger array
+                            
+                            return 0;
+                        }
+                    </script> 
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include <iomanip>
+                            #include <cstdlib>
+                            #include <ctime>
+                            
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                
+                                // srand(time(0));
+                                std::random_device seed;
+                                std::mt19937 engine(seed());
+                                std::uniform_int_distribution<int> dist(0, 100);
+                                
+                                const int SIZE = 10;
+                            
+                                int* counts[SIZE];
+                            
+                                // Allocate the rows
+                                for (int i = 0; i < SIZE; i++)
+                                {
+                                    counts[i] = new int[i + 1];
+                                    for (int j = 0; j <= i; j++)
+                                    {
+                                        counts[i][j] = 0;
+                                    }
+                                }
+                            
+                                const int RUNS = 1000;
+                            
+                                // Simulate 1,000 balls
+                                for (int run = 0; run < RUNS; run++)
+                                {
+                                    // Add a ball to the top
+                                    counts[0][0]++;
+                                    // Have the ball run to the bottom
+                                    int j = 0;
+                                    for (int i = 1; i < SIZE; i++)
+                                    {
+                                        int r = rand() % 2;
+                                        // If r is even, move down, otherwise to the right
+                                        if (r == 1)
+                                        {
+                                        j++; 
+                                        }
+                                        counts[i][j]++;
+                                    }
+                                }
+                            
+                                // Print all counts
+                                for (int i = 0; i < SIZE; i++)
+                                {
+                                    for (int j = 0; j <= i; j++)
+                                    {
+                                        cout << setw(4) << counts[i][j];
+                                    }
+                                    cout << endl;
+                                }
+                            
+                                // Deallocate the rows
+                                for (int i = 0; i < SIZE; i++)
+                                {
+                                    delete[] counts[i];
+                                }
+                            
+                                return 0;
+                            }
+                                
+                                
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">二维数组</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        #ifndef MATRIX_HPP
+                        #define MATRIX_HPP
+
+                        #include <cstddef>
+                        #include <vector>
+
+                        class Matrix {
+                        public:
+                        Matrix(size_t M, size_t N) : num_rows_(M), num_cols_(N), storage_(num_rows_ * num_cols_) {}
+
+                        double& operator()(size_t i, size_t j)       { return storage_[i * num_cols_ + j]; }
+                        const double& operator()(size_t i, size_t j) const { return storage_[i * num_cols_ + j]; }
+
+                        size_t num_rows() const { return num_rows_; }
+                        size_t num_cols() const { return num_cols_; }
+
+                        private:
+                        size_t              num_rows_, num_cols_;
+                        std::vector<double> storage_;
+                        };
+
+                        #endif    // MATRIX_HPP
+                                
+                                
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                            
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">结构体</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">                            
+                            typedef struct
+                            {
+                                size_t rows;
+                                size_t cols;
+                                float* data;
+                            } Mat;
+               
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">                            
+                                #include "matrix.h"
+                                #include <stdio.h>
+
+                                int main() {
+
+                                Mat *matrix1 = create(2, 5);
+
+                                Mat *matrix2 = create(5, 2);
+
+                                for (size_t i = 0; i < matrix1->rows * matrix1->cols; i++) {
+                                    matrix1->data[i] = 3.f;
+                                }
+                                printInfo(matrix1);
+
+                                for (size_t i = 0; i < matrix2->rows * matrix2->cols; i++) {
+                                    matrix2->data[i] = 2.f;
+                                }
+                                printInfo(matrix2);
+
+                                Mat *matrix = multiply(matrix1, matrix2);
+                                printInfo(matrix);
+
+                                release(matrix1);
+                                release(matrix2);
+                                release(matrix);
+
+                                return 0;
+                            }            
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">结构体</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">                            
+                        阅读C++ primer 2.3、3.4-3.6、12.2.1
+               
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>纸上得来终觉浅</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2403-Lecture03</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/earth.jpg" data-background-opacity="0.2">
+                    <h2>2403<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2024年04月12日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="func">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">函数</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">普通函数</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            return_type func_name(type parameter_name);
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">函数模板</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            template<typename T>
+                            return_type func_name(T parameter_name);
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">匿名模板</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            auto func = [](auto parameter_name){};
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">函数指针</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            return_type (*func_name)(type parameter_name);
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">函数对象</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            class ClassName{
+                                public: 
+                                ...
+                                    void operator()(type parameter_name) {}
+                            };
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">普通函数</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int add(int x, int y);              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        double add(double x, double y);              
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include "math.h"
+
+                            int add(int x, int y);
+                            double add(double x, double y); 
+                            
+                            int main()
+                            {  
+                                int x = 4;
+                                int y = 5;
+                                int z = add(x, y);
+                                std::cout << "x is: " << x << " y is :" << y << " x + y is " << z << std::endl;
+                                                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in >
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">普通函数</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        void add(int x, int y);              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        void add(double x, double y);              
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include "math.h"
+
+                            void add(int x, int y);
+                            void add(double x, double y); 
+                            
+                            int main()
+                            {  
+                                int x = 4;
+                                int y = 5;
+                                add(x, y);
+                                                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h2 data-id="func">普通函数</h2>
+                    <h3 data-id="func">main函数</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int main();    
+                        int main(int argc, char* argv[]);
+                        int main(int argc, char** argv);              
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            
+                            int main(int argc char* argv[])
+                            {  
+                                if(argc < 2) {
+                                    std::cout << "Please input more than 2 argc" << std::endl;
+                                    return 1;
+                                }
+
+                                for(int i = 0; i < argc; ++i) {
+                                    std::cout << argv[i] << std::end l;
+                                }
+                                                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">普通函数</h2>
+                    <h3 data-id="func">静态变量</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        static int count = 0;             
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            size_t count_calls() {
+                                static size_t counts = 0;
+                                return ++counts;
+                            }
+                            
+                            int main(int argc char* argv[])
+                            {  
+                                for(int i = 0; i < 10; ++i) {
+                                    std::cout << count_calls() << std::enl;
+                                }
+
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h2 data-id="func">普通函数</h2>
+                    <h3 data-id="func">递归</h3>
+                    \[\footnotesize{
+                        f(n) =n!
+                    }
+                    \]\[\footnotesize{
+                        f(5) = 1*2*3*4*5
+                    }
+                    \]
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        #include <iostream>
+
+                        size_t factorial(size_t n) {
+                            if (n == 1) {
+                                return 1;
+                            }
+                        
+                            return n * factorial(n - 1);
+                        }
+                        
+                        int main(int argc, char *argv[]) {
+                        
+                            std::cout << factorial(1) << std::endl;
+                            std::cout << factorial(5) << std::endl;
+                        
+                            return 0;
+                        }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h3 data-id="func">普通函数</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int swap(int* x, int* y);              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        void swap(int* x, int* y);              
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include "swap.h"
+
+                            //int swap(int &x, int &y);
+                            int swap(int x, int y);
+                            int swap(int *x, int *y);
+                            
+                            int main()
+                            {  
+                                int x = 4;
+                                int y = 5;
+                                swap(x, y);
+                                std::cout << "x is: " << x << " y is :" << y << std::endl;
+                                swap(&x, &y);
+                                std::cout << "x is: " << x << " y is :" << y << std::endl;
+                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp swap.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="func">函数重载</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int swap(int* x, int* y);              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int swap(int& x, int& y);              
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h2>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                            #include "swap.h"
+
+                            int swap(int &x, int &y);
+                            int swap(int *x, int *y);
+                            
+                            int main()
+                            {  
+                                int x = 4;
+                                int y = 5;
+                                swap(x, y);
+                                std::cout << "x is: " << x << " y is :" << y << std::endl;
+                                swap(&x, &y);
+                                std::cout << "x is: " << x << " y is :" << y << std::endl;
+                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp swap.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h3 data-id="func">函数模板</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        template<typename T>
+                        void swap(T* x, T* y);              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        void swap(auto* x, auto* y);              
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+                                
+                            void swap(auto* x, auto* y) {
+                                auto tmp= *x;
+                                *x = *y;
+                                *y = tmp;
+                            }
+                            
+                            int main() {
+                                int x = 4;
+                                int y = 5;
+                            
+                                swap(&x, &y);
+                                std::cout << "x is: " << x << " y is :" << y << std::endl;
+                            
+                                double d_x = 3.1;
+                                double d_y = 4.2;
+                                swap(&d_x, &d_y);
+                                std::cout << "d_x is: " << d_x << " d_y is :" << d_y << std::endl;
+                            
+                                return 0;
+                            }                 
+                        </script>
+                    </code></pre> 
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++20 main.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+
+                <section data-auto-animate>
+                    <h3 data-id="func">匿名函数</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        auto add = [](int x, int y) {
+                            return x + y;
+                        }              
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        auto add = [](auto x, auto y) {
+                            return x + y;
+                        }             
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                        $ g++ -std=c++14 main.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+                <!-- $ objdump -d ./overloading | grep square -->
+
+                <section data-auto-animate>
+                    <h3 data-id="func">代码示例</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            #include <iostream>
+
+                            int main() {
+                                int x = 4;
+                                int y = 5;
+                            
+                                auto g_add = [](auto x, auto y) {
+                                    return x + y;
+                                };
+                            
+                                std::cout << g_add(1.1, 2.3) << std::endl;
+                                std::cout << g_add(1, 2) << std::endl;
+                                std::cout << g_add(1.1f, 2.3f) << std::endl;
+                            
+                                std::cout << g_add(std::string{"Hello"}, std::string{"OpenFOAM"}) << std::endl;
+                            
+                                return 0;
+                            }       
+                        </script>
+                    </code></pre> 
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in>
+                        <script type="text/template">
+                            $ g++ -std=c++14 main.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+                                
+                <section>
+			    
+					<h1>Project DEMO</h1>
+				
+			    </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>纸上得来终觉浅</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>

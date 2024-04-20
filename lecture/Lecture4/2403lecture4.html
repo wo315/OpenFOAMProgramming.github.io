@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>2403-Lecture04</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/materialocean.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="../../node_modules/highlight.js/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="../../plugin/highlight/atom-one-dark.css" id="highlight-theme">
+        <style type="text/css">
+            .twoColContainer{
+                display:flex;
+            /*outline:3px dotted blue;*/
+            }
+            .colRCLI{
+		        flex:3;
+                position:relative;
+                /*outline:1px solid red;*/
+	        }
+	        .colLCLI{
+		        flex:2;
+		        text-align:left;
+                align-self:flex-start;
+                align-items:flex-start;
+		        font-size:80%;
+		        top:0;
+		        position:relative;
+                overflow:visible;
+                /*outline: 1px solid grey;*/
+	        }
+            .colL{
+                flex:2;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colR{
+                flex:1;
+                position:relative;
+                /*outline: 1px solid red;*/
+            }
+
+            .colLEven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid grey;*/
+            }
+            .colREven{
+                flex:1;
+                position:relative;
+                text-align:left;
+                /*outline: 1px solid red;*/
+            }
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="./images/earth.jpg" data-background-opacity="0.2">
+                    <h2>2403<a href="http://www.openfoam.com">OpenFOAM</a>编程</h2>
+                    <h3>汪洋</h3>
+                    <h4>2024年04月16日</h4>
+                </section>
+
+                <!-- <section  data-auto-animate>
+                    <h2 data-id="arithmetic">大纲</h2>
+                    <img src="cpp.png" width="1080px", height="540px">
+                </section> -->
+
+                <section data-auto-animate>
+                    <h2 data-id="func">CPP</h2>
+                        <ul style="line-height: 2em;">
+                            <li class="fragment">数组</li>
+                        </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">现代容器</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            std::vector<int> vec;
+                            std::vector<std::string> str_vec{"I", "Love", "OpenFOAM"};
+                            std::string str{"I Love OpenFOAM"}
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func" class="fragment fade-in">数组</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int a[3] = {1, 2, 3};
+                            char b[] = {'C', '+', '+'};
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">数组</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int numbers[10];
+                            std::string names[3];
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见数组算法</h3>
+                    <h4 data-id="func">复制</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int squares[5] = {0, 1, 4, 9, 16};
+                        int lucky_counts[5];
+                        for (int i = 0; i < 5; i++) {
+                            lucky_counts[i] = squares[i];
+                        }              
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">求和和平均值</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        double total = 0;
+                        for (int i = 0; i < SIZE; i++) {
+                            total = total + values[i]
+                        }   
+                        double average = total / SIZE;           
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见数组算法</h3>
+                    <h4 data-id="func">最大值和最小值</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        double max_value = values[0];
+                        for (int i = 1; i < SIZE; i++) {
+                            if (max_value < values[i]) {
+                                max_value = value[i]
+                            }
+                        }              
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">统计匹配项</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int count = 0;
+                        for (int i = 0; i < SIZE; i++) {
+                            if (values[i] >= 100) {
+                                count++
+                            }
+                        }   
+                        double average = total / SIZE;           
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见数组算法</h3>
+                    <h4 data-id="func">线性搜索</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int value[] = {99, 102, 101};
+                        int pos = 0;
+                        bool found = false;
+                        for (size_t i = 1; i < SIZE && !found; i++) {
+                            if (value[i] == 100) {
+                                found = true;
+                                pos = i;
+                            }
+                        }
+                        std::cout << "pos is " << pos << std::endl;              
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">删除元素</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int pos = 2;
+                        for (int i = pos + 1; i < SIZE; i++) {
+                            values[i - 1] = values[i];
+                        }   
+                        current_size--;         
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见数组算法</h3>
+                    <h4 data-id="func">插入元素</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int pos = 2;
+                        SIZE++;
+                        for (int i = SIZE - 1; i > pos; i--) {
+                            values[i] = values[i - 1];
+                        }   
+                        values[pos] = new_element;             
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">交换元素</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        double tmp = value[i];
+                        value[i] = value[j];
+                        value[j] = tmp;        
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">排序</h3>
+                    <h4 data-id="func">使用标准库排序</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        std::sort(a, a + SIZE);
+                        std::sort(std::begin(a), std::end(a));            
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">几种输出</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        std::cout << *value << *(value + 1) << *(value + 2) << std::endl;       
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">选择排序</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            void sort(int values[], int n) {
+                                for (int i = 0; i < n - 1; i++) {
+                                    int pos = i;
+                                    for (int j = i + 1; j < n; j++) {
+                                        if (values[j] < values[pos]) {
+                                            pos = j;
+                                        }
+                                    }
+                                    if (pos != i) {
+                                        double tmp = values[pos];
+                                        values[pos] = values[i];
+                                        values[i] = tmp;
+                                    }
+                                }
+                            }
+                            
+                            int main()
+                            {  
+                                int values[] = {99, 102, 101};
+                                sort(values, 3);
+                                std::cout << values << std::endl;                               
+                                                            
+                                return 0;
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in >
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">二分查找</h3>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                            bool found = false;
+                            int low = 0;
+                            int high = size - 1;
+                            int pos = 0;
+                            while(low <= high && !found) {
+                                pos = (low + high) / 2;
+                                if (values[pos] == sought) {
+                                    found = true;
+                                } else if (values[pos] < sought) {
+                                    low = pos + 1;
+                                }
+                                else {
+                                    high = pos - 1;
+                                }
+                            }
+                        </script>
+                    </code></pre>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="shell" fragment fade-in >
+                        <script type="text/template">
+                            $ g++ -std=c++17 main.cpp add.cpp -o main
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h4 data-id="func" class="fragment fade-in">数组</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++">
+                        <script type="text/template">
+                            int numbers[10];
+                            std::string names[3];
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见向量算法</h3>
+                    <h4 data-id="func">复制</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        vector<int> squares;
+                        for (int i = 0; i < 5; i++) {
+                            square.push_back(i * i);
+                        }
+                        vector<int> lucky_counts = squares;            
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">寻找匹配项</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        vector<double> matches;
+                        for (int i = 0; i < value.size; i++) {
+                            if (values[i] > 100) {
+                                matches.push_back(values[i]);
+                            }
+                        }         
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-auto-animate>
+                    <h3 data-id="func">常见向量算法</h3>
+                    <h4 data-id="func">移除元素</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        for (int i = pos + 1; i < values.size(); i++) {
+                            values[i-1] = value[i];
+                        }         
+                        values.pop_back();
+                        </script>
+                    </code></pre>
+                    <h4 data-id="func">插入元素</h4>
+                    <pre data-id="func" class="fragment fade-in"><code data-line-numbers data-trim class="c++" fragment fade-in>
+                        <script type="text/template">
+                        int last_pos = values.size() - 1;
+                        values.push_back(values[last_pos]);
+                        for (int i = last_pos; i > pos; i++) {
+                            values[i] = values[i-1];
+                        }    
+                        values[pos] = new_element;     
+                        </script>
+                    </code></pre>
+                </section>
+
+                <section data-background-image="./mars.jpg" data-background-opacity="0.3">
+			    
+					<h1>纸上得来终觉浅</h1>
+				
+			    </section>
+ 
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+		<!-- <script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script> -->
+        <script src="../../plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// navigationMode : "grid",
+                // autoPlayMedia: true,
+				// transition: 'fade',
+				// markdown: { smartypants: true }, 
+                hashOneBasedIndex: true,
+                slideNumber: 'c/t',
+                column: {
+                    // 列数
+                    count: 2,
+                    // 列宽百分比
+                    width: '40%',
+                    // 间距
+                    gutter: 10 
+                },
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX ],
+			});
+		</script>
+	</body>
+</html>
